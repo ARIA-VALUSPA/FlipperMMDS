@@ -74,13 +74,11 @@ public class BehaviourToGui implements ManageableBehaviourClass{
                         int numAdj = numVars(value, "@adj");
                         while (k < 10 && k < ri.size()) {
                             if (numAdj <= adjectives.getItem(ri.get(k)).getInteger()) {
-                                if (localReplacements.containsValue(replacementNoun)) {
+                                if (!localReplacements.containsValue(replacementNoun)) {
                                     String currNoun = nouns.getItem(ri.get(k)).getString();
                                     if(replacementNoun.startsWith("nounposs") && !kb.isPossession(currNoun)){
-                                        System.out.println("continue");
                                         continue;
                                     }
-                                    System.out.println("Hit the break");
                                     replacementNoun = currNoun;
                                     break;
                                 }
@@ -88,7 +86,6 @@ public class BehaviourToGui implements ManageableBehaviourClass{
                             k++;
                         }
                         if (replacementNoun.equals("")) {
-                            System.out.println("null return");
                             return null;
                         }
                         Pattern patn = Pattern.compile("@\\??" + r);
@@ -267,20 +264,15 @@ public class BehaviourToGui implements ManageableBehaviourClass{
         nouns = posUtterance.getList("nouns");
         adjectives = posUtterance.getList("adjectives");
         lastStated = posUtterance.getList("lastStated");
+
         int possSize = posUtterance.getInteger("possSize");
 
-        System.out.println(argValues);
         argValues = posQualifier(argValues, nouns.size(), "@noun");
         argValues = posQualifier(argValues, possSize, "@nounposs");
-        System.out.println(argValues);
         
         if(argValues.size() > 0) {
             agentOutput(argValues.get(0));
     }
-    }
-
-    public void blah(){
-        System.out.println(kb.numAdj("dog"));
     }
 
 

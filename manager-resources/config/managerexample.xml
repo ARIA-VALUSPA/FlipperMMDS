@@ -18,6 +18,13 @@ Managers: A template can contain one or multiple managers, and for each managers
 
 
 <managers>
+	<manager id="000" name="ManagerManager" interval="30">
+	<informationstate>
+		<state name="$userstates.utterance.pos.possSize" value="0"/>
+		<state name="$userstates.utterance.pos.nounSize" value="0"/>
+	</informationstate>
+</manager>
+
 	<manager id="001" name="IntentManager" interval="30">
 		<class classname="eu.aria.dialogue.managers.IntentManager">
 			<parameter name="rules_path" path="true" value="../data/rules.xml"/>

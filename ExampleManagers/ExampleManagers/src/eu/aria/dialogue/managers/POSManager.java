@@ -196,7 +196,7 @@ import java.util.*;
                 for(int k = 0; k < 2; k++) {
                     for (int i = 0; i < depParse.size(); i++) {
                         TypedDependency dep = depParse.get(i);
-                        System.out.println(depParse.get(i));
+//                        System.out.println(depParse.get(i));
                         //known by a different name - Jack, my brother
                         if (dep.reln().getShortName().equals("appos") && k == 0) {
                             String child = dep.gov().word();
@@ -208,24 +208,14 @@ import java.util.*;
                         else if (dep.reln().getShortName().equals("neg") && k == 1) {
                             String word = dep.gov().word();
                             String pos = dep.gov().tag();
-                            System.out.println(word);
-                            System.out.println(pos);
                             if (pos.startsWith("NN")) {
                                 kb.negateNoun(word);
                             } else if (pos.startsWith("JJ")) {
-                                System.out.println(adjHash.keySet());
-                                System.out.println("======================");
-                                System.out.println(adjHash.entrySet());
-
                                 kb.dumpAdjectives("dog");
                                 if (adjHash.containsKey(dep.gov().index())) {
-//                                System.out.println(alist);
-                                    System.out.println(word);
 
                                     ArrayList<String> alist = adjHash.get(dep.gov().index());
                                     for (String a : alist) {
-                                        System.out.println(a);
-                                        System.out.println(word);
                                         kb.negateAdj(a, word);
                                     }
                                 }
@@ -326,7 +316,6 @@ import java.util.*;
                                 if (!kb.isPossession(noun)) {
                                     kb.makePossession(noun);
                                     posUtterance.set("possSize", posUtterance.getInteger("possSize") + 1);
-                                    System.out.println("made into a possession");
                                 }
                             }
                         }
@@ -336,6 +325,4 @@ import java.util.*;
             }
         }
     }
-
-
  }

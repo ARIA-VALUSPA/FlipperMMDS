@@ -72,7 +72,7 @@ public class SentencesToKeywords {
             String[] temp = w.split("_");
             if (temp.length == 2) {
                 temp[1] = temp[1].trim();
-                if ((temp[1].contains("UH") || (temp[0].trim()).equals("yes") || (temp[0].trim()).equals("no") || (temp[0].trim()).contains("?")) && !wordsForKeywords.contains(temp[0].trim())) {
+                if ((temp[1].contains("UH") || (temp[0].trim()).equals("yes") || (temp[0].trim()).equals("you") || (temp[0].trim()).equals("no") || (temp[0].trim()).contains("?")) && !wordsForKeywords.contains(temp[0].trim())) {
                     wordsForKeywords.add(temp[0].toLowerCase());
                 }
                 else if (temp[1].equals("WRB"))
