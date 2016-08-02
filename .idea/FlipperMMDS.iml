@@ -69,19 +69,5 @@
         <jarDirectory url="file://$MODULE_DIR$/ExampleManagers/ExampleManagers/lib/stanford-postagger-full-2015-12-09" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="JSON" level="project" />
-    <orderEntry type="library" exported="" name="stanford-parser-full-2015-12-09" level="project" />
-    <orderEntry type="library" exported="" name="stanford-postagger-full-2015-12-09" level="project" />
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES />
-        <JAVADOC>
-          <root url="jar://$MODULE_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0_javadoc.zip!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0_jdk.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>
