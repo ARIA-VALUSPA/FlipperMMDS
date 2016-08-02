@@ -269,7 +269,7 @@ public class BehaviourToGui implements ManageableBehaviourClass{
 
         argValues = posQualifier(argValues, nouns.size(), "@noun");
         argValues = posQualifier(argValues, possSize, "@nounposs");
-        
+
         if(argValues.size() > 0) {
             agentOutput(argValues.get(0));
     }
