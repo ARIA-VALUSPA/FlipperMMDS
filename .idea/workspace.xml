@@ -7,233 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3a67114-0715-4aa1-9ede-3aa566399893" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/NEWS" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/binsrch.3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/cntlist.5.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/grind.1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/lexnames.5.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/morph.3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/morphy.7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/prologdb.5.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/senseidx.5.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/uniqbeg.7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wn.1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wnb.1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wndb.5.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wngloss.7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wngroups.7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wninput.5.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wnintro.1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wnintro.3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wnintro.5.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wnintro.7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wnlicens.7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wnpkgs.7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wnsearch.3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wnstats.7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/wnutil.3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/libWN.a" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/libWN_a-binsrch.o" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/libWN_a-morph.o" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/libWN_a-search.o" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/libWN_a-wnglobal.o" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/libWN_a-wnhelp.o" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/libWN_a-wnrtl.o" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/libWN_a-wnutil.o" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/wnres/wn.xbm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/wishwn" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/wishwn-stubs.o" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/wishwn-tkAppInit.o" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/wn" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/wn-wn.o" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Wordnet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/AUTHORS" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/COPYING" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/ChangeLog" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/INSTALL" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/Makefile.am" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/Makefile.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/acinclude.m4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/aclocal.m4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/compile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/config.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/config.h.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/config.status" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/configure" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/configure.ac" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/depcomp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/Makefile.am" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/Makefile.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/adj.exc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/adv.exc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/cntlist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/cntlist.rev" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/data.adj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/data.adv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/data.noun" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/data.verb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/frames.vrb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.adj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.adv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.noun" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.sense" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.verb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/lexnames" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/log.grind.3.0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/noun.exc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/sense.exc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/sentidx.vrb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/sents.vrb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/verb.Framestext" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/verb.exc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/Makefile.am" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/Makefile.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/Makefile.am" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/Makefile.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/binsrch.3WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/cntlist.5WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/grind.1WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/lexnames.5WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/morph.3WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/morphy.7WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/prologdb.5WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/senseidx.5WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/uniqbeg.7WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wn.1WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wnb.1WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wndb.5WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wngloss.7WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wngroups.7WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wninput.5WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wnintro.1WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wnintro.3WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wnintro.5WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wnintro.7WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wnlicens.7WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wnpkgs.7WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wnsearch.3WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wnstats.7WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/html/wnutil.3WN.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/Makefile.am" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/Makefile.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/binsrch.3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/cntlist.5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/grind.1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/lexnames.5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/morph.3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/morphy.7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/prologdb.5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/senseidx.5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/uniqbeg.7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wn.1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wnb.1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wndb.5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wngloss.7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wngroups.7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wninput.5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wnintro.1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wnintro.3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wnintro.5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wnintro.7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wnlicens.7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wnpkgs.7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wnsearch.3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wnstats.7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/man/wnutil.3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/Makefile.am" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/pdf/Makefile.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/Makefile.am" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/Makefile.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/binsrch.3.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/cntlist.5.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/grind.1.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/lexnames.5.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/morph.3.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/morphy.7.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/prologdb.5.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/senseidx.5.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/uniqbeg.7.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wn.1.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wnb.1.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wndb.5.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wngloss.7.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wngroups.7.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wninput.5.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wnintro.1.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wnintro.3.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wnintro.5.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wnintro.7.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wnlicens.7.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wnpkgs.7.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wnsearch.3.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wnstats.7.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/doc/ps/wnutil.3.ps" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/include/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/include/Makefile.am" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/include/Makefile.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/include/tk/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/include/tk/Makefile.am" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/include/tk/Makefile.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/include/tk/tk.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/include/tk/tkDecls.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/include/wn.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/include/wngrind.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/install-sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/.deps/libWN_a-binsrch.Po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/.deps/libWN_a-morph.Po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/.deps/libWN_a-search.Po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/.deps/libWN_a-wnglobal.Po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/.deps/libWN_a-wnhelp.Po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/.deps/libWN_a-wnrtl.Po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/.deps/libWN_a-wnutil.Po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/Makefile.am" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/Makefile.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/binsrch.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/morph.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/search.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/wnglobal.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/wnhelp.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/wnres/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/wnres/Makefile.am" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/wnres/Makefile.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/wnres/license.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/wnres/wnb.man" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/wnres/wngloss.man" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/wnrtl.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/lib/wnutil.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/missing" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/.deps/wishwn-stubs.Po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/.deps/wishwn-tkAppInit.Po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/.deps/wn-wn.Po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/Makefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/Makefile.am" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/Makefile.in" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/stubs.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/tkAppInit.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/wn.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/src/wnb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/stamp-h1" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-postagger-3.3.1.jar" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/FlipperMMDS.jar" afterPath="$PROJECT_DIR$/manager-resources/FlipperMMDS.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/FlipperMMDS.iml" afterPath="$PROJECT_DIR$/.idea/FlipperMMDS.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/IntentManager.java" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/IntentManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/POSManager.java" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/POSManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/StanfordParser.java" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/StanfordParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/templates/responses.xml" afterPath="$PROJECT_DIR$/manager-resources/templates/responses.xml" />
     </list>
     <ignored path="FlipperMMDS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -253,135 +29,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="POSManager.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/POSManager.java">
+      <file leaf-file-name="StoryManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/StoryManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="320" column="25" selection-start-line="320" selection-start-column="25" selection-end-line="320" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#16538#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;class#POSManager#0" expanded="false" />
-                <element signature="e#1789#1874#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StanfordParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/StanfordParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="1496">
+              <caret line="109" column="34" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KnowledgeBase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="97" column="30" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1595#1596#0" expanded="true" />
-                <element signature="e#1633#1634#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KnowledgeItem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="93" column="43" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
-              <folding>
-                <element signature="e#1345#1346#0" expanded="true" />
-                <element signature="e#1378#1379#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wordnet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Wordnet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-375">
-              <caret line="67" column="2" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="2" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BehaviourToGui.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="98" column="59" selection-start-line="98" selection-start-column="59" selection-end-line="98" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#10018#10019#0" expanded="true" />
-                <element signature="e#10070#10071#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="responses.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manager-resources/templates/responses.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-              <folding>
-                <element signature="n#template#69;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#69;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#71;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#71;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#71;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#72;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#72;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#72;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#73;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#73;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#73;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#74;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#74;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#74;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#75;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#75;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#75;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#76;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#76;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#76;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#77;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#77;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#77;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#78;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#78;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#78;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#79;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#79;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#79;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#80;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#80;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#80;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#81;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#81;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#81;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#82;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#82;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#82;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#template#83;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#preconditions#0;n#template#83;n#behaviourtemplates#0;n#!!top" expanded="false" />
-                <element signature="n#behaviour#0;n#template#83;n#behaviourtemplates#0;n#!!top" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -426,8 +79,8 @@
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeItem.java" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java" />
         <option value="$PROJECT_DIR$/manager-resources/templates/responses.xml" />
-        <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/POSManager.java" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java" />
+        <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/POSManager.java" />
       </list>
     </option>
   </component>
@@ -469,8 +122,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -803,6 +456,28 @@
               <option name="myItemId" value="ExampleManagers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExampleManagers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExampleManagers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -911,10 +586,7 @@
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
-      <method>
-        <option name="Make" enabled="true" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
@@ -937,10 +609,7 @@
       <Profilers>
         <option name="GAPID_DISABLE_PCS" value="false" />
       </Profilers>
-      <method>
-        <option name="Make" enabled="true" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -1196,7 +865,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1254,7 +923,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1269,8 +938,8 @@
           <caret line="252" column="46" selection-start-line="252" selection-start-column="46" selection-end-line="252" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10018#10019#0" expanded="true" />
-            <element signature="e#10070#10071#0" expanded="true" />
+            <element signature="e#10040#10041#0" expanded="true" />
+            <element signature="e#10092#10093#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1280,8 +949,8 @@
         <state relative-caret-position="986">
           <caret line="58" column="103" selection-start-line="58" selection-start-column="103" selection-end-line="58" selection-end-column="103" />
           <folding>
-            <element signature="n#template#69;n#behaviourtemplates#0;n#!!top" expanded="false" />
             <element signature="n#behaviour#0;n#template#69;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#69;n#behaviourtemplates#0;n#!!top" expanded="false" />
             <element signature="n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
             <element signature="n#preconditions#0;n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
             <element signature="n#behaviour#0;n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
@@ -1351,7 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1398,7 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1411,7 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1419,10 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#414#415#0" expanded="false" />
-            <element signature="e#444#445#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1444,23 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="208" column="55" selection-start-line="208" selection-start-column="55" selection-end-line="208" selection-end-column="55" />
-          <folding>
-            <element signature="docComment;class#ManagerParser#0" expanded="false" />
-            <element signature="method#parseFolder#1;class#ManagerParser#0" expanded="false" />
-            <element signature="method#parseFile#0;class#ManagerParser#0" expanded="false" />
-            <element signature="method#parseFile#1;class#ManagerParser#0" expanded="false" />
-            <element signature="method#parseDocument#0;class#ManagerParser#0" expanded="false" />
-            <element signature="method#getManagerInstance#0;class#ManagerParser#0" expanded="false" />
-            <element signature="method#getFunctionInstance#0;class#ManagerParser#0" expanded="false" />
-            <element signature="method#getBehaviourClassInstance#0;class#ManagerParser#0" expanded="false" />
-            <element signature="method#getClass#0;class#ManagerParser#0" expanded="false" />
-            <element signature="docComment;class#XSDErrorHandler#0;class#ManagerParser#0" expanded="false" />
-            <element signature="class#XSDErrorHandler#0;class#ManagerParser#0" expanded="false" />
-            <element signature="method#XSDErrorHandler#0;class#XSDErrorHandler#0;class#ManagerParser#0" expanded="false" />
-            <element signature="method#error#0;class#XSDErrorHandler#0;class#ManagerParser#0" expanded="false" />
-            <element signature="method#fatalError#0;class#XSDErrorHandler#0;class#ManagerParser#0" expanded="false" />
-            <element signature="method#warning#0;class#XSDErrorHandler#0;class#ManagerParser#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1468,7 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-352">
           <caret line="90" column="13" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1476,7 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1528,30 +1171,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="91" column="29" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
-          <folding>
-            <element signature="docComment;class#GuiController#0" expanded="false" />
-            <element signature="method#getInstance#0;class#GuiController#0" expanded="false" />
-            <element signature="method#addAgentSay#0;class#GuiController#0" expanded="false" />
-            <element signature="method#addUserSay#0;class#GuiController#0" expanded="false" />
-            <element signature="method#getAgentSays#0;class#GuiController#0" expanded="false" />
-            <element signature="method#getUserSays#0;class#GuiController#0" expanded="false" />
-            <element signature="method#getAllSays#0;class#GuiController#0" expanded="false" />
-            <element signature="method#setValence#0;class#GuiController#0" expanded="false" />
-            <element signature="method#setInterest#0;class#GuiController#0" expanded="false" />
-            <element signature="method#setArousal#0;class#GuiController#0" expanded="false" />
-            <element signature="method#setAnger#0;class#GuiController#0" expanded="false" />
-            <element signature="method#setDisgust#0;class#GuiController#0" expanded="false" />
-            <element signature="method#setFear#0;class#GuiController#0" expanded="false" />
-            <element signature="method#setHappiness#0;class#GuiController#0" expanded="false" />
-            <element signature="method#setNeutral#0;class#GuiController#0" expanded="false" />
-            <element signature="method#setSurpised#0;class#GuiController#0" expanded="false" />
-            <element signature="class#DataChanged#0;class#GuiController#0" expanded="false" />
-            <element signature="method#DataChanged#0;class#DataChanged#0;class#GuiController#0" expanded="false" />
-            <element signature="class#DataChangedType#0;class#GuiController#0" expanded="false" />
-            <element signature="class#EmotionKV#0;class#GuiController#0" expanded="false" />
-            <element signature="method#EmotionKV#0;class#EmotionKV#0;class#GuiController#0" expanded="false" />
-            <element signature="method#notifyChanged#0;class#GuiController#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1574,7 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1597,7 +1215,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1616,7 +1233,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1624,17 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="47">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/StoryManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1658,7 +1263,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1666,7 +1270,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1674,9 +1277,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1684,18 +1284,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
           <caret line="112" column="2" selection-start-line="86" selection-start-column="4" selection-end-line="112" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/ParserDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="63" column="24" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/ParserDemo.java" />
     <entry file="file://$PROJECT_DIR$/manager-resources/data/rules.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -1722,7 +1314,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/StanfordParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
+        <state relative-caret-position="629">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
@@ -1730,7 +1322,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Wordnet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-375">
+        <state relative-caret-position="969">
           <caret line="67" column="2" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1740,7 +1332,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="1479">
           <caret line="93" column="43" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
           <folding>
             <element signature="e#1345#1346#0" expanded="true" />
@@ -1751,7 +1343,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="1547">
           <caret line="97" column="30" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1763,11 +1355,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/manager-resources/templates/responses.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="969">
           <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
           <folding>
-            <element signature="n#template#69;n#behaviourtemplates#0;n#!!top" expanded="false" />
             <element signature="n#behaviour#0;n#template#69;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#69;n#behaviourtemplates#0;n#!!top" expanded="false" />
             <element signature="n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
             <element signature="n#preconditions#0;n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
             <element signature="n#behaviour#0;n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
@@ -1816,19 +1408,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="98" column="59" selection-start-line="98" selection-start-column="59" selection-end-line="98" selection-end-column="59" />
+        <state relative-caret-position="1258">
+          <caret line="96" column="59" selection-start-line="96" selection-start-column="59" selection-end-line="96" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10018#10019#0" expanded="true" />
-            <element signature="e#10070#10071#0" expanded="true" />
+            <element signature="e#10040#10041#0" expanded="true" />
+            <element signature="e#10092#10093#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/POSManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
+        <state relative-caret-position="121">
           <caret line="320" column="25" selection-start-line="320" selection-start-column="25" selection-end-line="320" selection-end-column="25" />
           <folding>
             <element signature="e#0#16538#0" expanded="true" />
@@ -1836,6 +1428,14 @@
             <element signature="docComment;class#POSManager#0" expanded="false" />
             <element signature="e#1789#1874#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/StoryManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="109" column="34" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
