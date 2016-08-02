@@ -7,60 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3a67114-0715-4aa1-9ede-3aa566399893" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/EmotionTools/BasicEmotions.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/EmotionTools/Emotion.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/EmotionTools/EmotionHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/KnowledgeDB/KnowledgeItem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/behaviours/BehaviourToGui.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/GuiController$DataChanged.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/GuiController$DataChangedType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/GuiController$EmotionKV.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/GuiController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/UserAndAgentGui$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/UserAndAgentGui$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/UserAndAgentGui$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/UserAndAgentGui$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/UserAndAgentGui$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/UserAndAgentGui$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/UserAndAgentGui$7.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/UserAndAgentGui$Holder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/gui/UserAndAgentGui.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/managers/GuiManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/managers/IntentManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/managers/POSManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/managers/StoryManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/managers/utils/ISInspector.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/managers/utils/ISInspectorController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/managers/utils/ISInspectorGui$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/managers/utils/ISInspectorGui$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/managers/utils/ISInspectorGui$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/managers/utils/ISInspectorGui$Holder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/managers/utils/ISInspectorGui.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/ActionTimer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/InterceptorStream$Listener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/InterceptorStream.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/Paths.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/RemoverStopWord.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/Rules.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/RulesReader.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/Say.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/SentencesToKeywords.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/SpeechGenerator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/StanfordParser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/StanfordTagger.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/State.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/SynonymReplacement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/aria/dialogue/util/Wordnet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/ariaagent/flipper/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/ariaagent/flipper/ManagerController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/ariaagent/flipper/ManagerParser$XSDErrorHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/ariaagent/flipper/ManagerParser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/ariaagent/managers/DefaultManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/ariaagent/managers/Manager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/ariaagent/managers/SimpleManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/ariaagent/util/ManageableBehaviourClass.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FlipperMMDS/eu/ariaagent/util/ManageableFunction.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/config/managerexample.xml" afterPath="$PROJECT_DIR$/manager-resources/config/managerexample.xml" />
     </list>
     <ignored path="FlipperMMDS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="managerexample.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="managerexample.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/manager-resources/config/managerexample.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+            <state relative-caret-position="195">
+              <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -134,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BehaviourToGui.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BehaviourToGui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="271" column="0" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+            <state relative-caret-position="245">
+              <caret line="274" column="8" selection-start-line="274" selection-start-column="8" selection-end-line="274" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -187,8 +135,8 @@
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeItem.java" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/POSManager.java" />
-        <option value="$PROJECT_DIR$/manager-resources/config/managerexample.xml" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java" />
+        <option value="$PROJECT_DIR$/manager-resources/config/managerexample.xml" />
       </list>
     </option>
   </component>
@@ -964,7 +912,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -978,7 +926,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1539,21 +1487,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manager-resources/config/managerexample.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="271" column="0" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+        <state relative-caret-position="245">
+          <caret line="274" column="8" selection-start-line="274" selection-start-column="8" selection-end-line="274" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager-resources/config/managerexample.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>

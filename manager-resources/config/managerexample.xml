@@ -79,6 +79,13 @@ Managers: A template can contain one or multiple managers, and for each managers
 		</templates>-->
 	</manager>
 
+	<manager id="007" name="TdawgManager" interval="60">
+		<class classname="eu.aria.dialogue.managers.TdawgManager">
+		</class>
+		<!--<templates>
+			 todo rules to flipper templates
+		</templates>-->
+	</manager>
 
 
 </managers>

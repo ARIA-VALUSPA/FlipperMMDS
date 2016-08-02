@@ -272,7 +272,7 @@ public class BehaviourToGui implements ManageableBehaviourClass{
 
         if(argValues.size() > 0) {
             agentOutput(argValues.get(0));
-    }
+        }
     }
 
 
