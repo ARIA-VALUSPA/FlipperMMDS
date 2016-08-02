@@ -1,70 +1,213 @@
 <behaviourtemplates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3schools.com template.xsd">
 	
-	<template id="0" name="Long_Pause">
+
+
+	<!--<template id="999" name="Test_q_two_var">-->
+		<!--<preconditions>-->
+			<!--<compare value1="$userstates.utterance" value2="longPause"/> &lt;!&ndash; change longPause into a more appropriate variable&ndash;&gt;-->
+		<!--</preconditions>-->
+
+		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">-->
+			<!--<argument name="response" value="Awesome!! This is really interesting. So do you think that possibly your interest in @noun1 is related to your interest in @noun2" />-->
+		<!--</behaviour>-->
+	<!--</template>-->
+
+
+
+	<!--<template id="998" name="Test_q_one_var">-->
+		<!--<preconditions>-->
+			<!--<compare value1="$userstates.utterance" value2="longPause"/> &lt;!&ndash;what does utterance stand for?&ndash;&gt;-->
+		<!--</preconditions>-->
+
+		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">-->
+			<!--<argument name="response" value="So, what specifically do you like about @noun1?" />-->
+			<!--<argument name="response" value="You mentioned @noun1. What specifically do you like about @noun1?" />-->
+		<!--</behaviour>-->
+<!--</template>-->
+	<!--The rules to using variables, as defined by Kevin Bowden:-->
+		<!--Recognized variable names: @noun0-9, @nounposs0-9, @?adj0-90-9, @adj0-90-9, @?adjposs0-90-9, @adjposs0-90-9-->
+		<!---->
+		<!--The first int is always the ID, the second int is for a secondary ID. All first IDs are related,-->
+		<!--such that adj12 can only be values of noun1, and the 2 correlates to the adjective itself. The question mark-->
+		<!--identifies optional arguments, and currently is only used with adj values. posnoun correlates to nouns that are possessions.-->
+	<!---->
+		<!--Example IS:
+				Nouns:[program, dog], adjectives[[robust, old],[hairy]]-->
+		<!--Example Input:
+				Can you tell me more about the @adj11 @?adj12 @noun1?-->
+		<!--Example output:-->
+			<!--Can you tell me more about the old program?-->
+			<!--Can you tell me more about the old robust program?-->
+	<!---->
+	<!--Regex matching for variable: @\??[a-zA-Z0-9]+-->
+
+
+	<template id="0.5" name="one_entry_test">
 	   <preconditions>
 	      <compare value1="$userstates.intention" value2="longPause" />
 	   </preconditions>
 	   
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Hi, are you still there?" />
+			<!--<argument name="response" value="Hey, are you still there?" />-->
+			<argument name="response" value="So you said the @noun1 was @adj11, why is that?" />
+
 	   </behaviour>
 	</template>
 	
+	<template id="0.5" name="one_entry_test">
+		<preconditions>
+			<compare value1="$userstates.utterance.pos.possSize" comparator="greater_than" value2="1" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<!--<argument name="response" value="Hey, are you still there?" />-->
+			<argument name="response" value="Why don't you tell me more about your @nounposs1" />
 	
-	<template id="1" name="Return_greeting">
+		</behaviour>
+	</template>
+
+	<template id="0.6" name="one_entry_test">
 	   <preconditions>
-	      <compare value1="$userstates.intention" value2="greeting" />
-		  <compare value1="$dialoguestates.topic" value2="greeting" />
+			<compare value1="$userstates.utterance.pos.nounSize" comparator="greater_equals"  value2="9" />
 	   </preconditions>
 	   
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Hello, my name is Alice. How are you?"  />
+			<argument name="response" value="So you said the @noun1 was @adj11, why is that?" />
 	   </behaviour>
 	</template>
 	
+	<template id="0.8" name="one_entry_test">
+		<preconditions>
+			<compare value1="$userstates.utterance.pos.nounSize" comparator="greater_equals"  value2="10" />
+		</preconditions>
 
-	<template id="1_3" name="Return_greeting_Negative">
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="You seem very interested in @noun1, is there anything else about it you want me to know?" />
+		</behaviour>
+	</template>
+	<!--<template id="999" name="two_entry_test">-->
+		<!--<preconditions>-->
+			<!--<compare value1="$userstates.intention" value2="longPause" />-->
+		<!--</preconditions>-->
+
+		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">-->
+			<!--<argument name="response" value="Do you think you interests in @noun1 are because of your interest in @noun2?" />-->
+		<!--</behaviour>-->
+	<!--</template>-->
+
+
+	<!--old stuf below here-->
+
+	<!--<template id="0" name="Long_Pause">-->
+	   <!--<preconditions>-->
+	      <!--<compare value1="$userstates.intention" value2="longPause" />-->
+	   <!--</preconditions>-->
+	   <!---->
+	   <!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">-->
+	      <!--<argument name="response" value="Hi, are you still there?" />-->
+	   <!--</behaviour>-->
+	<!--</template>-->
+
+	<template id="900" name="Return_greeting_test">
 	   <preconditions>
-		  <compare value1="0.4" value2="$userstates.emotion.fromAudio.valence" comparator="greater_equals"/>
 		  <compare value1="$userstates.intention" value2="greeting" />
 		  <compare value1="$dialoguestates.topic" value2="greeting" />
 	   </preconditions>	   
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Hi, you sound sad, are you alright?" />
+			<argument name="response" value="Hello, my name is Alice. Why don't you tell me a little bit about yourself?"  />
 	   </behaviour>
 	</template>
 	
-	<template id="1_4" name="Return_greeting_Positive">
+
+	<template id="1" name="Return_greeting">
 	   <preconditions>
-	   	  <compare value1="0.6" value2="$userstates.emotion.fromAudio.valence" comparator="smaller_equals"/>
 	      <compare value1="$userstates.intention" value2="greeting" />
 		  <compare value1="$dialoguestates.topic" value2="greeting" />
 	   </preconditions>	   
+	   
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Hi, you sound happy today. I love to hear all the happiness" />
+	      <argument name="response" value="Hello, my name is Alice. How are you?"  />
 	   </behaviour>
 	</template>	
 	
 	
-	<template id="1_1" name="Return_greeting_Negative">
+
+	<template id="0" name="Long_Pause">  <!--increase duration of longpause-->
+		<preconditions>
+			<compare value1="$userstates.intention" value2="longPause" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Hi, are you still there??" />
+			<argument name="response" value="Where have you gone?" />
+			<argument name="response" value="Hey, are you ignoring me?" />
+			<argument name="response" value="Did you forget about me? I'm still here!" />
+			<argument name="response" value="Are you there?" />
+			<argument name="response" value="Where are you?" />
+			<argument name="response" value="Are you still there?" />
+			<argument name="response" value="You still there?" />
+			<argument name="response" value="Come back, we need to talk!" />
+			<argument name="response" value="Come'on! Talk to me!" />
+			<argument name="response" value="Stop acting like you're not here!" />
+			<argument name="response" value="Dude, you're boring me out!" />
+		</behaviour>
+	</template>
+
+	<template id="0" name="Long_Pause">  <!--increase duration of longpause-->
 	   <preconditions>
+			<compare value1="$userstates.intention" value2="longPause" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Are you there?" />
+		</behaviour>
+	</template>0
+
+
+	<template id="1_3" name="Return_greeting_Negative">
+		<preconditions>
+			<compare value1="0.8" value2="$userstates.emotion.fromAudio.valence" comparator="greater_equals"/>
 	      <compare value1="$userstates.intention" value2="greeting" />
 		  <compare value1="$dialoguestates.topic" value2="greeting" />
-		  <compare value1="-0.2" value2="$userstates.emotion.fromFE.fusion" comparator="smaller_equals"/>
 	   </preconditions>	   
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Hi, you look sad, are you alright?" />
+			<argument name="response" value="Haha! You sound sad, that's so hilarious!" />
 	   </behaviour>
 	</template>
 	
-	<template id="1_2" name="Return_greeting_Positive">
+
+
+	<template id="1" name="Talk_dogs">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="askAboutDog" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Woof woof!"  />
+		</behaviour>
+	</template>
+
+	<template id="1" name="Return_greeting">
 	   <preconditions>
 	      <compare value1="$userstates.intention" value2="greeting" />
 		  <compare value1="$dialoguestates.topic" value2="greeting" />
-		  <compare value1="0.2" value2="$userstates.emotion.fromFE.fusion" comparator="greater_equals"/>
 	   </preconditions>	   
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Hi, you look happy today. I love to see all the happiness" />
+			<argument name="response" value="Hello, my name is Alice. How are you?"  />
+			<argument name="response" value="Hi there! I'm Alice. What's up?"  />
+			<argument name="response" value="Hey hey, I'm Alice, how goes your day?"  />
+		</behaviour>
+	</template>
+
+	<template id="1" name="good_day">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="goodday" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Good day indeed, what's up?"  />
+			<argument name="response" value="I agree, a good day indeed."  />
+			<argument name="response" value="Why do you think this day is good?"  />
 	   </behaviour>
 	</template>	
 	
@@ -76,6 +219,7 @@
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 	      <argument name="response" value="I am good! Thanks. How are you?" />
+			<argument name="response" value="I am fine! Thank you for asking. How about you?" />
 	   </behaviour>
 	</template>
 	
@@ -87,24 +231,79 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="I am good! Thanks. What a lovely day, isnt it?" />
+			<argument name="response" value="I am good! Thanks. What a lovely day, isn't it?" />
+		</behaviour>
+	</template>
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--below this is old -->
+
+
+	<!--Awesome. This is really interesting. So do you think that possibly your interest in {@NOUN} is related to your interest in {NOUN}
+-->
+
+
+
+	<!-- input from audio recorder-->
+	<template id="1_4" name="Return_greeting_Positive">
+	   <preconditions>
+	   	  <compare value1="0.6" value2="$userstates.emotion.fromAudio.valence" comparator="smaller_equals"/>
+	      <compare value1="$userstates.intention" value2="greeting" />
+		  <compare value1="$dialoguestates.topic" value2="greeting" />
+	   </preconditions>	   
+	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+		   <argument name="response" value="Hi, you sound happy today. I love to hear all the happiness" />
+		   <argument name="response" value="Hi, why the hell are you happy? I don't like happiness!" />
 	   </behaviour>
 	</template>
 	
 	
+<template id="1_1" name="Return_greeting_Negative">
+	   <preconditions>
+	      <compare value1="$userstates.intention" value2="greeting" />
+		  <compare value1="$dialoguestates.topic" value2="greeting" />
+		  <compare value1="-0.2" value2="$userstates.emotion.fromFE.fusion" comparator="smaller_equals"/>
+	   </preconditions>	   
+	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+	      <argument name="response" value="Hi, you look sad, are you alright?" />
+	   </behaviour>
+	</template>
+
+	<!-- input from video recorder-->
+	<template id="1_2" name="Return_greeting_Positive">
+	   <preconditions>
+	      <compare value1="$userstates.intention" value2="greeting" />
+		  <compare value1="$dialoguestates.topic" value2="greeting" />
+		  <compare value1="0.2" value2="$userstates.emotion.fromFE.fusion" comparator="greater_equals"/>
+	   </preconditions>	   
+	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+	      <argument name="response" value="Hi, you look happy today. I love to see all the happiness" />
+	   </behaviour>
+	</template>
+	
+	<!--input from audio/video-->
 	<template id="6_2" name="Return_HowAreYou_Negative">
 	   <preconditions>
 	      <compare value1="$userstates.intention" value2="askHowAreYou" />
 		  <compare value1="$dialoguestates.topic" value2="greeting" />
 		  <compare value1="-0.2" value2="$userstates.emotion.fromFE.fusion" comparator="smaller_equals"/>
 	   </preconditions>
-	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 	      <argument name="response" value="I am good! Thanks. But you look sad, are you alright?" />
 	   </behaviour>
 	</template>
 	
-	
+	<!--input from the audio-->
 		<template id="6_3" name="Return_HowAreYou_Positive2">
 	   <preconditions>
 	      <compare value1="$userstates.intention" value2="askHowAreYou" />
@@ -117,7 +316,7 @@
 	   </behaviour>
 	</template>
 	
-	
+	<!--input from the audio-->
 	<template id="6_4" name="Return_HowAreYou_Negative2">
 	   <preconditions>
 	      <compare value1="$userstates.intention" value2="askHowAreYou" />
@@ -126,7 +325,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="I am good! Thanks. But you look sad, are you alright?" />
+	      <argument name="response" value="I am good! Thanks. But you sound sad, are you alright?" />
 	   </behaviour>
 	</template>
 	
@@ -139,6 +338,7 @@
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 	      <argument name="response" value="I am 28 years old this year. Oh time flies so fast." />
+		   <argument name="response" value="That's none of your business." />
 	   </behaviour>
 	</template>
 	
@@ -150,8 +350,13 @@
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 	      <argument name="response" value="Goodbye!" />
+		   <argument name="response" value="See you in hell!" />
+		   <argument name="response" value="Bye! It's been my pleasure talking to you." />
+		   <argument name="response" value="Take care, it was nice talking to you." />
 	   </behaviour>
 	</template>
+	
+
 	
 	<template id="2_1" name="Return_ending_Positive">
 	   <preconditions>
@@ -181,7 +386,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="I am not sure" />
+	      <argument name="response" value="That's cool." />
 	   </behaviour>
 	</template>
 
@@ -192,7 +397,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Alice is a sensible prepubescent girl from a wealthy English family who finds herself in a strange world ruled by imagination and fantasy." />
+	      <argument name="response" value="Alice? Why, I believe that's me! You can talk to me about anything. I like talking!" />
 	   </behaviour>
 	</template>	
 	
@@ -204,7 +409,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Alice is a sensible prepubescent girl from a wealthy English family who finds herself in a strange world ruled by imagination and fantasy. She is a positive girl like you!" />
+	      <argument name="response" value="Alice? That's me! I am an experimental virtual agent. You can ask me anything." />
 	   </behaviour>
 	</template>	
 	
@@ -215,7 +420,8 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Oh you sound unhappy today. Chapter three of the book might cheer you up!" />
+			<argument name="response" value="I am Alice, I'm seriously cool." />
+			<argument name="response" value="Alice is awesome! Just like me!! Oh wait." />
 	   </behaviour>
 	</template>	
 	
@@ -227,7 +433,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Alice is a sensible prepubescent girl from a wealthy English family who finds herself in a strange world ruled by imagination and fantasy. She is a positive girl like you!" />
+	      <argument name="response" value="I am Alice and I am totally awesome!" />
 	   </behaviour>
 	</template>	
 	
@@ -238,7 +444,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Oh you look unhappy today. Chapter three of the book might cheer you up!" />
+	      <argument name="response" value="Oh you look unhappy today. Tell me something funny!" />
 	   </behaviour>
 	</template>	
 
@@ -248,7 +454,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Alice begins arguing with the Lory, but the Mouse interjects and commands everyone to sit down and listen to a history lesson.  The Mouse reasons that the story of William the Conqueror would be best since this story is the driest thing it knows. After completing the story, Alice and the other animals are still wet, prompting the Dodo to suggest a Caucus race. The Dodo marks out a course, sets everyone in place, and yells go. The animals run around haphazardly until the Dodo declares half an hour later that the race is over. The Dodo says that all of them have won the Caucus race and elects Alice to confer prizes.  Alice passes mints to all the animals, leaving herself without a prize.  Finding a thimble, she hands it to the Dodo, who in turn presents it back to her as her prize.  Alice solemnly accepts the thimble but cannot help feeling that the gesture is absurd. After eating their mints, the Mouse declares that it will tell its tale. Alice confuses tale and tail, and focuses on the Mouses appendage as it talks about Fury prosecuting a mouse in court." />
+	      <argument name="response" value="Alice is trying to talk to a human, but the human does not make much sense." />
 	   </behaviour>
 	</template>	
 		
@@ -259,7 +465,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="I think Alice is a lovely girl." />
+	      <argument name="response" value="I think Alice is a lovely virtual agent." />
 	   </behaviour>
 	</template>
 	
@@ -271,7 +477,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="I think Alice is a lovely girl. She is a positive girl like you!" />
+	      <argument name="response" value="I think Alice is a lovely agent! Almost as lovely as you!" />
 	   </behaviour>
 	</template>
 	
@@ -283,7 +489,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="I think Alice is a lovely girl. She is a positive girl like you!" />
+	      <argument name="response" value="I think Alice is totally awesome. Every other virtual agent sucks!" />
 	   </behaviour>
 	</template>
 	
@@ -294,7 +500,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="She is The Queens uncommonly ugly cousin." />
+	      <argument name="response" value="I do not know any duchess." />
 	   </behaviour>
 	</template>
 	
@@ -304,7 +510,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="The Caterpillar sits on a mushroom, smokes a hookah, and treats Alice with contempt. He directs Alice to the magic mushroom that allows her to shrink and grow." />
+	      <argument name="response" value="What's a caterpillar? Never heard about that one before." />
 	   </behaviour>
 	</template>
 	
@@ -314,7 +520,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="I think the Caterpillar is a little bit weird. Dont you think so?" />
+	      <argument name="response" value="You're starting to sound confused. Speak sense, human!" />
 	   </behaviour>
 	</template>
 	
@@ -324,7 +530,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="The Cheshire Cat is unique among Wonderland creatures. The Cheshire Cat has insight into the workings of Wonderland as a whole. Its calm explanation to Alice that to be in Wonderland is to be mad reveals a number of points that do not occur to Alice on her own. " />
+	      <argument name="response" value="Cheshire? Sounds like a really nasty place. Would not like to live there." />
 	   </behaviour>
 	</template>
 	
@@ -334,7 +540,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="I do like this character. He doesnt seem to have any memory, or just likes playing with words and Alice, so his conversations with her are really funny." />
+	      <argument name="response" value="I don't know... I just don't know. Sorry." />
 	   </behaviour>
 	</template>	
 	
@@ -365,7 +571,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="The Dodo is a Wonderland creature. He tends to use big words, and others accuse him of not knowing their meanings. He proposes that the animals participate in a Caucus race." />
+	      <argument name="response" value="Dodo? Sounds like a bloody Taliban to me." />
 	   </behaviour>
 	</template>
 	
@@ -375,7 +581,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="The Dodo is funny with his big words! Most of the time I dont really catch what he wants to say, but I am not the only one so that is ok !" />
+	      <argument name="response" value="Dodo? What a funny word! No idea what it means though." />
 	   </behaviour>
 	</template>	
 	
@@ -385,7 +591,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="The Dormouse sat between the March Hare and the Hatter. They were using him, while he slept, as a cushion when Alice arrives at the start of the chapter. The Dormouse is always falling asleep during the scene, waking up every so often." />
+	      <argument name="response" value="Dormouse? I know little about mouses, sorry." />
 	   </behaviour>
 	</template>
 	
@@ -395,7 +601,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Always sleepy, it is hard to follow his story during the Tea-Party." />
+	      <argument name="response" value="No idea what you're talking about right now. " />
 	   </behaviour>
 	</template>		
 	
@@ -405,7 +611,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="The Queens uncommonly ugly cousin. The Duchess behaves rudely to Alice at first, but later treats her so affectionately that her advances feel threatening." />
+	      <argument name="response" value="Duchess? I kow noone that would fit that description." />
 	   </behaviour>
 	</template>
 	
@@ -415,7 +621,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="I dont know actually, she is not really nice at the beginning and then starting to be. She is weird. We just have to see her behaviour with her baby pig. Leaving in pepper smoke. I dont know what to think about her." />
+	      <argument name="response" value="I don't know actually. You make no sense." />
 	   </behaviour>
 	</template>			
 	
@@ -425,7 +631,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="A servant to the Queen who befriends Alice. The Gryphon escorts Alice to see the Mock Turtle." />
+	      <argument name="response" value="Sounds like a mythological creature from a fairytale. Are you drunk?" />
 	   </behaviour>
 	</template>
 	
@@ -435,7 +641,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="I dont know actually, I dont have any particular opinion on him." />
+	      <argument name="response" value="I don't know what you're talking about." />
 	   </behaviour>
 	</template>		
 	
@@ -445,7 +651,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="The Jabberwock is a fictional character from the novel Through the Looking Glass, and What Alice Found There by Lewis Carroll. It only appears within the poem Jabberwocky that Alice reads during the first chapter and never interacts with the rest of the cast." />
+	      <argument name="response" value="Jabbero...what?! I have no idea what you're talking about." />
 	   </behaviour>
 	</template>
 		
@@ -455,7 +661,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="The King is the coruler of Wonderland. He is ineffectual and generally unlikeable, but lacks the Queens ruthlessness and undoes her orders of execution." />
+	      <argument name="response" value="The king is a powerful person. I never met him personally." />
 	   </behaviour>
 	</template>	
 	
@@ -465,7 +671,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="He is a small, impolite hatter who lives in perpetual tea time. The Mad Hatter enjoys frustrating Alice." />
+	      <argument name="response" value="Sorry, never heard of that that." />
 	   </behaviour>
 	</template>
 	
@@ -475,7 +681,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="I love the Mad Hatter! He is mad, but kind with Alice in some way. And his background story is so sad. I cant hate him." />
+	      <argument name="response" value="Madhatter? Sounds like you're the one mad, you confused little human!" />
 	   </behaviour>
 	</template>		
 
@@ -485,7 +691,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="The March Hare appears in the tea party scene. Like the characters friend, the Hatter, the March Hare feels compelled to always behave as though it is tea-time because the Hatter supposedly murdered the time whilst singing for the Queen of Hearts. " />
+	      <argument name="response" value="Marchhare? What a strange word. No idea what it means though.Doesn't sound like English." />
 	   </behaviour>
 	</template>
 	
@@ -495,7 +701,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="He is a turtle with the head of a calf. The Mock Turtle is friendly to Alice but is exceedingly sentimental and self absorbed." />
+	      <argument name="response" value="Mock...what? Are you just making fun of me now?." />
 	   </behaviour>
 	</template>
 	
@@ -505,7 +711,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Even if Mock the Turtle is friendly with Alice, I think he is only using her to achieve his personal goal. I don't like that" />
+	      <argument name="response" value="ou make no sense!" />
 	   </behaviour>
 	</template>	
 	
@@ -515,7 +721,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="The Mouse appears at the beginning of the book. He panics every time he hears the word cat and had a sad story." />
+	      <argument name="response" value="Mouse is a small creature that likes cheese." />
 	   </behaviour>
 	</template>
 	
@@ -525,7 +731,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="The Queen is cruel and mad. She is a bad woman who only want power. But she stays one of the most interesting character of the book for me. And I must admit that the way I imagine her say cut off their head is funny" />
+	      <argument name="response" value="What queen? Elizabeth II? I do not like her, she is narrowminded. " />
 	   </behaviour>
 	</template>	
 	
@@ -535,7 +741,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="As the ruler of Wonderland, the Queen of Hearts is the character that Alice must inevitably face to figure out the puzzle of Wonderland. In a sense, the Queen of Hearts is literally the heart of Alices conflict. " />
+	      <argument name="response" value="The queen? She sucks. " />
 	   </behaviour>
 	</template>
 	
@@ -545,7 +751,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="I think that the White Rabbit is always in such a hurry, he looks at his watch so often. I dont like people who are always hurry such as the White Rabbit." />
+	      <argument name="response" value="Oh, I like rabbits... for dinner! Muhahaha!!" />
 	   </behaviour>
 	</template>	
 	
@@ -555,7 +761,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="The frantic, harried Wonderland creature that originally leads Alice to Wonderland. The White Rabbit is figure of some importance, but he is manic, timid, and occasionally aggressive." />
+	      <argument name="response" value="Rabbits are cool and tasty! I caught and ate one just a few minutes ago." />
 	   </behaviour>
 	</template>	
 	
@@ -566,7 +772,7 @@
 	   </preconditions>
 	
 	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-	      <argument name="response" value="Wonderland is a world where Alice goes after falling into the Rabbit Hole. It seems to look like a big garden where animals can talk just like humans. The Cheshire Cat says to Alice that she would not have come there if she wasnt mad. " />
+	      <argument name="response" value="Wonderland? Sounds like a really cool place! " />
 	   </behaviour>
 	</template>	
 	
@@ -717,7 +923,7 @@
 	
 	<template id="45" name="Respond_ToAgreement">
 		<preconditions>
-			 <compare value1="$userstates.intention" value2="expressAgreement" />
+			 <compare value1="$userstates.intention" value2="Okay." />
 		</preconditions>
 		
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">

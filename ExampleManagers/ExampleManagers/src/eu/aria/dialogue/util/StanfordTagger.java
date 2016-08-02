@@ -3,6 +3,8 @@ package eu.aria.dialogue.util;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;
 import java.util.ArrayList;
 
+//tagger tag settings https://gist.github.com/nlothian/9240750
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,14 +21,13 @@ public class StanfordTagger {
     private String sample;
     static MaxentTagger tagger;
 
-    StanfordTagger(String taggerLocation) {
+    public StanfordTagger(String taggerLocation) {
         tagged = "";
         sample = "";
         tagger = new MaxentTagger(taggerLocation);       
     }
 
     public ArrayList<String> tagFile(ArrayList<String> wordsList) {
-
         int i = 0;
         //we will now pick up sentences line by line from the file input.txt and store it in the string sample
         while (i < wordsList.size()) {

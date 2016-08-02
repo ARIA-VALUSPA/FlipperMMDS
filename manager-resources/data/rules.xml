@@ -9,6 +9,18 @@
 		</states>
 	</rule>
 	
+
+	<rule id="R1">
+		<words>
+			<word value="good"/>
+			<word value="day"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value="goodday"/>
+			<state name="$dialoguestates.topic" value="greeting"/>
+		</states>
+	</rule>
+	
 	<rule id="R31_1">
 		<words>
 			<word value="information"/>
@@ -133,10 +145,10 @@
 	
 	<rule id="R7">
 		<words>
-			<word value="cheshire"/>
+			<word value="dog"/>
 		</words>		
 		<states> 
-			<state name="$userstates.intention" value="askAboutCheshire"/>
+			<state name="$userstates.intention" value="askAboutDog"/>
 		</states>
 	</rule>
 	

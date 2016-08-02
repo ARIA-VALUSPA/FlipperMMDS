@@ -18,13 +18,17 @@ Managers: A template can contain one or multiple managers, and for each managers
 
 
 <managers>
-	<manager id="001" name="IntentManager" interval="50">
+	<manager id="001" name="IntentManager" interval="30">
 		<class classname="eu.aria.dialogue.managers.IntentManager">
 			<parameter name="rules_path" path="true" value="../data/rules.xml"/>
 			<parameter name="stopwords_path" path="true" value="../data/stopwords.txt"/>
 			<parameter name="synonyms_path" path="true" value="../data/synonyms.txt"/>
-			<parameter name="pos_model_path" path="true" value="../data/english-left3words-distsim.tagger"/>
+			<parameter name="pos_model_path" path="true" value="../data/taggers/english-left3words-distsim.tagger"/>
+
 		</class>
+		<!--<templates>
+			 todo rules to flipper templates
+		</templates>-->
 	</manager>
 
 	<manager id="002" name="BehaviourGenerator" interval="100">
@@ -45,4 +49,29 @@ Managers: A template can contain one or multiple managers, and for each managers
 		<class classname="eu.aria.dialogue.managers.utils.ISInspector">
 		</class>
 	</manager>
+
+	<manager id="005" name="POSManager" interval="50">
+		<class classname="eu.aria.dialogue.managers.POSManager">
+			<parameter name="rules_path" path="true" value="../data/rules.xml"/>
+			<parameter name="stopwords_path" path="true" value="../data/stopwords.txt"/>
+			<parameter name="synonyms_path" path="true" value="../data/synonyms.txt"/>
+			<parameter name="pos_model_path" path="true" value="../data/taggers/english-left3words-distsim.tagger"/>
+			<parameter name="parse_model" path="false" value="edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz"/>
+
+		</class>
+		<!--<templates>
+			 todo rules to flipper templates
+		</templates>-->
+	</manager>
+
+	<manager id="006" name="StoryManager" interval="40">
+		<class classname="eu.aria.dialogue.managers.StoryManager">
+		</class>
+		<!--<templates>
+			 todo rules to flipper templates
+		</templates>-->
+	</manager>
+
+
+
 </managers>

@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="JSON">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/JSON" />
+      <root url="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-parser-full-2015-12-09" />
+      <root url="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-postagger-full-2015-12-09" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/JSON" />
+      <root url="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-parser-full-2015-12-09" />
+      <root url="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-postagger-full-2015-12-09" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/JSON" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-parser-full-2015-12-09" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-postagger-full-2015-12-09" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/JSON" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-parser-full-2015-12-09" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-postagger-full-2015-12-09" recursive="false" type="SOURCES" />
+  </library>
+</component>

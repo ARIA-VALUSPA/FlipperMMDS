@@ -33,7 +33,7 @@ import java.util.logging.Logger;
     private String unknownState = "unknown";
     private String longPauseState = "longPause";
     
-    private long timeout = 15000;
+    private long timeout = 10000;
     
     public IntentManager(DefaultRecord is) {
         super(is);
@@ -127,11 +127,11 @@ import java.util.logging.Logger;
             processInternal(userSay);
             utterance.set("consumed", "true");
         }   
-        
     }
 
     private void processInternal(String userSay) {
 
+        ArrayList<String> keywordMatches = new ArrayList<>();
         boolean keywordFound = false;
        
         // userSay = userSay.replaceAll("\\?", " ?");
@@ -145,15 +145,19 @@ import java.util.logging.Logger;
             int count = 0;
             for (String word : rule.getWords()) {
                 for (String userUtt : userSayAL) {
-                    if (userUtt.toLowerCase().contains(word)) count++;
+                    if (userUtt.toLowerCase().contains(word)) {
+                        count++;
+                    }
                 }
             }
             if (count == rule.getWords().size()) {
                 for (State state : rule.getStates()) {
+                    System.out.println(state.getName());
                     is.set(state.getName(), state.getValue());
                 }
+                System.out.println("The true rule");
                 keywordFound = true;
-                break;
+//                break;
             }
         }
         if (!keywordFound) {
