@@ -9,9 +9,11 @@ package eu.aria.dialogue.behaviours;
  *
  * @author By Kevin Bowden
  */
+import eu.aria.dialogue.KnowledgeDB.AgentHistory;
 import eu.aria.dialogue.gui.GuiController;
 
 import java.util.HashMap;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -20,13 +22,11 @@ import eu.aria.dialogue.util.Say;
 import eu.aria.dialogue.util.Wordnet;
 import eu.ariaagent.managers.Manager;
 import eu.ariaagent.util.ManageableBehaviourClass;
+import hmi.flipper.defaultInformationstate.DefaultList;
 import hmi.flipper.defaultInformationstate.DefaultRecord;
 import hmi.flipper.informationstate.List;
 import hmi.flipper.informationstate.Record;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import java.util.ArrayList;
 
 public class BehaviourToGui implements ManageableBehaviourClass{
@@ -34,7 +34,7 @@ public class BehaviourToGui implements ManageableBehaviourClass{
     private String userposPath = "$userstates.utterance.pos";
     private String userStoryPath = "$userstates.utterance.story";
 
-    List nouns, lastStated, adjectives;
+    List nouns, lastStated, adjectives, keywords;
 
     GuiController gui;
     
@@ -45,7 +45,9 @@ public class BehaviourToGui implements ManageableBehaviourClass{
     private double currTime;
     private HashMap localReplacements;
 
+    Wordnet wn = new Wordnet();
     KnowledgeBase kb = KnowledgeBase.getKB();
+    AgentHistory ah = AgentHistory.getAH();
 
     public String queryBuilder(String value){
         String pattern = "@\\??[a-zA-Z0-9]+";
@@ -76,7 +78,7 @@ public class BehaviourToGui implements ManageableBehaviourClass{
                             if (numAdj <= adjectives.getItem(ri.get(k)).getInteger()) {
                                 if (!localReplacements.containsValue(replacementNoun)) {
                                     String currNoun = nouns.getItem(ri.get(k)).getString();
-                                    if(replacementNoun.startsWith("nounposs") && !kb.isPossession(currNoun)){
+                                    if (replacementNoun.startsWith("nounposs") && !kb.isPossession(currNoun)) {
                                         continue;
                                     }
                                     replacementNoun = currNoun;
@@ -94,28 +96,37 @@ public class BehaviourToGui implements ManageableBehaviourClass{
                         localReplacements.put(r, replacementNoun);
                     } else if (r.startsWith("adj") && iters > 0) {
                         String poss = "";
-                        if(r.startsWith("adjposs")){
+                        if (r.startsWith("adjposs")) {
                             poss = "poss";
                         }
-                        String[] reps = r.split("adj"+poss);
+                        String[] reps = r.split("adj" + poss);
                         String repID = reps[reps.length - 1];
 
-                        String adjNoun = localReplacements.get("noun"+poss + repID.substring(0, 1)).toString();
+                        String adjNoun = localReplacements.get("noun" + poss + repID.substring(0, 1)).toString();
                         String replacementAdj = "";
-                        if(kb.numAdj(adjNoun) > 0){
+                        if (kb.numAdj(adjNoun) > 0) {
                             replacementAdj = kb.getAdj(adjNoun, localReplacements.keySet());
                         }
-                        Pattern pata = Pattern.compile("@\\??"+r);
+                        Pattern pata = Pattern.compile("@\\??" + r);
                         Matcher mata = pata.matcher(value);
                         value = mata.replaceAll(replacementAdj);
                         localReplacements.put(r, replacementAdj);
+                    } else if (r.startsWith("keyword")) {
+
+                        for (int i = 0; i < keywords.size(); i++) {
+                            String replacementNoun = keywords.getString(i);
+                            Pattern patn = Pattern.compile("@\\" + r);
+                            Matcher matn = patn.matcher(value);
+                            value = matn.replaceAll(replacementNoun);
+                        }
+                        manager.getIS().set("$userstates.keywords", new DefaultList());
                     }
                 }
-                iters++;
+                    iters++;
             }
-
                 return value;
     }
+
 
     public double scoreNoun(int frequency, double lastStated, double preference){
         double timeDiff = currTime - lastStated;
@@ -223,6 +234,7 @@ public class BehaviourToGui implements ManageableBehaviourClass{
         if(value != null) {
             Say newSay = new Say(value, agentName, true);
             gui.addAgentSay(newSay, true);
+            ah.storeRule(value);
         }
     }
 
@@ -237,18 +249,11 @@ public class BehaviourToGui implements ManageableBehaviourClass{
         }
 
 //        Wordnet wn = new Wordnet();
-//        wn.runExample();
-
-//        ScriptEngineManager mgr = new ScriptEngineManager();
-//        ScriptEngine engine = mgr.getEngineByName("JavaScript");
-//        String foo = "blah()";
-//        try {
-//            System.out.println(engine.eval(foo));
-//        } catch (ScriptException e) {
-//            e.printStackTrace();
-//        }
+//        wn.findSynonym();
 
         manager.getIS().set("$userstates.intention", "");
+
+
         currTime = (double) System.currentTimeMillis();
         posUtterance = manager.getIS().getRecord(userposPath);
         if (posUtterance == null) {
@@ -264,17 +269,37 @@ public class BehaviourToGui implements ManageableBehaviourClass{
         nouns = posUtterance.getList("nouns");
         adjectives = posUtterance.getList("adjectives");
         lastStated = posUtterance.getList("lastStated");
+        keywords = manager.getIS().getList("$userstates.keywords");
 
-        int possSize = posUtterance.getInteger("possSize");
+        int possSize = 0;
+        try {
+            possSize = posUtterance.getInteger("possSize");
+        } catch(NullPointerException e) { }
 
-        argValues = posQualifier(argValues, nouns.size(), "@noun");
-        argValues = posQualifier(argValues, possSize, "@nounposs");
+        if(keywords == null){
+            manager.getIS().set("$userstates.keywords", new DefaultList());
+            keywords = manager.getIS().getList("$userstates.keywords");
 
-        if(argValues.size() > 0) {
-            agentOutput(argValues.get(0));
+        }
+
+        argValues = ah.sortValues(argValues, 10, true);
+
+        if(nouns != null || adjectives != null || lastStated != null) {
+            argValues = posQualifier(argValues, nouns.size(), "@noun");
+            argValues = posQualifier(argValues, possSize, "@nounposs");
+            argValues = posQualifier(argValues, keywords.size(), "@keyword");
+            if (argValues.size() > 0) {
+                String value = randomValue(argValues);
+                agentOutput(value);
+            }
         }
     }
 
+    public String randomValue(ArrayList<String> values){
+        Random randomGenerator = new Random();
+        int index = randomGenerator.nextInt(values.size());
+        return values.get(index);
+    }
 
     @Override
     public void prepare(ArrayList<String> argNames, ArrayList<String> argValues) {

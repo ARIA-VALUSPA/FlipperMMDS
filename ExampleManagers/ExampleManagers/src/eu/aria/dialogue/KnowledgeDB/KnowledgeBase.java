@@ -12,7 +12,6 @@ public class KnowledgeBase {
 public static KnowledgeBase kb = new KnowledgeBase();
 private HashMap nounHash = new HashMap();
 
-
     public static KnowledgeBase getKB(){
         return kb;
     }

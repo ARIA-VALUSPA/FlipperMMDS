@@ -11,21 +11,21 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/ExampleManagers/ExampleManagers/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/ExampleManagers/ExampleManagers/lib" recursive="false" />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
           <root url="file://$MODULE_DIR$/manager-resources/modules" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="file://$MODULE_DIR$/manager-resources/modules" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/ExampleManagers/ExampleManagers/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/ExampleManagers/ExampleManagers/lib" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
@@ -67,6 +67,15 @@
         </SOURCES>
         <jarDirectory url="file://$MODULE_DIR$/ExampleManagers/ExampleManagers/lib/stanford-postagger-full-2015-12-09" recursive="false" />
         <jarDirectory url="file://$MODULE_DIR$/ExampleManagers/ExampleManagers/lib/stanford-postagger-full-2015-12-09" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="JWI">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0_jdk.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>

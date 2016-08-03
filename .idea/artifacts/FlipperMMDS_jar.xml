@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="FlipperMMDS:jar">
+  <artifact type="jar" build-on-make="true" name="FlipperMMDS:jar">
     <output-path>$PROJECT_DIR$/manager-resources</output-path>
     <root id="archive" name="FlipperMMDS.jar">
       <element id="module-output" name="FlipperMMDS" />
@@ -29,6 +29,7 @@
       <element id="file-copy" path="$PROJECT_DIR$/manager-resources/config/managerexample.xml" />
       <element id="file-copy" path="$PROJECT_DIR$/resources/manager.xsd" />
       <element id="dir-copy" path="$PROJECT_DIR$/manager-resources/data" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0_jdk.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

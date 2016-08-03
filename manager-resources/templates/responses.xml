@@ -584,7 +584,7 @@
 		</preconditions>
 
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I don't know why..." quality="0.6"  />
+			<argument name="response" value="I don't know why..."  />
 		</behaviour>
 	</template>
 
@@ -594,7 +594,7 @@
 		</preconditions>
 
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I don't know what..." quality="0.7"  />
+			<argument name="response" value="I don't know what..."  />
 		</behaviour>
 	</template>
 
@@ -614,7 +614,9 @@
 		</preconditions>
 
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I am not sure" quality="0" />
+			<argument name="response" value="JK it's me" />
+			<argument name="response" value="This is it, I'm positive" />
+			<argument name="response" value="lul trolled you both" />
 		</behaviour>
 	</template>
 
