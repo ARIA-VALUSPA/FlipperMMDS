@@ -7,8 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3a67114-0715-4aa1-9ede-3aa566399893" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/KeywordManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/FlipperMMDS.jar" afterPath="$PROJECT_DIR$/manager-resources/FlipperMMDS.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/config/managerexample.xml" afterPath="$PROJECT_DIR$/manager-resources/config/managerexample.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/data/rules.xml" afterPath="$PROJECT_DIR$/manager-resources/data/rules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/templates/responses.xml" afterPath="$PROJECT_DIR$/manager-resources/templates/responses.xml" />
     </list>
     <ignored path="FlipperMMDS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,12 +33,90 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KnowledgeBase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java">
+      <file leaf-file-name="POSManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/POSManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-623">
-              <caret line="24" column="38" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="38" />
+            <state relative-caret-position="270">
+              <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#15876#0" expanded="true" />
+                <element signature="docComment;class#POSManager#0" expanded="false" />
+                <element signature="e#1789#1874#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="managerexample.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manager-resources/config/managerexample.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="693">
+              <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeywordManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/KeywordManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="972">
+              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="responses.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manager-resources/templates/responses.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="128" column="66" selection-start-line="128" selection-start-column="66" selection-end-line="128" selection-end-column="66" />
+              <folding>
+                <element signature="n#template#69;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#71;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#71;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#71;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#72;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#72;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#72;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#73;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#73;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#73;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#74;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#74;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#74;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#75;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#75;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#75;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#76;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#76;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#76;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#77;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#77;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#77;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#78;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#78;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#78;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#79;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#79;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#79;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#80;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#80;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#80;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#81;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#81;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#81;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#82;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#82;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#82;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#template#83;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#preconditions#0;n#template#83;n#behaviourtemplates#0;n#!!top" expanded="false" />
+                <element signature="n#behaviour#0;n#template#83;n#behaviourtemplates#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,79 +124,28 @@
       <file leaf-file-name="StoryManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/StoryManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="1458">
+              <caret line="67" column="45" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AgentHistory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/AgentHistory.java">
+      <file leaf-file-name="KnowledgeBase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1230#1247#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1377">
+              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BehaviourToGui.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BehaviourToGui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="121" column="67" selection-start-line="121" selection-start-column="67" selection-end-line="121" selection-end-column="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/eu/ariaagent/managers/DefaultManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Say.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Say.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="0" selection-start-line="9" selection-start-column="4" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="e#615#616#0" expanded="true" />
-                <element signature="e#640#641#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IntentManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/IntentManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="163" column="47" selection-start-line="163" selection-start-column="47" selection-end-line="163" selection-end-column="47" />
-              <folding>
-                <element signature="docComment;class#IntentManager#0" expanded="false" />
-                <element signature="e#3812#3897#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wordnet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Wordnet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="84" column="13" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="13" />
+            <state relative-caret-position="2083">
+              <caret line="117" column="61" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -129,11 +161,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="kevin &lt;kkbowden@ucsc.edu&gt;" />
-      </list>
-    </option>
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -156,18 +184,19 @@
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/IntentManager.java" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/KnowledgeItem.java" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/KnowledgeBase.java" />
+        <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Wordnet.java" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/ParserDemo.java" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/StanfordParser.java" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/SentencesToKeywords.java" />
+        <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/StoryManager.java" />
+        <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeItem.java" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/POSManager.java" />
         <option value="$PROJECT_DIR$/manager-resources/config/managerexample.xml" />
-        <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/StoryManager.java" />
-        <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/manager-resources/templates/responses.xml" />
-        <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/AgentHistory.java" />
-        <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Wordnet.java" />
         <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java" />
+        <option value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/KeywordManager.java" />
       </list>
     </option>
   </component>
@@ -179,10 +208,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="2584" />
+    <option name="height" value="1554" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -209,9 +238,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -241,6 +267,128 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ariaagent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager-resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager-resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WordNet3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager-resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager-resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager-resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager-resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -317,6 +465,10 @@
               <option name="myItemId" value="dialogue" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="managers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -331,36 +483,162 @@
               <option name="myItemId" value="ExampleManagers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExampleManagers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dialogue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KnowledgeDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExampleManagers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExampleManagers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dialogue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExampleManagers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExampleManagers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dialogue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behaviours" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExampleManagers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExampleManagers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExampleManagers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlipperMMDS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0_jdk.jar!/" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\manager-resources\WordNet3" />
-      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\ExampleManagers\ExampleManagers\src\eu\aria\dialogue\managers" />
-      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\ExampleManagers\ExampleManagers\lib" />
-      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\manager-resources\data" />
-      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\manager-resources\modules\lib" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\manager-resources" />
+      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\src\eu\ariaagent" />
+      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="eu.aria.dialogue.managers" />
       <recent name="eu.aria.dialogue.managers.utils" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\manager-resources" />
-      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\src\eu\ariaagent" />
-      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\ExampleManagers\ExampleManagers\src\eu\aria\dialogue\managers" />
+      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\ExampleManagers\ExampleManagers\lib" />
+      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\manager-resources\data" />
+      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\manager-resources\modules\lib" />
+      <recent name="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\ExampleManagers\ExampleManagers\src\eu\aria\dialogue\util" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -377,7 +655,25 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/FlipperMMDS.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/artifacts/FlipperMMDS_jar.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/Flipper.jar</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Wordnet.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/FlipperMMDS.jar</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/data.adj</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/data.adv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/data.noun</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/data.verb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/index.adj</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/index.adv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/index.noun</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/index.sense</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/index.verb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/noun.exc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/templates/responses.xml</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -385,6 +681,57 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/edu_mit_jwi_2_4_0.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/AgentHistory.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/cousin.exc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/adj.all</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/adj.pert</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/adj.ppl</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/adv.all</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/cntlist</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.Tops</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.act</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.animal</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.artifact</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.attribute</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.body</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.cognition</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.communication</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.event</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.feeling</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.food</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.group</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.location</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.motive</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.object</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.person</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.phenomenon</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.plant</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.possession</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.process</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.quantity</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.relation</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.shape</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.state</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.substance</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.time</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.Framestext</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.body</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.change</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.cognition</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.communication</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.competition</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.consumption</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.contact</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.creation</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.emotion</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.motion</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.perception</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.possession</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.social</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.stative</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.weather</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/log.grind.3.1</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -392,6 +739,13 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/Makefile</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/Makefile.am</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/Makefile.in</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/frames.vrb</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/lexnames</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/log.grind.3.0</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/manager-resources/WordNet3/dict/sense.exc</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -496,7 +850,7 @@
     </configuration>
     <configuration default="false" name="run" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\CCSC-PC\NLDS\eNTRANCE16\new_dir\FlipperMMDS\manager-resources" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Kubra\Documents\FlipperMMDS\manager-resources" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <module name="FlipperMMDS" />
@@ -512,26 +866,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="eu.aria.dialogue.managers.ParserDemo" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="FlipperMMDS" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="Wordnet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="eu.aria.dialogue.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="eu.aria.dialogue.util.Wordnet" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -804,31 +1138,16 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
-      <setting name="environment" value="" />
-      <setting name="specsToExecute" value="" />
-      <setting name="tags" value="" />
-      <setting name="parallelNodes" value="" />
-      <setting name="execInParallel" value="false" />
-      <setting name="programParameters" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="moduleName" value="" />
-      <envMap />
-      <setting name="rowsRange" value="" />
-      <method />
-    </configuration>
-    <list size="4">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="Batch.run" />
       <item index="2" class="java.lang.String" itemvalue="Application.ParserDemo" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Wordnet" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Batch.run" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Wordnet" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ParserDemo" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ParserDemo" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -846,18 +1165,10 @@
       <option name="presentableId" value="Default" />
       <updated>1469452698692</updated>
     </task>
-    <task id="LOCAL-00001" summary="Added agent history and wordnet works.">
-      <created>1470236355392</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1470236355392</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-12" y="-12" width="2584" height="1554" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -867,13 +1178,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32569557" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32526475" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32829046" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19419822" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -884,6 +1194,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -923,13 +1234,9 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added agent history and wordnet works." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added agent history and wordnet works." />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -938,6 +1245,34 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/gui/UserAndAgentGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/InterceptorStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/ActionTimer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Paths.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/SpeechGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -949,7 +1284,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,6 +1296,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/eu/ariaagent/managers/SimpleManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/eu/ariaagent/managers/DefaultManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2196#2197#0" expanded="false" />
+            <element signature="e#2223#2224#0" expanded="false" />
+            <element signature="e#2277#2278#0" expanded="false" />
+            <element signature="e#2309#2310#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/eu/ariaagent/flipper/ManagerParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="208" column="55" selection-start-line="208" selection-start-column="55" selection-end-line="208" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/eu/ariaagent/flipper/ManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-352">
+          <caret line="90" column="13" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/eu/ariaagent/flipper/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1035,7 +1411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1061,10 +1436,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/Flipper.jar!/hmi/flipper/behaviourselection/TemplateController.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/manager-resources/run.bat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/IntentManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+          <folding>
+            <element signature="docComment;class#IntentManager#0" expanded="false" />
+            <element signature="e#3812#3897#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1129,6 +1522,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="441" column="58" selection-start-line="441" selection-start-column="58" selection-end-line="441" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1139,11 +1533,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Wordnet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="67" column="2" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/SentencesToKeywords.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="74" column="47" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1151,192 +1554,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
           <caret line="93" column="18" selection-start-line="93" selection-start-column="12" selection-end-line="93" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/manager.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="1323">
           <caret line="49" column="73" selection-start-line="49" selection-start-column="73" selection-end-line="49" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager-resources/config/managerexample.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/POSManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="270">
           <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="59" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#0#15876#0" expanded="true" />
             <element signature="docComment;class#POSManager#0" expanded="false" />
             <element signature="e#1789#1874#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0.jar!/edu/mit/jwi/Dictionary.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0_jdk.jar!/overview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="89" selection-start-line="10" selection-start-column="89" selection-end-line="10" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/IntentManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="163" column="47" selection-start-line="163" selection-start-column="47" selection-end-line="163" selection-end-column="47" />
-          <folding>
-            <element signature="docComment;class#IntentManager#0" expanded="false" />
-            <element signature="e#3812#3897#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/StoryManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="1458">
+          <caret line="67" column="45" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/eu/ariaagent/managers/SimpleManager.java">
+    <entry file="file://$PROJECT_DIR$/manager-resources/config/managerexample.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="29" />
+        <state relative-caret-position="693">
+          <caret line="82" column="57" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/eu/ariaagent/flipper/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eu/ariaagent/flipper/ManagerParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="197" column="30" selection-start-line="197" selection-start-column="29" selection-end-line="197" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eu/ariaagent/flipper/ManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="100" column="38" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Say.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="0" selection-start-line="9" selection-start-column="4" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager-resources/templates/responses.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="378" column="71" selection-start-line="378" selection-start-column="68" selection-end-line="378" selection-end-column="71" />
-          <folding>
-            <element signature="n#template#83;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#84;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#84;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#85;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#85;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#86;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#86;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#87;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#87;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#88;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#88;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#89;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#89;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#90;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#90;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#91;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#91;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#92;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#92;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#93;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#93;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#94;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#94;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#95;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#95;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#template#97;n#behaviourtemplates#0;n#!!top" expanded="false" />
-            <element signature="n#behaviour#0;n#template#97;n#behaviourtemplates#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0_jdk.jar!/edu/mit/jwi/morph/WordnetStemmer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0_jdk.jar!/edu/mit/jwi/IDictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager-resources/WordNet3/dict/data.noun">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-714">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eu/ariaagent/managers/DefaultManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/Flipper.jar!/hmi/flipper/behaviourselection/TemplateController.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager-resources/WordNet3/dict/adj.exc">
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1344,40 +1609,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-623">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="38" />
+        <state relative-caret-position="495">
+          <caret line="825" column="42" selection-start-line="825" selection-start-column="42" selection-end-line="825" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Wordnet.java">
+    <entry file="file://$PROJECT_DIR$/ExampleManagers/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="84" column="13" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="13" />
+        <state relative-caret-position="252">
+          <caret line="353" column="27" selection-start-line="353" selection-start-column="20" selection-end-line="353" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/AgentHistory.java">
+    <entry file="file://$PROJECT_DIR$/manager-resources/templates/responses.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        <state relative-caret-position="307">
+          <caret line="128" column="66" selection-start-line="128" selection-start-column="66" selection-end-line="128" selection-end-column="66" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1230#1247#0" expanded="true" />
+            <element signature="n#template#69;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#70;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#71;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#71;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#71;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#72;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#72;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#72;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#73;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#73;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#73;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#74;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#74;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#74;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#75;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#75;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#75;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#76;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#76;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#76;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#77;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#77;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#77;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#78;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#78;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#78;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#79;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#79;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#79;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#80;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#80;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#80;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#81;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#81;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#81;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#82;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#82;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#82;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#template#83;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#preconditions#0;n#template#83;n#behaviourtemplates#0;n#!!top" expanded="false" />
+            <element signature="n#behaviour#0;n#template#83;n#behaviourtemplates#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="121" column="67" selection-start-line="121" selection-start-column="67" selection-end-line="121" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="2083">
+          <caret line="117" column="61" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/managers/KeywordManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1386,12 +1698,7 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor>
-            <show-content>
-              <type id="library" />
-              <type id="artifact" />
-            </show-content>
-          </artifact-editor>
+          <artifact-editor />
           <last-edited>FlipperMMDS:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
@@ -1465,7 +1772,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>edu.mit.jwi_2.4.0</last-edited>
+          <last-edited>JSON</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

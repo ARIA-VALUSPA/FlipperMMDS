@@ -696,6 +696,17 @@
 		</states>
 	</rule>
 
+	<rule id="R3">
+		<words>
+			<word value="this"/>
+			<word value="is"/>
+			<word value="turkey"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value=""/>
+		</states>
+	</rule>
+
 	<!--<rule id="R23">-->
 	<!--<words>-->
 	<!--<word value="how"/>-->

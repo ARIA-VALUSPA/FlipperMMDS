@@ -27,7 +27,7 @@
 
 	<template id="1" name="work">
 		<preconditions>
-			<compare value1="$userstates.utterance.pos.nouns" comparator="contains" value2="work" />
+			<compare value1="$userstates.utterance.story.sentences" comparator="contains" value2="work" />
 		</preconditions>
 
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.9">
@@ -126,11 +126,11 @@
 
 	<template id="1" name="germany">
 		<preconditions>
-			<compare value1="$userstates.intention" value2="germany" />
+			<compare value1="$userstates.intention" value2="countryFound" />
 		</preconditions>
 
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="You mentioned Germany, can you tell me more about it?"  />
+			<argument name="response" value="You mentioned @keyword1, can you tell me more about it?"  />
 		</behaviour>
 	</template>
 
@@ -201,14 +201,14 @@
 			<compare value1="$userstates.utterance" value2="longPause"/> <!-- change longPause into a more appropriate variable-->
 		</preconditions>
 
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="1">
 			<argument name="response" value="Awesome!! This is really interesting. So do you think that possibly your interest in @noun1 is related to your interest in @noun2" />
 		</behaviour>
 	</template>
 
 
 
-	<template id="998" name="Test_q_one_var">
+	<template id="0" name="Test_q_one_var">
 		<preconditions>
 			<compare value1="$userstates.utterance" value2="longPause"/> <!--what does utterance stand for?-->
 		</preconditions>
@@ -330,7 +330,7 @@
 
 
 
-	<template id="0" name="Long_Pause">  <!--increase duration of longpause-->
+	<template id="11110" name="Long_Pause">  <!--increase duration of longpause-->
 		<preconditions>
 			<compare value1="$userstates.intention" value2="longPause" />
 		</preconditions>
@@ -380,7 +380,8 @@
 		</preconditions>
 
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Woof woof!"  />
+			<argument name="response" value="So, what specifically do you like about the @adj11 @noun1?" />
+			<argument name="response" value="You mentioned @noun1. What specifically do you like about @noun1?" />
 		</behaviour>
 	</template>
 

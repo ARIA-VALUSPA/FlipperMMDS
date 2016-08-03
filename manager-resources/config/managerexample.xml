@@ -87,5 +87,13 @@ Managers: A template can contain one or multiple managers, and for each managers
 		</templates>-->
 	</manager>
 
+	<manager id="008" name="KeywordManager" interval="40">
+		<class classname="eu.aria.dialogue.managers.KeywordManager">
+		</class>
+		<!--<templates>
+			 todo rules to flipper templates
+		</templates>-->
+	</manager>
+
 
 </managers>

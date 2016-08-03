@@ -115,7 +115,7 @@ public class BehaviourToGui implements ManageableBehaviourClass{
 
                         for (int i = 0; i < keywords.size(); i++) {
                             String replacementNoun = keywords.getString(i);
-                            Pattern patn = Pattern.compile("@\\" + r);
+                            Pattern patn = Pattern.compile("@" + r);
                             Matcher matn = patn.matcher(value);
                             value = matn.replaceAll(replacementNoun);
                         }
