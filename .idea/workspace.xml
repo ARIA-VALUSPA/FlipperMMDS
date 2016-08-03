@@ -6,83 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3a67114-0715-4aa1-9ede-3aa566399893" name="Default" comment="Added agent history and wordnet works.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/cousin.exc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/edu_mit_jwi_2_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/AgentHistory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/adj.all" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/adj.pert" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/adj.ppl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/adv.all" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/cntlist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.Tops" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.act" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.animal" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.artifact" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.attribute" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.body" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.cognition" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.communication" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.event" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.feeling" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.food" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.group" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.location" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.motive" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.object" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.person" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.phenomenon" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.plant" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.possession" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.process" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.quantity" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.relation" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.shape" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.state" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.substance" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/noun.time" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.Framestext" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.body" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.change" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.cognition" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.communication" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.competition" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.consumption" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.contact" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.creation" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.emotion" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.motion" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.perception" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.possession" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.social" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.stative" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/dbfiles/verb.weather" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/log.grind.3.1" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/Makefile.am" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/Makefile.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/frames.vrb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/lexnames" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/log.grind.3.0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/sense.exc" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/FlipperMMDS.jar" afterPath="$PROJECT_DIR$/manager-resources/FlipperMMDS.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/FlipperMMDS.iml" afterPath="$PROJECT_DIR$/.idea/FlipperMMDS.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/FlipperMMDS_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/FlipperMMDS_jar.xml" />
+    <list default="true" id="a3a67114-0715-4aa1-9ede-3aa566399893" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/KnowledgeDB/KnowledgeBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Wordnet.java" afterPath="$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/util/Wordnet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/data.adj" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/data.adj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/data.adv" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/data.adv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/data.noun" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/data.noun" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/data.verb" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/data.verb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.adj" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.adj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.adv" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.adv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.noun" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.noun" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.sense" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.sense" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.verb" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/index.verb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/WordNet3/dict/noun.exc" afterPath="$PROJECT_DIR$/manager-resources/WordNet3/dict/noun.exc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager-resources/templates/responses.xml" afterPath="$PROJECT_DIR$/manager-resources/templates/responses.xml" />
     </list>
     <ignored path="FlipperMMDS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -138,8 +64,8 @@
       <file leaf-file-name="BehaviourToGui.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="281" column="0" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+            <state relative-caret-position="109">
+              <caret line="121" column="67" selection-start-line="121" selection-start-column="67" selection-end-line="121" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -203,6 +129,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="kevin &lt;kkbowden@ucsc.edu&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -915,20 +846,28 @@
       <option name="presentableId" value="Default" />
       <updated>1469452698692</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added agent history and wordnet works.">
+      <created>1470236355392</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1470236355392</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32569557" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1434,8 +1373,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ExampleManagers/ExampleManagers/src/eu/aria/dialogue/behaviours/BehaviourToGui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="281" column="0" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+        <state relative-caret-position="109">
+          <caret line="121" column="67" selection-start-line="121" selection-start-column="67" selection-end-line="121" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

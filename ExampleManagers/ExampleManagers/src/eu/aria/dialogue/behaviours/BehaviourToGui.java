@@ -119,7 +119,7 @@ public class BehaviourToGui implements ManageableBehaviourClass{
                             Matcher matn = patn.matcher(value);
                             value = matn.replaceAll(replacementNoun);
                         }
-                        manager.getIS().set("$userstates.keywords", new DefaultList());
+                        manager.getIS().set("$userstates.utterance.keywords", new DefaultList());
                     }
                 }
                     iters++;
@@ -269,7 +269,7 @@ public class BehaviourToGui implements ManageableBehaviourClass{
         nouns = posUtterance.getList("nouns");
         adjectives = posUtterance.getList("adjectives");
         lastStated = posUtterance.getList("lastStated");
-        keywords = manager.getIS().getList("$userstates.keywords");
+        keywords = manager.getIS().getList("$userstates.utterance.keywords");
 
         int possSize = 0;
         try {
@@ -277,9 +277,8 @@ public class BehaviourToGui implements ManageableBehaviourClass{
         } catch(NullPointerException e) { }
 
         if(keywords == null){
-            manager.getIS().set("$userstates.keywords", new DefaultList());
-            keywords = manager.getIS().getList("$userstates.keywords");
-
+            manager.getIS().set("$userstates.utterance.keywords", new DefaultList());
+            keywords = manager.getIS().getList("$userstates.utterance.keywords");
         }
 
         argValues = ah.sortValues(argValues, 10, true);
