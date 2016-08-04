@@ -190,7 +190,15 @@
 	</template>
 
 
+	<template id="1" name="country">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="countryFound" />
+		</preconditions>
 
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.8">
+			<argument name="response" value="You mentioned @keyword1, can you tell me more about it?" />
+		</behaviour>
+	</template>
 
 	<!--<template id="1" name="america2">-->
 		<!--<preconditions>-->
@@ -1142,11 +1150,24 @@
 
 	<template id="40" name="Respond_To_Positive_Words">
 		<preconditions>
-			<compare value1="$agentstates.intention.prevIntention" comparator="equals" value2="HowAreYou" />
+			<compare value1="$agentstates.intention.prevIntention" comparator="equals" value2="askHowAreYou" />
 			<compare value1="$userstates.intention" value2="expressPositive" />
 		</preconditions>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="Glad to hear that"/>
+			<argument name="response" value="Wow, OK."/>
+			<argument name="response" value="Cool."/>
+			<argument name="response" value="Nice."/>
+			<argument name="response" value="Awesome."/>
+			<argument name="response" value="Amazing."/>
+			<argument name="response" value="Incredible."/>
+			<argument name="response" value="Fascinating!"/>
+			<argument name="response" value="Hmmm"/>
+			<argument name="response" value="Wow. I see!!"/>
+			<argument name="response" value="Hmmmm. OK."/>
+			<argument name="response" value="Wow. Controversial!"/>
+			<argument name="response" value="That’s insane!"/>
+
 		</behaviour>
 	</template>
 
@@ -1201,6 +1222,211 @@
 			<argument name="response" value="Tell me what interests you"/>
 		</behaviour>
 	</template>
+
+
+	<template id="801" name="Say_opinion_topic">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="sayOpinionTopic" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="OK, I see. Why?" />
+			<argument name="response" value="OK, I see. Why not?" />
+			<argument name="response" value="Really? Why?" />
+		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
+	</template>
+
+	<template id="802" name="Confirmation">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="confirmation" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="I see" />
+			<argument name="response" value="Uh-huh" />
+			<argument name="response" value="Hmmmm" />
+			<argument name="response" value="Sure" />
+			<argument name="response" value="OK" />
+			<argument name="response" value="Yeah" />
+			<argument name="response" value="Hmm, interesting" />
+		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
+	</template>
+
+
+	<template id="803" name="Fear_Responses">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="fearResponses" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Is something worrying you?" />
+		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
+	</template>
+
+	<template id="804" name="Disgust_Responses">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="disgustResponses" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="What is the matter? Is something wrong?" />
+		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
+	</template>
+
+	<template id="805" name="Surprise_Responses">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="surpriseResponses" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="You seem surprised.  Why?" />
+			<argument name="response" value="You seem surprised. Why do you think a human would feel surprised in this situation?" />
+			<argument name="response" value="You seem surprised. What would you say is the most surprising thing about humanity?" />
+			<argument name="response" value="You seem surprised.  Why?" />
+		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
+	</template>
+
+
+	<template id="806" name="Anger_Responses">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="angerResponses" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="I sense that you are feeling some anger. What do you think is the purpose of anger?" />
+			<argument name="response" value="I sense that you are feeling some anger. Can you tell me why a human  would feel anger in this situation?" />
+			<argument name="response" value="I sense that you are feeling some anger. Can you tell me why?" />
+
+		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
+	</template>
+
+	<template id="807" name="Sadness_Responses">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="sadnessResponses" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="I sense that you are feeling sad. Does talking about @noun1 make you feel sad?" />
+			<argument name="response" value="I sense that you are feeling sad? What is wrong?" />
+			<argument name="response" value="I sense that you are feeling sad. Does talking about @noun1 make humans feel sad?" />
+			<argument name="response" value="I sense that you are feeling sad. Do you think that feeling sadness is part of the human condition?" />
+
+		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
+	</template>
+
+	<template id="808" name="Laughter_Responses">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="laughterResponses" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="That was funny!" />
+			<argument name="response" value="I sense that you are feeling sad? What is wrong?" />
+			<argument name="response" value="I see that you found something funny. Could you tell me specifically what you found funny?" />
+			<argument name="response" value="Wow… I see that you found that funny. Do you think there is a deeper meaning behind human laughter?" />
+
+		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
+	</template>
+
+	<template id="809" name="Silence_Responses">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="silenceResponses" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Aww, don’t be shy! Talk to me, I like talking!" />
+			<argument name="response" value="I know it’s weird talking to someone who lives in a computer, but don’t be shy!" />
+
+		</behaviour>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
+	</template>
+
+
+	<template id="810" name="Changing_Topic">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="changingTopic" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="OK, cool. Maybe we should try a different topic now. Can you tell me something interesting about yourself that you haven’t told me before?" />
+
+		</behaviour>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
+	</template>
+
+	<template id="811" name="NotUnderstand_Changing_Topic">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="notUnderstandChangingTopic" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Hmmmm….. Let’s pretend I understood what you said there. Why don’t we move on to a different topic. Can you tell me more about @noun1?" />
+			<argument name="response" value="Hmmmm….. Let’s pretend I understood what you said there. Why don’t we move on to a different topic. What is your favourite thing to do in your spare time?" />
+
+		</behaviour>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
+	</template>
+
+	<template id="812" name="NotUnderstand_Reexplaining">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="notUnderstandReexplaining" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Hmm, I didn’t quite understand what you meant there? Could you explain that to me again?" />
+			<argument name="response" value="I didn’t quite get that - would you mind explaining that to me again" />
+			<argument name="response" value="Oh dear, seems like you sound a little confused! Take a deep breath and try and explain that to me again!" />
+			<argument name="response" value="Hmmm…. Want to go over that again for me?" />
+			<argument name="response" value="Well, that was totally nonsensical. I’m not saying you’re an idiot. Calling you an idiot would be an insult to all stupid people. I want you to take a deep breath and tell me something at least remotely intelligent." />
+			<argument name="response" value="Look, I’m going to be really honest here. I kind of zoned out when you were speaking. Could you tell me that again, maybe using better words? Thanks." />
+
+		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
+	</template>
+
+
+
 
 </behaviourtemplates>
 
