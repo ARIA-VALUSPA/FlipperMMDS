@@ -206,6 +206,9 @@ import java.util.*;
                         }
                         //negations present - Bill is not a doctor
                         else if (dep.reln().getShortName().equals("neg") && k == 1) {
+//                            System.out.println("-------------.................................--------------------------"+dep);
+//                            System.out.println("-------------.................................--------------------------"+dep.dep());
+//                            System.out.println("-------------.................................--------------------------"+dep.gov());
                             String word = dep.gov().word();
                             String pos = dep.gov().tag();
                             if (pos.startsWith("NN")) {
