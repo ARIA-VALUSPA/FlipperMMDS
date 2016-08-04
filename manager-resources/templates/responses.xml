@@ -12,22 +12,25 @@
 		</preconditions>
 
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Hello, my name is Alice. Who are you?" />
-			<argument name="response" value="Hello, my name is Alice. What's your name?" />
-			<argument name="response" value="Hi there, what’s up? Would you mind answering a few questions? Please! What's your name?" />
-			<argument name="response" value="Hey, my name is Alice... What's your name?" />
-			<argument name="response" value="Hello! I’m Alice and I’m a virtual human journalist. I’m trying to expand my knowledge base about humans. I’m interviewing a lot of people and asking them to tell me about themselves. Would you mind if I asked you to tell me about yourself, starting with your name – and I really like details by the way!" />
-			<argument name="response" value="Hi human, my name is Alice, and I’m really interested in learning more about you and the kind of things you like doing. Why don’t you tell me all about yourself, what's your name?" />
-			<argument name="response" value="Hi there, my name is Alice. I live in a computer and I’m really interested in finding out more about the kinds of things that humans like doing. Why don’t you tell me a bit about yourself, starting with your name and how old you are?"/>
-			<argument name="response" value="Hey! My name is Alice and I’m a virtual human. I like learning how you real humans live! Tell me about yourself, and don’t skimp on the details! I like details! What's your name?"/>
-			<argument name="response" value="Hey there. My name is Alice and I live inside a computer. I’m trying to improve my knowledge about what it is to be human. Maybe you can help me with that question. Tell me something about yourself, who are you?"/>
-			<argument name="response" value="Hey there human! My name is Alice and I am an aspiring journalist. I’m really interested in learning about humans and the kinds of stuff you guys are interested in. I know you might feel weird about talking to someone who lives in a computer, but bare with me and tell me all about yourself!"/>
-			<argument name="response" value="Hello. My name is Jane Locke. I'm a philosopher contemplating the deeper meaning of life. I would like to learn more about you. Who are you?" />
+			<argument name="response" value="Hello, my name is Alice. Who are you? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
+			<argument name="response" value="Hello, my name is Alice. What's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
+			<argument name="response" value="Hi there, what’s up? Would you mind answering a few questions? Please! What's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
+			<argument name="response" value="Hey, my name is Alice... What's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
+			<argument name="response" value="Hello! I’m Alice and I’m a virtual human journalist. I’m trying to expand my knowledge base about humans. I’m interviewing a lot of people and asking them to tell me about themselves. Would you mind if I asked you to tell me about yourself, starting with your name – and I really like details by the way! {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
+			<argument name="response" value="Hi human, my name is Alice, and I’m really interested in learning more about you and the kind of things you like doing. Why don’t you tell me all about yourself, what's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
+			<argument name="response" value="Hi there, my name is Alice. I live in a computer and I’m really interested in finding out more about the kinds of things that humans like doing. Why don’t you tell me a bit about yourself, starting with your name and how old you are? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
+			<argument name="response" value="Hey! My name is Alice and I’m a virtual human. I like learning how you real humans live! Tell me about yourself, and don’t skimp on the details! I like details! What's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
+			<argument name="response" value="Hey there. My name is Alice and I live inside a computer. I’m trying to improve my knowledge about what it is to be human. Maybe you can help me with that question. Tell me something about yourself, who are you? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
+			<argument name="response" value="Hey there human! My name is Alice and I am an aspiring journalist. I’m really interested in learning about humans and the kinds of stuff you guys are interested in. I know you might feel weird about talking to someone who lives in a computer, but bare with me and tell me all about yourself! {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
+			<argument name="response" value="Hello. My name is Jane Locke. I'm a philosopher contemplating the deeper meaning of life. I would like to learn more about you. Who are you? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
 		</behaviour>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
 	</template>
 
 
-	<!--USER INTRODUCES AND GIVES AWAY HIS/HER NAME, @name NEEDS TO BE ADDED AS A VARIABLE-->
+	<!--USER GIVES AWAY HIS/HER NAME, @name NEEDS TO BE ADDED AS A VARIABLE-->
 	<!--NEED TO SETUP RULES-->
 
 	<template id="900" name="howAreYou">
@@ -36,16 +39,118 @@
 		</preconditions>
 
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Nice to meet you @name, how are you doing?" />
+			<argument name="response" value="Nice to meet you @name, how are you doing? {res/file.fml}" />
+			<argument name="response" value="Awesome name. Tell me more about yourself @name. {res/file.fml}" />
+			<argument name="response" value="I have a virtual great aunt called @name. She isn’t very nice, but I’m sure you are. Tell me more about yourself @name {res/file.fml}" />
+			<argument name="response" value="Cool. Tell me more about yourself @name." />
+			<argument name="response" value="Nice to meet you, @name. I’m really interested in learning more about you. Why don’t you tell me the most interesting thing about yourself? {res/file.fml}" />
+			<argument name="response" value="Nice to meet you @name. So what do you do for fun in your spare time?" />
+			<argument name="response" value="Nice to meet you @name. So what do you do for a living?" />
+			<argument name="response" value="Very pleased to meet you @name. So what is your favourite thing about being a human?" />
+			<argument name="response" value="Nice to meet you, @name. I’m really interested in learning more about you. Why don’t you tell me the most interesting thing about yourself?" />
+
 		</behaviour>
+        <effects>
+            <update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
+        </effects>
 	</template>
+
+
+
+	<!--USER MENTIONS HIS/HER AGE, @age NEEDS TO BE ADDED AS A VARIABLE-->
+	<!--NEED TO SETUP RULES-->
+
+	<template id="900" name="howOld">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="age" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="@age is a good age. Can you tell me some more details about yourself?" />
+			<argument name="response" value="@age years old? Remember, you are as young as you feel! Tell me more about yourself, I like learning about humans." />
+		</behaviour>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutAge" />
+		</effects>
+	</template>
+
+
+
+	<!--USER MENTIONS HIS/HER COUNTRY-->
+	<!--NEED TO SETUP RULES-->
+
+	<template id="900" name="country">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="country" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Oh, I’m sorry. Only joking, @keyword1 is a great place. Can you tell me more about it?" />
+			<argument name="response" value="Nice. I have never been to @keyword1 before. Can you tell me about it?" />
+		</behaviour>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutCountry" />
+		</effects>
+	</template>
+
+
+
+    <!--USER GIVES A TOO SHORT ANSWER-->
+    <!--NEED TO SETUP RULES-->
+
+    <template id="900" name="shortanswer">
+        <preconditions>
+            <compare value1="$userstates.intention" value2="shortanswer" />
+        </preconditions>
+
+        <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+            <argument name="response" value="Could I get a little more detail about @noun? I like details! Details are good!" />
+            <argument name="response" value="I see. Could you tell me a little more about @noun?" />
+            <argument name="response" value="Would you like to tell me a little bit more about @noun?" />
+            <argument name="response" value="I’d be interested in hearing more about @noun. Can you tell me a little bit more about it?" />
+            <argument name="response" value="Is that all? How disappointing. Surely you can tell me more." />
+            <argument name="response" value="So, what specifically do you like about @noun?" />
+
+        </behaviour>
+        <effects>
+            <update name="$agentstates.prevIntentions._addlast" value="moreInfo" />
+        </effects>
+    </template>
+
+
+
+    <!--USER GIVES A LONG ANSWER, AGENT WANTS TO ELABORATE A BIT MORE-->
+    <!--NEED TO SETUP RULES-->
+
+    <template id="900" name="longanswer">
+        <preconditions>
+            <compare value1="$userstates.intention" value2="longanswer" />
+        </preconditions>
+
+        <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+            <argument name="response" value="So, what specifically do you like about @noun?" />
+            <argument name="response" value="So…. you said something about @noun. Why don’t you tell me more about @noun?" />
+            <argument name="response" value="Awesome. This is really interesting. Could you tell me a little bit more about @noun?" />
+            <argument name="response" value="So why do you like @noun?" />
+            <argument name="response" value="Cool. OK, so you talked about @noun. What is it about @noun that really interests you?" />
+            <argument name="response" value="You also talked about @noun. What do you like most about @noun?" />
+            <argument name="response" value="Ah, I see. That is very interesting to hear. I am learning a lot of new information today. Could you tell me a little more about @noun?" />
+            <argument name="response" value="I’d be interested in hearing more about @noun. Can you tell me a little bit more about that?" />
+            <argument name="response" value="Hmmm… and what would you say is the most interesting thing about @noun?" />
+
+        </behaviour>
+        <effects>
+            <update name="$agentstates.prevIntentions._addlast" value="moreInfo2" />
+        </effects>
+    </template>
+
 
 
 	<!--CONVERSATION ENDING, @name NEEDS TO BE ADDED AS A VARIABLE-->
 
 	<template id="900" name="Return_ending_test">
 		<preconditions>
-			<compare value1="$userstates.intention" value2="PostitiveH" />
+			<compare value1="$userstates.intention" value2="PostitiveHi" />
 			<compare value1="$agentstates.intention.prevIntention" comparator="equals" value2="HowAreYou" />
 		</preconditions>
 
@@ -73,33 +178,30 @@
 			<compare value1="$dialoguestates.topic" value2="negation" />
 		</preconditions>
 
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.9">
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" >
 			<argument name="response" value="Comeon, surely you know something!!" />
+			<argument name="response" value="Ahhh, come on, you must have an opinion on that!" />
+			<argument name="response" value="Come on, that’s a generic response. You can tell me more than that!" />
+			<argument name="response" value="Come on, that’s a generic response. Surely you must have an opinion on that!" />
+			<argument name="response" value="Ahh, give me more details about that! I really like details!" />
+			<argument name="response" value="It might seem like a vague question, but I’m interested in hearing what you have to say" />
+			<argument name="response" value="Oh you must have an opinion on that! Even if you don’t, why don’t you make something up?" />
 		</behaviour>
 	</template>
 
 
-	<template id="1" name="america">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="america" />
-		</preconditions>
-
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.8">
-			<argument name="response" value="You mentioned America, can you tell me more about it?" />
-		</behaviour>
-	</template>
 
 
-	<template id="1" name="america2">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="america" />
-			<compare value1="$dialoguestates.topic" value2="from"/>
-		</preconditions>
+	<!--<template id="1" name="america2">-->
+		<!--<preconditions>-->
+			<!--<compare value1="$userstates.intention" value2="america" />-->
+			<!--<compare value1="$dialoguestates.topic" value2="from"/>-->
+		<!--</preconditions>-->
 
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.9">
-			<argument name="response" value="From where???" />
-		</behaviour>
-	</template>
+		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.9">-->
+			<!--<argument name="response" value="From where???" />-->
+		<!--</behaviour>-->
+	<!--</template>-->
 
 
 	<template id="998" name="Test_q_one_var">
