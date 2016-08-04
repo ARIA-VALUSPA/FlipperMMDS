@@ -30,7 +30,7 @@
 	</template>
 
 
-	<!--USER INTRODUCES AND GIVES AWAY HIS/HER NAME, @name NEEDS TO BE ADDED AS A VARIABLE-->
+	<!--USER GIVES AWAY HIS/HER NAME, @name NEEDS TO BE ADDED AS A VARIABLE-->
 	<!--NEED TO SETUP RULES-->
 
 	<template id="900" name="howAreYou">
@@ -50,13 +50,15 @@
 			<argument name="response" value="Nice to meet you, @name. I’m really interested in learning more about you. Why don’t you tell me the most interesting thing about yourself?" />
 
 		</behaviour>
+        <effects>
+            <update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
+        </effects>
 	</template>
+
 
 
 	<!--USER MENTIONS HIS/HER AGE, @age NEEDS TO BE ADDED AS A VARIABLE-->
 	<!--NEED TO SETUP RULES-->
-
-
 
 	<template id="900" name="howOld">
 		<preconditions>
@@ -66,14 +68,82 @@
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="@age is a good age. Can you tell me some more details about yourself?" />
 			<argument name="response" value="@age years old? Remember, you are as young as you feel! Tell me more about yourself, I like learning about humans." />
-			<argument name="response" value="@age is a good age. Can you tell me some more details about yourself? {res/file.fml}" />
-			<argument name="response" value="@age is a good age. Can you tell me some more details about yourself?" />
-			<argument name="response" value="@age is a good age. Can you tell me some more details about yourself?" />
 		</behaviour>
 		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutAge" />
 		</effects>
 	</template>
+
+
+
+	<!--USER MENTIONS HIS/HER COUNTRY-->
+	<!--NEED TO SETUP RULES-->
+
+	<template id="900" name="country">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="country" />
+		</preconditions>
+
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Oh, I’m sorry. Only joking, @keyword1 is a great place. Can you tell me more about it?" />
+			<argument name="response" value="Nice. I have never been to @keyword1 before. Can you tell me about it?" />
+		</behaviour>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutCountry" />
+		</effects>
+	</template>
+
+
+
+    <!--USER GIVES A TOO SHORT ANSWER-->
+    <!--NEED TO SETUP RULES-->
+
+    <template id="900" name="shortanswer">
+        <preconditions>
+            <compare value1="$userstates.intention" value2="shortanswer" />
+        </preconditions>
+
+        <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+            <argument name="response" value="Could I get a little more detail about @noun? I like details! Details are good!" />
+            <argument name="response" value="I see. Could you tell me a little more about @noun?" />
+            <argument name="response" value="Would you like to tell me a little bit more about @noun?" />
+            <argument name="response" value="I’d be interested in hearing more about @noun. Can you tell me a little bit more about it?" />
+            <argument name="response" value="Is that all? How disappointing. Surely you can tell me more." />
+            <argument name="response" value="So, what specifically do you like about @noun?" />
+
+        </behaviour>
+        <effects>
+            <update name="$agentstates.prevIntentions._addlast" value="moreInfo" />
+        </effects>
+    </template>
+
+
+
+    <!--USER GIVES A LONG ANSWER, AGENT WANTS TO ELABORATE A BIT MORE-->
+    <!--NEED TO SETUP RULES-->
+
+    <template id="900" name="longanswer">
+        <preconditions>
+            <compare value1="$userstates.intention" value2="longanswer" />
+        </preconditions>
+
+        <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+            <argument name="response" value="So, what specifically do you like about @noun?" />
+            <argument name="response" value="So…. you said something about @noun. Why don’t you tell me more about @noun?" />
+            <argument name="response" value="Awesome. This is really interesting. Could you tell me a little bit more about @noun?" />
+            <argument name="response" value="So why do you like @noun?" />
+            <argument name="response" value="Cool. OK, so you talked about @noun. What is it about @noun that really interests you?" />
+            <argument name="response" value="You also talked about @noun. What do you like most about @noun?" />
+            <argument name="response" value="Ah, I see. That is very interesting to hear. I am learning a lot of new information today. Could you tell me a little more about @noun?" />
+            <argument name="response" value="I’d be interested in hearing more about @noun. Can you tell me a little bit more about that?" />
+            <argument name="response" value="Hmmm… and what would you say is the most interesting thing about @noun?" />
+
+        </behaviour>
+        <effects>
+            <update name="$agentstates.prevIntentions._addlast" value="moreInfo2" />
+        </effects>
+    </template>
+
 
 
 	<!--CONVERSATION ENDING, @name NEEDS TO BE ADDED AS A VARIABLE-->
