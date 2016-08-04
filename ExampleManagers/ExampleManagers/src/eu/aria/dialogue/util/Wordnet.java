@@ -3,13 +3,11 @@ package eu.aria.dialogue.util;
 import edu.mit.jwi.Dictionary;
 import edu.mit.jwi.IDictionary;
 import edu.mit.jwi.item.*;
-import edu.mit.jwi.morph.WordnetStemmer;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Kevin Bowden on 8/1/2016.
@@ -19,7 +17,7 @@ public class Wordnet {
     IDictionary dict;
 
     public Wordnet(){
-        File file = new File("manager-resources/WordNet3/dict");
+        File file = new File("WordNet3/dict");
         dict = new Dictionary(file);
         try {
             dict.open();

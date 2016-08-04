@@ -5,3 +5,6 @@ dist/
 nbdist/
 nbactions.xml
 .nb-gradle/
+.idea/workspace.xml
+out/
+.idea/encodings.xml
