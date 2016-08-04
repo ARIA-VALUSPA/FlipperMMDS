@@ -14,26 +14,31 @@
 	<!--</rule>-->
 
 
-	<rule id="R5">
+
+	<rule id="R7">
 		<words>
-			<word value="how"/>
-			<word value="are"/>
-			<word value="you"/>
+			<word value="from"/>
 		</words>
 		<states>
-			<state name="$userstates.intention" value="askHowAreYou"/>
-			<!--<state name="$dialoguestates.topic" value="greeting"/>-->
+			<state name="$dialoguestates.topic" value="from"/>
 		</states>
 	</rule>
 
-	<rule id="A1">
+	<rule id="R8b">
 		<words>
-			<word value="how"/>
-			<word value="old"/>
-			<word value="are"/>
+			<word value="know"/>
 		</words>
 		<states>
-			<state name="$userstates.intention" value="howold"/>
+			<state name="$userstates.intention" value="know"/>
+		</states>
+	</rule>
+
+	<rule id="R8c">
+		<words>
+			<word value="not"/>
+		</words>
+		<states>
+			<state name="$dialoguestates.topic" value="negation"/>
 		</states>
 	</rule>
 
@@ -47,88 +52,43 @@
 		</states>
 	</rule>
 
-	<rule id="R7">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<rule id="R5">
 		<words>
-			<word value="from"/>
+			<word value="how"/>
+			<word value="are"/>
+			<word value="you"/>
 		</words>
 		<states>
-			<state name="$userstates.intention" value="from"/>
+			<state name="$userstates.intention" value="askHowAreYou"/>
+			<!--<state name="$dialoguestates.topic" value="greeting"/>-->
 		</states>
 	</rule>
 
 
-
-	<rule id="R7">
+	<rule id="A1">
 		<words>
-			<word value="england"/>
+			<word value="how"/>
+			<word value="old"/>
+			<word value="are"/>
 		</words>
 		<states>
-			<state name="$userstates.intention" value="england"/>
+			<state name="$userstates.intention" value="howold"/>
 		</states>
 	</rule>
-
-	<rule id="R7">
-		<words>
-			<word value="from england"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="from england"/>
-		</states>
-	</rule>
-
-
-
-	<rule id="R7">
-		<words>
-			<word value="australia"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="australia"/>
-		</states>
-	</rule>
-
-	<rule id="R7">
-		<words>
-			<word value="from australia"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="from australia"/>
-		</states>
-	</rule>
-
-
-
-	<rule id="R7">
-		<words>
-			<word value="netherlands"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="netherlands"/>
-		</states>
-	</rule>
-
-	<rule id="R7">
-		<words>
-			<word value="from netherlands"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="from netherlands"/>
-		</states>
-	</rule>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	<rule id="R1">
 		<words>
@@ -274,6 +234,8 @@
 			<state name="$userstates.intention" value="askOpinionCheshire"/>
 		</states>
 	</rule>
+
+
 
 	<rule id="R7">
 		<words>
