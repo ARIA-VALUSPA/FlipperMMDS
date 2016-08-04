@@ -1,5 +1,5 @@
 /*
-by Kevin Bowden
+by Kubra
  */
 package eu.aria.dialogue.managers;
 
@@ -24,8 +24,6 @@ public class KeywordManager extends DefaultManager {
 
     public KeywordManager(DefaultRecord is) {
         super(is);
-        System.out.println("IntentGenerator is WIP. It should be using a Flipper template later. Right now it uses: ");
-        System.out.println("$userstates.utterance(.consumed <boolean> |.timestamp = 't:<long ms since 1970>' |.text = <string> ) -> $userstates.intention = <string>");
         interval = 75; //fast default interval
 
 
@@ -76,15 +74,12 @@ public class KeywordManager extends DefaultManager {
             if (getIS().getList(userKeywordPath) == null) {
                 getIS().set(userKeywordPath, new DefaultList());
             }
-           // double currTime = (double) System.currentTimeMillis();
             String userSay = utterance.getString("text");
-            System.out.println(userSay);
                 if (userSay != null) {
                     List keyword = getIS().getList(userKeywordPath);
                     String[] splited = userSay.split("\\s+");
                     for (int i = 0; i < splited.length; i++) {
                         if (countries.contains(splited[i])){
-                            System.out.println(splited[i]+" is found");
                             keyword.addItemEnd(splited[i]);
                             getIS().set(userKeywordPath, keyword);
                             getIS().set(userIntentionPath, "countryFound");

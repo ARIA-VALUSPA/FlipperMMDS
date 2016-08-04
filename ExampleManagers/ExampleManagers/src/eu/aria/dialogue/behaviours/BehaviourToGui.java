@@ -12,12 +12,12 @@ package eu.aria.dialogue.behaviours;
 import eu.aria.dialogue.KnowledgeDB.AgentHistory;
 import eu.aria.dialogue.gui.GuiController;
 
-import java.util.HashMap;
-import java.util.Random;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import eu.aria.dialogue.KnowledgeDB.KnowledgeBase;
+import eu.aria.dialogue.util.HedgeFactory;
 import eu.aria.dialogue.util.Say;
 import eu.aria.dialogue.util.Wordnet;
 import eu.ariaagent.managers.Manager;
@@ -27,27 +27,44 @@ import hmi.flipper.defaultInformationstate.DefaultRecord;
 import hmi.flipper.informationstate.List;
 import hmi.flipper.informationstate.Record;
 
-import java.util.ArrayList;
-
 public class BehaviourToGui implements ManageableBehaviourClass{
 
     private String userposPath = "$userstates.utterance.pos";
     private String userStoryPath = "$userstates.utterance.story";
 
-    List nouns, lastStated, adjectives, keywords;
+    List nouns, lastStated, adjectives, keywords, prevAgentIntentions;
 
     GuiController gui;
-    
+
+    int numArgValues;
+
     Record posUtterance, storyUtterance;
     Manager manager;
-    
+
     private String agentName = "Agent";
     private double currTime;
     private HashMap localReplacements;
 
+    HedgeFactory hf =HedgeFactory.getHF();
+
     Wordnet wn = new Wordnet();
     KnowledgeBase kb = KnowledgeBase.getKB();
     AgentHistory ah = AgentHistory.getAH();
+
+    public ArrayList<String> getAllCurrentNouns(){
+
+        ArrayList<String> values = new ArrayList<>();
+            Iterator it = localReplacements.entrySet().iterator();
+            while (it.hasNext()) {
+
+                Map.Entry pair = (Map.Entry)it.next();
+                if(!pair.getKey().toString().startsWith("@adj")){
+                    values.add(pair.getValue().toString());
+                }
+                it.remove(); // avoids a ConcurrentModificationException
+            }
+            return values;
+    }
 
     public String queryBuilder(String value){
         String pattern = "@\\??[a-zA-Z0-9]+";
@@ -112,21 +129,18 @@ public class BehaviourToGui implements ManageableBehaviourClass{
                         value = mata.replaceAll(replacementAdj);
                         localReplacements.put(r, replacementAdj);
                     } else if (r.startsWith("keyword")) {
-
                         for (int i = 0; i < keywords.size(); i++) {
                             String replacementNoun = keywords.getString(i);
                             Pattern patn = Pattern.compile("@" + r);
                             Matcher matn = patn.matcher(value);
                             value = matn.replaceAll(replacementNoun);
                         }
-                        manager.getIS().set("$userstates.utterance.keywords", new DefaultList());
                     }
                 }
                     iters++;
             }
                 return value;
     }
-
 
     public double scoreNoun(int frequency, double lastStated, double preference){
         double timeDiff = currTime - lastStated;
@@ -232,7 +246,10 @@ public class BehaviourToGui implements ManageableBehaviourClass{
     public void agentOutput(String value){
         value = queryBuilder(value);
         if(value != null) {
-            Say newSay = new Say(value, agentName, true);
+            String hedgeValue = "";
+            ArrayList<String> currNouns = getAllCurrentNouns();
+            hedgeValue = hf.hedgeBuilder(prevAgentIntentions, currNouns, manager.getIS().getString("$userstates.utterance.text"));
+            Say newSay = new Say(hedgeValue + value, agentName, true);
             gui.addAgentSay(newSay, true);
             ah.storeRule(value);
         }
@@ -254,6 +271,7 @@ public class BehaviourToGui implements ManageableBehaviourClass{
         manager.getIS().set("$userstates.intention", "");
 
 
+
         currTime = (double) System.currentTimeMillis();
         posUtterance = manager.getIS().getRecord(userposPath);
         if (posUtterance == null) {
@@ -265,7 +283,13 @@ public class BehaviourToGui implements ManageableBehaviourClass{
             storyUtterance = new DefaultRecord();
             manager.getIS().set(userStoryPath, storyUtterance);
         }
-        
+
+        prevAgentIntentions = manager.getIS().getList("$agentstates.prevIntentions");
+        if(prevAgentIntentions == null){
+            prevAgentIntentions = new DefaultList();
+        }
+
+        numArgValues = argValues.size();
         nouns = posUtterance.getList("nouns");
         adjectives = posUtterance.getList("adjectives");
         lastStated = posUtterance.getList("lastStated");
@@ -283,7 +307,7 @@ public class BehaviourToGui implements ManageableBehaviourClass{
 
         argValues = ah.sortValues(argValues, 10, true);
 
-        if(nouns != null || adjectives != null || lastStated != null) {
+        if(nouns != null && adjectives != null && lastStated != null) {
             argValues = posQualifier(argValues, nouns.size(), "@noun");
             argValues = posQualifier(argValues, possSize, "@nounposs");
             argValues = posQualifier(argValues, keywords.size(), "@keyword");

@@ -350,6 +350,10 @@
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="Woof woof!"  />
 		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
+		</effects>
 	</template>
 
 	<template id="1" name="exclaim">

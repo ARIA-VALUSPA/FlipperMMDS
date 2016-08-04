@@ -31,8 +31,6 @@ import java.util.*;
 
     public POSManager(DefaultRecord is) {
         super(is);
-        System.out.println("IntentGenerator is WIP. It should be using a Flipper template later. Right now it uses: ");
-        System.out.println("$userstates.utterance(.consumed <boolean> |.timestamp = 't:<long ms since 1970>' |.text = <string> ) -> $userstates.intention = <string>");
         interval = 50; //fast default interval
     }
 
@@ -96,13 +94,17 @@ import java.util.*;
             if (posUtterance.getList("preference") == null) {
                 posUtterance.set("preference", new DefaultList());
             }
+            if (utterance.getString("name") == null){
+                utterance.set("name", "");
+            }
 
             String userSay = utterance.getString("text");
             if (userSay != null && !userSay.equals("") && !utterance.getString("consumed").equals("true")) {
                 currNouns = new ArrayList<>();
                 ArrayList<String> wordset = new ArrayList<>(Arrays.asList(userSay.split(" ")));
                 ArrayList<String> taggedText = stanfordTagger.tagFile(wordset);
-
+                List prevAgentIntentions = getIS().getList("$agentstates.prevIntentions");
+                ArrayList<String> nameOptions = new ArrayList<>();
                 for (int i = 0; i < taggedText.size(); i++) {
                     String word = taggedText.get(i);
                     int index = word.lastIndexOf("_");
@@ -136,6 +138,9 @@ import java.util.*;
                         }
                     }
                     if (pos.startsWith("NN")) {
+                        if(prevAgentIntentions.getString(prevAgentIntentions.size()-1).equals("askAboutName") && pos.startsWith("NNP")){
+                            nameOptions.add(word);
+                        }
                         nounBuilder.add(word);
                     }
                     double currTime = (double) System.currentTimeMillis();
@@ -206,9 +211,6 @@ import java.util.*;
                         }
                         //negations present - Bill is not a doctor
                         else if (dep.reln().getShortName().equals("neg") && k == 1) {
-//                            System.out.println("-------------.................................--------------------------"+dep);
-//                            System.out.println("-------------.................................--------------------------"+dep.dep());
-//                            System.out.println("-------------.................................--------------------------"+dep.gov());
                             String word = dep.gov().word();
                             String pos = dep.gov().tag();
                             if (pos.startsWith("NN")) {
@@ -325,6 +327,10 @@ import java.util.*;
                     }
                 }
                 kb.storeRelatedNouns(currNouns);
+                if(nameOptions.size()>0){
+                    getIS().set("$userstates.name", nameOptions.toString());
+                }
+
             }
         }
     }
