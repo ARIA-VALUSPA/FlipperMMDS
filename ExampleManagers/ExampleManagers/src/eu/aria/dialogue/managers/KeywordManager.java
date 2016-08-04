@@ -40,7 +40,7 @@ public class KeywordManager extends DefaultManager {
 
     }
 
-    public void getDefaultList(ArrayList countries) {
+    public void getDefaultCountryList(ArrayList countries) {
 
         String[] isoCountries = Locale.getISOCountries();
         for (String country : isoCountries) {
@@ -57,7 +57,7 @@ public class KeywordManager extends DefaultManager {
     @Override
     public void process() {
         super.process();
-        getDefaultList(countries);
+        getDefaultCountryList(countries);
 
         Record utterance = getIS().getRecord(userUtterancePath);
         if (utterance == null) {
