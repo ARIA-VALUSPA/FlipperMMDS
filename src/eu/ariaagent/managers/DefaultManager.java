@@ -5,13 +5,13 @@
  */
 package eu.ariaagent.managers;
 
-import hmi.flipper.behaviourselection.TemplateController;
-
-import hmi.flipper.behaviourselection.template.behaviours.BehaviourClassProvider;
-import hmi.flipper.defaultInformationstate.DefaultRecord;
-import java.util.Map;
 import eu.ariaagent.util.ManageableBehaviourClass;
 import eu.ariaagent.util.ManageableFunction;
+import hmi.flipper.behaviourselection.TemplateController;
+import hmi.flipper.behaviourselection.template.behaviours.BehaviourClassProvider;
+import hmi.flipper.defaultInformationstate.DefaultRecord;
+
+import java.util.Map;
 
 /**
  *
@@ -39,7 +39,8 @@ public abstract class DefaultManager implements Manager
      * @return true if it is, false otherwise.
      */
     private boolean canProcess(){
-        return System.currentTimeMillis() >= previousTime + interval;
+        // return System.currentTimeMillis() >= previousTime + interval;
+        return true;
     }
     
     @Override

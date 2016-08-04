@@ -3,13 +3,10 @@ package eu.ariaagent.flipper;
 import eu.ariaagent.managers.DefaultManager;
 import eu.ariaagent.managers.Manager;
 import hmi.flipper.defaultInformationstate.DefaultRecord;
+
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Stack;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Manager controller for references to all managers and reading the templates
@@ -32,6 +29,18 @@ public class ManagerController {
         newManagers = mp.parseFolder(managerPath);
         managers = new ArrayList<>();
         managers.addAll(newManagers);
+
+        // just ensure order
+        managers.sort((o1, o2) -> {
+            try {
+                int n1 = Integer.parseInt(o1.getID());
+                int n2 = Integer.parseInt(o2.getID());
+                return n1 - n2;
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+            return 0;
+        });
     }
     
     public ManagerController(String managerPath, DefaultRecord is){
@@ -57,8 +66,19 @@ public class ManagerController {
     public void run(){
         if(managers == null || managers.isEmpty()){
             System.err.println("No managers to run found.");
+            return;
         }
-        while(!managers.isEmpty()){
+        while (true) {
+            for (Manager manager : managers) {
+                processManager(manager);
+            }
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        /*while(!managers.isEmpty()){
             long startTime = System.currentTimeMillis();
             long nextTime = Long.MAX_VALUE;
             long longestItTime = 0;
@@ -102,7 +122,7 @@ public class ManagerController {
                     Logger.getLogger(ManagerController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        }
+        }*/
     }
 
     private void processManager(Manager m){
