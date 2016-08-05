@@ -14,9 +14,8 @@ import hmi.flipper.defaultInformationstate.DefaultRecord;
 import hmi.flipper.informationstate.Record;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -134,13 +133,15 @@ import java.util.logging.Logger;
     private void processInternal(String userSay) {
         ArrayList<String> keywordMatches = new ArrayList<>();
         boolean keywordFound = false;
+        HashMap<Rules, Integer> keywordMatchHash = new HashMap<>();
+
         userSay = userSay.replaceAll("\\?", " ?");
         userSay = userSay.replaceAll("\\!", " !");
         userSay = userSay.replaceAll("\\.", " .");
         userSay = userSay.replaceAll("\\,", " ,");
         ArrayList<String> userSayAL = sk.removeStopWords(userSay);
 
-        if(userSayAL.contains("?")){
+        if (userSayAL.contains("?")) {
             is.set("$userstates.dialoguestates", "askQuestion");
         }
 
@@ -155,15 +156,27 @@ import java.util.logging.Logger;
                 }
             }
             if (count == rule.getWords().size()) {
-                for (State state : rule.getStates()) {
-                    is.set(state.getName(), state.getValue());
-                }
+                keywordMatchHash.put(rule, count);
                 keywordFound = true;
 //                break;
             }
         }
+
+
         if (!keywordFound) {
 //            is.set(intentionPath, unknownState);
+        } else {
+            int maxSize = 0;
+            Rules maxRule = new Rules();
+            for (Map.Entry<Rules, Integer> entry : keywordMatchHash.entrySet()) {
+                if (maxSize < entry.getValue()) {
+                    maxSize = entry.getValue();
+                    maxRule = entry.getKey();
+                }
+                for (State state : maxRule.getStates()) {
+                    is.set(state.getName(), state.getValue());
+                }
+            }
         }
     }
 }
