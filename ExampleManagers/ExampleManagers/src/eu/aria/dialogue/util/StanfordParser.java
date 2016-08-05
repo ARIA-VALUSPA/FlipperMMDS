@@ -1,7 +1,6 @@
 package eu.aria.dialogue.util;
 
 import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.ling.IndexedWord;
 import edu.stanford.nlp.ling.Sentence;
 import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
 import edu.stanford.nlp.process.CoreLabelTokenFactory;
@@ -23,9 +22,9 @@ public class StanfordParser {
 
     public StanfordParser(String parseModel) {
         parser = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz");
-           }
+    }
 
-    public List<TypedDependency> dependencyParse(String text){
+    public List<TypedDependency> dependencyParse(String text) {
         TokenizerFactory<CoreLabel> tokenizerFactory = PTBTokenizer.factory(new CoreLabelTokenFactory(), "");
         Tokenizer<CoreLabel> tok = tokenizerFactory.getTokenizer(new StringReader(text));
         List<CoreLabel> rawWords2 = tok.tokenize();
@@ -43,12 +42,9 @@ public class StanfordParser {
 //        tp.printTree(parse);
 
         return tdl;
-
-
-
     }
 
-    public Tree parseWords(ArrayList<String> wordsList){
+    public Tree parseWords(ArrayList<String> wordsList) {
         String[] wordsArray = wordsList.toArray(new String[wordsList.size()]);
         List<CoreLabel> rawWords = Sentence.toCoreLabelList(wordsArray);
 
@@ -57,8 +53,5 @@ public class StanfordParser {
         return parse;
 
 
-
-
-        }
-
+    }
 }

@@ -46,10 +46,10 @@ public class BehaviourToGui implements ManageableBehaviourClass {
     private double currTime;
     private HashMap<String, String> localReplacements;
 
-    private HedgeFactory hf = HedgeFactory.getHF();
+    private HedgeFactory hf = HedgeFactory.getInstance();
 
     private Wordnet wn = new Wordnet();
-    private KnowledgeBase kb = KnowledgeBase.getKB();
+    private KnowledgeBase kb = KnowledgeBase.getInstance();
     private AgentHistory ah = AgentHistory.getAH();
 
     public ArrayList<String> getAllCurrentNouns() {

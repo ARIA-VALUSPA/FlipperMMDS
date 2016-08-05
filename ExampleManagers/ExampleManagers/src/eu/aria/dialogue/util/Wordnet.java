@@ -81,7 +81,6 @@ public class Wordnet {
     public static void main( String args[] ){
         Wordnet wn = new Wordnet();
         System.out.println(wn.findSynonym("happy", "JJ"));
-
     }
 
 }

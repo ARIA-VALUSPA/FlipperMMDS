@@ -1,9 +1,10 @@
 package eu.aria.dialogue.util;
 
-import hmi.flipper.informationstate.*;
 import hmi.flipper.informationstate.List;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,46 +14,37 @@ import java.util.regex.Pattern;
 
 public class HedgeFactory {
 
+    private static HedgeFactory instance = new HedgeFactory();
 
-public ArrayList<String> hedgesOne, hedgesTwo, topicChangeHedgesOne, topicChangeHedgesTwo, topicContHedgesOne, topicContHedgesTwo;
-static HedgeFactory hf = new HedgeFactory();
+    public static HedgeFactory getInstance() {
+        return instance;
+    }
 
-    private HedgeFactory(){
-        hedgesOne = new ArrayList<>();
-        hedgesOne = new ArrayList<String>(
-                Arrays.asList("I see. ", "Interesting. "));
+    // public ArrayList<String> hedgesOne, hedgesTwo, topicChangeHedgesOne, topicChangeHedgesTwo, topicContHedgesOne, topicContHedgesTwo;
+    private ContinuousList<String> hedges, topicChange, topicCont;
 
-        hedgesTwo = new ArrayList<>();
+    private HedgeFactory() {
+        hedges = new ContinuousList<>(Arrays.asList("I see. ", "Interesting. "));
 
-        topicChangeHedgesOne = new ArrayList<>();
-        topicChangeHedgesOne = new ArrayList<String>(
+        topicChange = new ContinuousList<>(
                 Arrays.asList("Okay, well, maybe let's move on to something else.",
                         "I think I would be interested in learning about something new.",
                         "Let's change the topic."));
 
-        topicChangeHedgesTwo = new ArrayList<>();
-
-        topicChangeHedgesOne = new ArrayList<>();
-        topicChangeHedgesOne = new ArrayList<String>(
-                Arrays.asList("So then, ", "I see, ", "Well then, ", "And "));
-
-        topicChangeHedgesTwo = new ArrayList<>();
+        topicCont = new ContinuousList<>(Arrays.asList("So then, ", "I see, ", "Well then, ", "And "));
     }
 
-    public static HedgeFactory getHF(){
-        return hf;
-    }
 
-    public String hedgeBuilder(List prevIntentions, ArrayList<String> prevNouns, String previousAgentSent){
+    public String hedgeBuilder(List prevIntentions, ArrayList<String> prevNouns, String previousAgentSent) {
         String hedge = "";
-        if(prevIntentions.size() > 1) {
-            if (prevIntentions.getString(prevIntentions.size()-1).equals("probingQuestion")) {
+        if (prevIntentions.size() > 1) {
+            if (prevIntentions.getString(prevIntentions.size() - 1).equals("probingQuestion")) {
                 for (int i = 0; i < prevIntentions.size() - 1; i++) {
                     if (prevIntentions.getString(i).equals("probingQuestions")) {
-                        hedge += hf.insertHedge();
+                        hedge += insertHedge();
                     }
                 }
-                hedge += hf.insertTopicChangeHedge();
+                hedge += insertTopicChangeHedge();
             }
             if (prevNouns.size() > 0) {
                 for (String noun : prevNouns) {
@@ -61,7 +53,7 @@ static HedgeFactory hf = new HedgeFactory();
 
                     if (matches.find()) {
                         hedge = "";
-                        hedge += hf.insertTopicContHedge();
+                        hedge += insertTopicContHedge();
                     }
                 }
             }
@@ -69,51 +61,51 @@ static HedgeFactory hf = new HedgeFactory();
                 Random randomGenerator = new Random();
                 int index = randomGenerator.nextInt(2);
                 if (index == 1) {
-                    hedge = hf.insertHedge();
+                    hedge = insertHedge();
                 }
             }
         }
         return hedge;
     }
 
-    public String insertTopicContHedge(){
-        String hedge = randomValue(topicContHedgesOne);
-        topicContHedgesTwo.add(hedge);
-        topicContHedgesOne.remove(hedge);
-        if(topicContHedgesOne.isEmpty()){
-            topicContHedgesOne = topicContHedgesTwo;
-            topicContHedgesTwo = new ArrayList();
-        }
-        return hedge;
+    public String insertTopicContHedge() {
+        return  topicCont.getValue();
     }
 
-    public String insertTopicChangeHedge(){
-        String hedge = randomValue(topicChangeHedgesOne);
-        topicChangeHedgesTwo.add(hedge);
-        topicChangeHedgesOne.remove(hedge);
-        if(topicChangeHedgesOne.isEmpty()){
-            topicChangeHedgesOne = topicChangeHedgesTwo;
-            topicChangeHedgesTwo = new ArrayList();
-        }
-        return hedge;
+    public String insertTopicChangeHedge() {
+        return topicChange.getValue();
     }
 
 
-    public String insertHedge(){
-        String hedge = randomValue(hedgesOne);
-        hedgesTwo.add(hedge);
-        hedgesOne.remove(hedge);
-        if(hedgesOne.isEmpty()){
-            hedgesOne = hedgesTwo;
-            hedgesTwo = new ArrayList();
-        }
-    return hedge;
+    public String insertHedge() {
+        return hedges.getValue();
     }
 
-    private String randomValue(ArrayList<String> values){
+    private static <T> T randomValue(ArrayList<T> values) {
         Random randomGenerator = new Random();
         int index = randomGenerator.nextInt(values.size());
         return values.get(index);
     }
 
+    public static class ContinuousList<T> {
+
+        private ArrayList<T> one;
+        private ArrayList<T> two;
+
+        public ContinuousList(java.util.List<T> init) {
+            one = new ArrayList<>(init);
+            two = new ArrayList<>();
+        }
+
+        public T getValue() {
+            T val = randomValue(one);
+            two.add(val);
+            one.remove(val);
+            if (one.isEmpty()) {
+                one = two;
+                two = new ArrayList<>();
+            }
+            return val;
+        }
+    }
 }
