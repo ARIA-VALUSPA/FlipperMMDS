@@ -132,30 +132,17 @@ import java.util.logging.Logger;
     }
 
     private void processInternal(String userSay) {
-
-        System.out.println("This is the keywords we are given:");
-        System.out.println(userSay);
-
-
         ArrayList<String> keywordMatches = new ArrayList<>();
         boolean keywordFound = false;
+        userSay = userSay.replaceAll("\\?", " ?");
+        userSay = userSay.replaceAll("\\!", " !");
+        userSay = userSay.replaceAll("\\.", " .");
+        userSay = userSay.replaceAll("\\,", " ,");
+        ArrayList<String> userSayAL = sk.removeStopWords(userSay);
 
-        ArrayList<String> userSayAL = sk.removeStopWords(userSay.replaceAll("\\?", " ?"));
         if(userSayAL.contains("?")){
             is.set("$userstates.dialoguestates", "askQuestion");
-            System.out.println("dialoguestate set to ?");
         }
-
-
-//        try {
-//            userSayAL = sk.pickUp(userSayAL/*, bwDet*/);
-//        } catch (IOException ex) {
-//            Logger.getLogger(IntentManager.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-
-//        String punct = userSay.substring(userSay.length()-2, userSay.length()-1);
-        System.out.println("This is the keywords we are given after the pruning:");
-        System.out.println(userSayAL);
 
         for (Rules rule : rules) {
             int count = 0;
@@ -169,11 +156,8 @@ import java.util.logging.Logger;
             }
             if (count == rule.getWords().size()) {
                 for (State state : rule.getStates()) {
-                    System.out.println(state.getName());
                     is.set(state.getName(), state.getValue());
                 }
-                System.out.println("The true rule");
-                System.out.println(rule.getWords());
                 keywordFound = true;
 //                break;
             }
