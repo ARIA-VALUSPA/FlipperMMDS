@@ -39,7 +39,7 @@ public class AgentHistory {
         ArrayList<FilePointer> stringList = new ArrayList<>();
 
         for (FilePointer value : values) {
-            int freq = getRuleFrequency(value.getSpeechContent());
+            int freq = getRuleFrequency(value.getCurSpeechContent());
             AbstractMap.SimpleEntry<FilePointer, Integer> newEntry = new AbstractMap.SimpleEntry<>(value, freq);
             sortedList.add(newEntry);
         }

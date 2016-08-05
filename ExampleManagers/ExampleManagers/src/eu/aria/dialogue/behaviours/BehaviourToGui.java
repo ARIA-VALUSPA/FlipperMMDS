@@ -67,13 +67,18 @@ public class BehaviourToGui implements ManageableBehaviourClass {
         return values;
     }
 
-    public boolean queryBuilder(FilePointer value) {
-        value.prepareCurrent();
+    public boolean queryBuilder(FilePointer value, boolean isRepeat) {
+        if(isRepeat){
+//            FilePointer.CreateFromSpeech("").getFilePath();
+        } else {
+            value.prepareCurrent();
+        }
+
 
         String pattern = "@\\??[a-zA-Z0-9]+";
         localReplacements = new HashMap<>();
         Pattern pat = Pattern.compile(pattern);
-        Matcher matches = pat.matcher(value.getSpeechContent());
+        Matcher matches = pat.matcher(value.getCurSpeechContent());
         ArrayList<String> toReplace = new ArrayList<>();
 
         adjectives = posUtterance.getList("adjectives");
@@ -93,7 +98,7 @@ public class BehaviourToGui implements ManageableBehaviourClass {
                     ArrayList<Integer> ri = sortNounIndicies(false);
                     String replacementNoun = "";
                     int k = 0;
-                    int numAdj = numVars(value.getSpeechContent(), "@adj");
+                    int numAdj = numVars(value.getCurSpeechContent(), "@adj");
                     while (k < 10 && k < ri.size()) {
                         if (numAdj <= adjectives.getItem(ri.get(k)).getInteger()) {
                             if (!localReplacements.containsValue(replacementNoun)) {
@@ -234,7 +239,7 @@ public class BehaviourToGui implements ManageableBehaviourClass {
         ArrayList<FilePointer> nvals = new ArrayList<>();
         for (FilePointer value : values) {
             Pattern pat = Pattern.compile(pattern);
-            Matcher matches = pat.matcher(value.getSpeechContent());
+            Matcher matches = pat.matcher(value.getCurSpeechContent());
             int count = 0;
             while (matches.find()) {
                 count++;
@@ -256,15 +261,17 @@ public class BehaviourToGui implements ManageableBehaviourClass {
         return m;
     }
 
-    public void agentOutput(FilePointer value) {
-        boolean resultOK = queryBuilder(value);
+    public void agentOutput(FilePointer value, boolean isRepeat) {
+        boolean resultOK = queryBuilder(value, isRepeat);
         if (resultOK) {
             String hedgeValue;
+
             ArrayList<String> currNouns = getAllCurrentNouns();
             hedgeValue = hf.hedgeBuilder(prevAgentIntentions, currNouns, manager.getIS().getString("$userstates.utterance.text"));
-            value.addHedge(hedgeValue);
+            value.setHedge(hedgeValue);
             Say newSay = new Say(value.getCurSpeechContent(), agentName, true);
             gui.addAgentSay(newSay, true);
+            manager.getIS().set("$agentstates.utterance.lastPath", value.getFilePath());
             ah.storeRule(value.getCurSpeechContent());
         }
     }
@@ -275,9 +282,15 @@ public class BehaviourToGui implements ManageableBehaviourClass {
         //        "Agent":{ "id":2, "timestamp":1469625417747, "text":"Hi, are you still there?" }
 
         ArrayList<FilePointer> values = new ArrayList<>();
+        boolean isRepeat = false;
         if(argValues.get(0).equals("@repeatMostRecent")){
-            prevAgentIntentions = manager.getIS().getList("$agentstates.prevIntentions");
-            FileStorage.getInstance().getFile(prevAgentIntentions.getString(prevAgentIntentions.size()-1));
+            isRepeat = true;
+            String repeatPath = manager.getIS().getString("$agentstates.utterance.lastPath");
+            if(repeatPath == null) {
+                System.err.println("there is no lastPath");
+                return;
+            }
+            values.add(FileStorage.getInstance().getFile(repeatPath));
         } else {
             for (String val : argValues) {
                 FilePointer fp = FileStorage.getInstance().getFileFromValue(val);
@@ -337,7 +350,7 @@ public class BehaviourToGui implements ManageableBehaviourClass {
             values = posQualifier(values, keywords.size(), "@keyword");
             if (values.size() > 0) {
                 FilePointer value = randomValue(values);
-                agentOutput(value);
+                agentOutput(value, isRepeat);
             }
         }
     }

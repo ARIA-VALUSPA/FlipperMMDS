@@ -51,11 +51,14 @@ public class FilePointer {
     private String curXmlContent;
     private String curSpeechContent;
 
+    private String curHedge = null;
+
     public FilePointer(String filePath) {
         this.filePath = filePath;
         try {
             xmlContent = ReadFile(filePath, Charset.defaultCharset());
             readFile(true);
+            prepareCurrent();
         } catch (Exception e) {
             xmlContent = "";
             speechContent = "";
@@ -67,6 +70,7 @@ public class FilePointer {
         this.filePath = filePath;
         this.xmlContent = xmlContent;
         this.speechContent = speechContent;
+        prepareCurrent();
     }
 
     public String getFilePath() {
@@ -101,31 +105,37 @@ public class FilePointer {
         curSpeechContent = matcher2.replaceAll(replaceWith);
     }
 
-    public void addHedge(String hedge) {
-        curSpeechContent = hedge + curSpeechContent;
+    public void setHedge(String hedge) {
+        if (curHedge != null) {
+            curSpeechContent = curSpeechContent.replace(curHedge, hedge);
+            curXmlContent = curXmlContent.replace(curHedge, hedge);
+            curHedge = hedge;
+        } else {
+            curSpeechContent = hedge + curSpeechContent;
 
-        try {
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder builder = factory.newDocumentBuilder();
+            try {
+                DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder builder = factory.newDocumentBuilder();
 
-            Document doc = builder.parse(new InputSource(new StringReader(curXmlContent)));
-            doc.normalizeDocument();
+                Document doc = builder.parse(new InputSource(new StringReader(curXmlContent)));
+                doc.normalizeDocument();
 
-            NodeList nodeList = doc.getElementsByTagName("speech");
-            if (nodeList.getLength() > 0) {
-                Node speechNode = nodeList.item(0);
-                for (Node node = speechNode.getFirstChild(); node != null; node = node.getNextSibling()) {
-                    if (node.getNodeName().equals("#text") && !node.getNodeValue().trim().isEmpty()) {
-                        node.setNodeValue(hedge + node.getNodeName());
-                        break;
+                NodeList nodeList = doc.getElementsByTagName("speech");
+                if (nodeList.getLength() > 0) {
+                    Node speechNode = nodeList.item(0);
+                    for (Node node = speechNode.getFirstChild(); node != null; node = node.getNextSibling()) {
+                        if (node.getNodeName().equals("#text") && !node.getNodeValue().trim().isEmpty()) {
+                            node.setNodeValue(hedge + node.getNodeValue());
+                            break;
+                        }
                     }
+                    curXmlContent = NodeToString(doc);
+                } else {
+                    System.err.println("Could find speech node in modified file '" + filePath + "' \n " + curXmlContent);
                 }
-                curXmlContent = NodeToString(doc);
-            } else {
-                System.err.println("Could find speech node in modified file '" + filePath + "' \n " + curXmlContent);
+            } catch (ParserConfigurationException | IOException | SAXException e) {
+                e.printStackTrace();
             }
-        } catch (ParserConfigurationException | IOException | SAXException e) {
-            e.printStackTrace();
         }
     }
 
@@ -147,6 +157,11 @@ public class FilePointer {
                 readFile(false);
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "{ " + filePath + " ; " + speechContent + " ; " + xmlContent + " ; " + curSpeechContent + " ; " + curXmlContent + " }";
     }
 
     public static FilePointer CreateFromSpeech(String speech) {

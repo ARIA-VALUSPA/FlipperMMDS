@@ -34,7 +34,7 @@ public class HedgeFactory {
         topicCont = new ContinuousList<>(Arrays.asList("So then, ", "I see, ", "Well then, ", "And "));
 
 
-        topicCont = new ContinuousList<>(Arrays.asList("Sure, ", "Okay, ", "Fine, ", "Sure, no problem, "));
+        repeat = new ContinuousList<>(Arrays.asList("Sure, ", "Okay, ", "Fine, ", "Sure, no problem, "));
     }
 
 

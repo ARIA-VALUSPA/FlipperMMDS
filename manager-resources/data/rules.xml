@@ -109,17 +109,6 @@
 	</rule>
 
 
-	<rule id="R13b">
-		<words>
-			<word value="hello!"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="greeting"/>
-			<state name="$dialoguestates.topic" value="greeting"/>
-		</states>
-	</rule>
-
-
 	<rule id="R1">
 		<words>
 			<word value="good"/>
@@ -183,7 +172,7 @@
 	</rule>
 
 
-	<rule id="R3">
+    <rule id="R3">
 		<words>
 			<word value="alice"/>
 		</words>
@@ -201,17 +190,19 @@
 		</states>
 	</rule>
 
-	<rule id="R4">
-		<words>
-			<word value="old"/>
-			<word value="are"/>
-			<word value="you"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAgentAge"/>
-			<!--<state name="$dialoguestates.topic" value="greeting"/>-->
-		</states>
-	</rule>
+
+    <rule id="R4">
+        <words>
+            <word value="old"/>
+            <word value="are"/>
+            <word value="you"/>
+        </words>
+        <states>
+            <state name="$userstates.intention" value="askAgentAge"/>
+            <!--<state name="$dialoguestates.topic" value="greeting"/>-->
+        </states>
+    </rule>
+
 
 
 	<rule id="R6_1">
@@ -278,15 +269,26 @@
 
 
 
-	<rule id="R8">
-		<words>
-			<word value="information"/>
-			<word value="name"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutAgentName"/>
-		</states>
-	</rule>
+    <rule id="R8">
+        <words>
+			<word value="what"/>
+			<word value="your"/>
+            <word value="name"/>
+        </words>
+        <states>
+            <state name="$userstates.intention" value="askAboutAgentName"/>
+        </states>
+    </rule>
+
+    <rule id="R8_A">
+        <words>
+            <word value="information"/>
+            <word value="name"/>
+        </words>
+        <states>
+            <state name="$userstates.intention" value="askAboutHumanName"/>
+        </states>
+    </rule>
 
 	<rule id="R9_1">
 		<words>
@@ -337,6 +339,37 @@
 			<state name="$userstates.intention" value="askReally"/>
 		</states>
 	</rule>
+
+	<rule id="R_General_1">
+		<words>
+			<word value="can"/>
+			<word value="you"/>
+			<word value="repeat"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value="repeatPrevious"/>
+		</states>
+	</rule>
+
+	<rule id="R_General_1">
+		<words>
+			<word value="say"/>
+			<word value="again"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value="repeatPrevious"/>
+		</states>
+	</rule>
+
+	<rule id="R_General_1">
+		<words>
+			<word value="what"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value="repeatPrevious"/>
+		</states>
+	</rule>
+
 
 	<rule id="R11_1">
 		<words>
@@ -637,26 +670,6 @@
 		</states>
 	</rule>
 
-
-	<rule id="R23">
-		<words>
-			<word value="why"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="why"/>
-
-		</states>
-	</rule>
-
-	<rule id="R23">
-		<words>
-			<word value="what"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="what"/>
-
-		</states>
-	</rule>
 
 	<rule id="R3">
 		<words>
