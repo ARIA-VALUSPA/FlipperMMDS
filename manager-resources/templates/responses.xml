@@ -1,4 +1,4 @@
-<behaviourtemplates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3schools.com template.xsd">
+<behaviourtemplates>
 
 
 
@@ -55,6 +55,32 @@
 	</template>
 
 
+
+    <template id="1" name="good_day">
+        <preconditions>
+            <compare value1="$userstates.intention" value2="goodDay" />
+        </preconditions>
+        <effects>
+            <update name="$agentstates.prevIntentions._addlast" value="goodDay" />
+        </effects>
+        <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+            <argument name="response" value="Good day indeed, what's up? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"  />
+            <argument name="response" value="I agree, a good day indeed. {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"  />
+            <argument name="response" value="Why do you think this day is good? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"  />
+        </behaviour>
+    </template>
+
+    <template id="0.01" name="testing">
+        <preconditions>
+            <compare value1="$userstates.intention" value2="testing" />
+        </preconditions>
+        <effects>
+            <update name="$agentstates.prevIntentions._addlast" value="testing" />
+        </effects>
+        <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+            <argument name="response" value="testing testing testing" />
+        </behaviour>
+    </template>
 
 	<!--USER MENTIONS HIS/HER AGE, @age NEEDS TO BE ADDED AS A VARIABLE-->
 	<!--NEED TO SETUP RULES-->
@@ -167,7 +193,7 @@
             <update name="$agentstates.prevIntentions._addlast" value="knowsnot" />
         </effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.9">
-			<argument name="response" value="Comeon, surely you know something!!" />
+			<argument name="response" value="Come'on, surely you know something!!" />
 			<argument name="response" value="Ahhh, come on, you must have an opinion on that!" />
 			<argument name="response" value="Come on, that’s a generic response. You can tell me more than that!" />
 			<argument name="response" value="Come on, that’s a generic response. Surely you must have an opinion on that!" />
@@ -245,6 +271,7 @@
 		</behaviour>
 	</template>
 
+
 	<template id="1" name="exclaim">
 		<preconditions>
 			<compare value1="$userstates.utterance.tdawg.exclaim" value2="true" />
@@ -254,39 +281,25 @@
         </effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="Don't yell at me!"  />
-
 		</behaviour>
 	</template>
 
 
-	<template id="1" name="Return_greeting">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="greeting" />
-			<compare value1="$dialoguestates.topic" value2="greeting" />
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="returnGreeting" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Hello, my name is Alice. How are you?"  />
-			<argument name="response" value="Hi there! I'm Alice. What's up?"  />
-			<argument name="response" value="Hey hey, I'm Alice, how goes your day?"  />
-		</behaviour>
-	</template>
+	<!--<template id="1" name="Return_greeting">-->
+		<!--<preconditions>-->
+			<!--<compare value1="$userstates.intention" value2="greeting" />-->
+			<!--<compare value1="$dialoguestates.topic" value2="greeting" />-->
+		<!--</preconditions>-->
+        <!--<effects>-->
+            <!--<update name="$agentstates.prevIntentions._addlast" value="returnGreeting" />-->
+        <!--</effects>-->
+		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">-->
+			<!--<argument name="response" value="Hello, my name is Alice. How are you?"  />-->
+			<!--<argument name="response" value="Hi there! I'm Alice. What's up?"  />-->
+			<!--<argument name="response" value="Hey hey, I'm Alice, how goes your day?"  />-->
+		<!--</behaviour>-->
+	<!--</template>-->
 
-	<template id="1" name="good_day">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="goodday" />
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="goodDay" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Good day indeed, what's up?"  />
-			<argument name="response" value="I agree, a good day indeed."  />
-			<argument name="response" value="Why do you think this day is good?"  />
-		</behaviour>
-	</template>
 
 	<template id="6" name="Return_HowAreYou">
 		<preconditions>
@@ -464,17 +477,17 @@
 		</behaviour>
 	</template>
 
-	<template id="3" name="Unknown_intention">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="unknown" />
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="unknown" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0">
-			<argument name="response" value="I am not sure" />
-		</behaviour>
-	</template>
+	<!--<template id="3" name="Unknown_intention">-->
+		<!--<preconditions>-->
+			<!--<compare value1="$userstates.intention" value2="unknown" />-->
+		<!--</preconditions>-->
+        <!--<effects>-->
+            <!--<update name="$agentstates.prevIntentions._addlast" value="unknown" />-->
+        <!--</effects>-->
+		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0">-->
+			<!--<argument name="response" value="I am not sure" />-->
+		<!--</behaviour>-->
+	<!--</template>-->
 
 
 	<template id="4" name="Ask_about_alice">
@@ -872,7 +885,7 @@
 	<template id="40" name="Respond_To_Positive_Words">
 		<preconditions>
 			<compare value1="$agentstates.intention.prevIntention" comparator="equals" value2="askHowAreYou" />
-			<compare value1="$userstates.intention" value2="expressPositive" />
+			<compare value1="$userstates.intention" value2="sitexpressPoive" />
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="respondPositiveWords" />
@@ -1054,19 +1067,19 @@
 	</template>
 
 
-	<template id="806" name="Anger_Responses">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="angerResponses" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="angerResponses" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I sense that you are feeling some anger. What do you think is the purpose of anger?" />
-			<argument name="response" value="I sense that you are feeling some anger. Can you tell me why a human  would feel anger in this situation?" />
-			<argument name="response" value="I sense that you are feeling some anger. Can you tell me why?" />
-		</behaviour>
-	</template>
+	<!--<template id="806" name="Anger_Responses">-->
+		<!--<preconditions>-->
+			<!--<compare value1="$userstates.intention" value2="angerResponses" />-->
+		<!--</preconditions>-->
+		<!--<effects>-->
+			<!--<update name="$agentstates.prevIntentions._addlast" value="angerResponses" />-->
+		<!--</effects>-->
+		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">-->
+			<!--<argument name="response" value="I sense that you are feeling some anger. What do you think is the purpose of anger?" />-->
+			<!--<argument name="response" value="I sense that you are feeling some anger. Can you tell me why a human  would feel anger in this situation?" />-->
+			<!--<argument name="response" value="I sense that you are feeling some anger. Can you tell me why?" />-->
+		<!--</behaviour>-->
+	<!--</template>-->
 
 	<template id="807" name="Sadness_Responses">
 		<preconditions>
