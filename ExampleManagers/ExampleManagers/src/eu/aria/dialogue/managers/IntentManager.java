@@ -138,6 +138,9 @@ import java.util.logging.Logger;
 
         // userSay = userSay.replaceAll("\\?", " ?");
         ArrayList<String> userSayAL = sk.removeStopWords(userSay.replaceAll("\\?", " ?"));
+        if(userSay.endsWith("?")){
+            is.set("$userstates.dialoguestates", "askQuestion");
+        }
         try {
             userSayAL = sk.pickUp(userSayAL/*, bwDet*/);
         } catch (IOException ex) {

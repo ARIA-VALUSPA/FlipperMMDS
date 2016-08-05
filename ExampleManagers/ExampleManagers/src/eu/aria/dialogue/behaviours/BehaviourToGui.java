@@ -293,7 +293,7 @@ public class BehaviourToGui implements ManageableBehaviourClass {
 //        wn.findSynonym();
 
         manager.getIS().set("$userstates.intention", "");
-
+        manager.getIS().set("$userstates.dialoguestates", "");
 
         currTime = (double) System.currentTimeMillis();
         posUtterance = manager.getIS().getRecord(userposPath);
