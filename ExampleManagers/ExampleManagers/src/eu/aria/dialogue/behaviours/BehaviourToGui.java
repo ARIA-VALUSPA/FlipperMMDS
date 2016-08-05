@@ -302,7 +302,7 @@ public class BehaviourToGui implements ManageableBehaviourClass {
             this.gui = GuiController.getInstance(manager.getIS());
         }
 
-//        Wordnet wn = new Wordnet();
+  //      Wordnet wn = new Wordnet();
 //        wn.findSynonym();
 
         manager.getIS().set("$userstates.intention", "");

@@ -25,12 +25,31 @@
 			<argument name="response" value="Hey there. My name is Alice and I live inside a computer. I’m trying to improve my knowledge about what it is to be human. Maybe you can help me with that question. Tell me something about yourself, who are you? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
 			<argument name="response" value="Hey there human! My name is Alice and I am an aspiring journalist. I’m really interested in learning about humans and the kinds of stuff you guys are interested in. I know you might feel weird about talking to someone who lives in a computer, but bare with me and tell me all about yourself! {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
 			<argument name="response" value="Hello. My name is Jane Locke. I'm a philosopher contemplating the deeper meaning of life. I would like to learn more about you. Who are you? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
+			<argument name="response" value="Hello, my name is Alice. Who are you?" />
+			<argument name="response" value="Hello, my name is Alice. What's your name?" />
+			<argument name="response" value="Hi there, what’s up? Would you mind answering a few questions? Please! What's your name?" />
+			<argument name="response" value="Hey, my name is Alice... What's your name?" />
+			<argument name="response" value="Hello! I’m Alice and I’m a virtual human journalist. I’m trying to expand my knowledge base about humans. I’m interviewing a lot of people and asking them to tell me about themselves. Would you mind if I asked you to tell me about yourself, starting with your name – and I really like details by the way!" />
+			<argument name="response" value="Hi human, my name is Alice, and I’m really interested in learning more about you and the kind of things you like doing. Why don’t you tell me all about yourself, what's your name?" />
+			<argument name="response" value="Hi there, my name is Alice. I live in a computer and I’m really interested in finding out more about the kinds of things that humans like doing. Why don’t you tell me a bit about yourself, starting with your name and how old you are?"/>
+			<argument name="response" value="Hey! My name is Alice and I’m a virtual human. I like learning how you real humans live! Tell me about yourself, and don’t skimp on the details! I like details! What's your name?"/>
+			<argument name="response" value="Hey there. My name is Alice and I live inside a computer. I’m trying to improve my knowledge about what it is to be human. Maybe you can help me with that question. Tell me something about yourself, who are you?"/>
+			<argument name="response" value="Hey there human! My name is Alice and I am an aspiring journalist. I’m really interested in learning about humans and the kinds of stuff you guys are interested in. I know you might feel weird about talking to someone who lives in a computer, but bare with me and tell me all about yourself!"/>
+			<argument name="response" value="Hello. My name is Jane Locke. I'm a philosopher contemplating the deeper meaning of life. I would like to learn more about you. Who are you?" />
+			<argument name="response" value="Hello, my name is Alice. How are you?"  />
+			<argument name="response" value="Hi there! I'm Alice. What's up?"  />
+			<argument name="response" value="Hey hey, I'm Alice, how goes your day?"  />
 		</behaviour>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
+			<update name="$userstates.specificAnswer" value="true" />
+
+		</effects>
 
 	</template>
 
 
-	<!--USER GIVES AWAY HIS/HER NAME, @name NEEDS TO BE ADDED AS A VARIABLE-->
+	<!--USER INTRODUCES AND GIVES AWAY HIS/HER NAME, @name NEEDS TO BE ADDED AS A VARIABLE-->
 	<!--NEED TO SETUP RULES-->
 
 	<template id="900" name="howAreYou">
@@ -52,6 +71,9 @@
 			<argument name="response" value="Nice to meet you, @name. I’m really interested in learning more about you. Why don’t you tell me the most interesting thing about yourself?" />
 
 		</behaviour>
+        <effects>
+            <update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
+        </effects>
 	</template>
 
 
@@ -128,6 +150,10 @@
             <argument name="response" value="Hmmm… and what would you say is the most interesting thing about @noun?" />
 
         </behaviour>
+        <effects>
+            <update name="$agentstates.prevIntentions._addlast" value="moreInfo2" />
+			<update name="$userstates.longAnswer" value="false" />
+        </effects>
     </template>
 
 
@@ -181,7 +207,7 @@
 
     <template id="1" name="country">
 		<preconditions>
-			<compare value1="$userstates.intention" value2="countryFound" />
+			<compare value1="$userstates.countryFound" value2="true" />
 		</preconditions>
         <effects>
             <update name="$agentstates.prevIntentions._addlast" value="country" />
@@ -189,6 +215,9 @@
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.8">
 			<argument name="response" value="You mentioned @keyword1, can you tell me more about it?" />
 		</behaviour>
+		<effects>
+			<update name="$userstates.countryFound" value="false" />
+		</effects>
 	</template>
 
 	<!--<template id="1" name="america2">-->
@@ -237,12 +266,14 @@
 		<preconditions>
 			<compare value1="$userstates.intention" value2="askAboutDog" />
 		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
-        </effects>
+
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="Woof woof!"  />
 		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutDog" />
+		</effects>
 	</template>
 
 	<template id="1" name="exclaim">
@@ -993,6 +1024,10 @@
 			<argument name="response" value="OK, I see. Why not?" />
 			<argument name="response" value="Really? Why?" />
 		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askReason" />
+		</effects>
 	</template>
 
 	<template id="802" name="Confirmation">
@@ -1011,6 +1046,10 @@
 			<argument name="response" value="Yeah" />
 			<argument name="response" value="Hmm, interesting" />
 		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="sayConfirmation" />
+		</effects>
 	</template>
 
 
@@ -1024,6 +1063,10 @@
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="Is something worrying you?" />
 		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutFear" />
+		</effects>
 	</template>
 
 	<template id="804" name="Disgust_Responses">
@@ -1036,6 +1079,10 @@
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="What is the matter? Is something wrong?" />
 		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutDisgust" />
+		</effects>
 	</template>
 
 	<template id="805" name="Surprise_Responses">
@@ -1051,6 +1098,10 @@
 			<argument name="response" value="You seem surprised. What would you say is the most surprising thing about humanity?" />
 			<argument name="response" value="You seem surprised.  Why?" />
 		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutSuprise" />
+		</effects>
 	</template>
 
 
@@ -1066,6 +1117,10 @@
 			<argument name="response" value="I sense that you are feeling some anger. Can you tell me why a human  would feel anger in this situation?" />
 			<argument name="response" value="I sense that you are feeling some anger. Can you tell me why?" />
 		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutAnger" />
+		</effects>
 	</template>
 
 	<template id="807" name="Sadness_Responses">
@@ -1081,6 +1136,10 @@
 			<argument name="response" value="I sense that you are feeling sad. Does talking about @noun1 make humans feel sad?" />
 			<argument name="response" value="I sense that you are feeling sad. Do you think that feeling sadness is part of the human condition?" />
 		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutSadness" />
+		</effects>
 	</template>
 
 	<template id="808" name="Laughter_Responses">
@@ -1096,6 +1155,10 @@
 			<argument name="response" value="I see that you found something funny. Could you tell me specifically what you found funny?" />
 			<argument name="response" value="Wow… I see that you found that funny. Do you think there is a deeper meaning behind human laughter?" />
 		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutLaughter" />
+		</effects>
 	</template>
 
 	<template id="809" name="Silence_Responses">
@@ -1109,6 +1172,9 @@
 			<argument name="response" value="Aww, don’t be shy! Talk to me, I like talking!" />
 			<argument name="response" value="I know it’s weird talking to someone who lives in a computer, but don’t be shy!" />
 		</behaviour>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askForOpenup" />
+		</effects>
 	</template>
 
 
@@ -1122,6 +1188,9 @@
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="OK, cool. Maybe we should try a different topic now. Can you tell me something interesting about yourself that you haven’t told me before?" />
 		</behaviour>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askForChangingTopic" />
+		</effects>
 	</template>
 
 
@@ -1136,6 +1205,9 @@
 			<argument name="response" value="Hmmmm….. Let’s pretend I understood what you said there. Why don’t we move on to a different topic. Can you tell me more about @noun1?" />
 			<argument name="response" value="Hmmmm….. Let’s pretend I understood what you said there. Why don’t we move on to a different topic. What is your favourite thing to do in your spare time?" />
 		</behaviour>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askForNotUnderstandChangingTopic" />
+		</effects>
 	</template>
 
 	<template id="812" name="NotUnderstand_Reexplaining">
@@ -1153,5 +1225,9 @@
 			<argument name="response" value="Well, that was totally nonsensical. I’m not saying you’re an idiot. Calling you an idiot would be an insult to all stupid people. I want you to take a deep breath and tell me something at least remotely intelligent." />
 			<argument name="response" value="Look, I’m going to be really honest here. I kind of zoned out when you were speaking. Could you tell me that again, maybe using better words? Thanks." />
 		</behaviour>
+
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askForReexplaining" />
+		</effects>
 	</template>
 </behaviourtemplates>

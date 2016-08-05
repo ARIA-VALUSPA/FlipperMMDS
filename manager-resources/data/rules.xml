@@ -36,8 +36,7 @@
 
 	<rule id="R7">
 		<words>
-			<word value="I"/>
-			<word value="don't"/>
+			<word value="not"/>
 			<word value="like"/>
 		</words>
 		<states>
