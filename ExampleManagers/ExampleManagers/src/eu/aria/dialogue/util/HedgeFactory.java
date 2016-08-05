@@ -21,7 +21,7 @@ public class HedgeFactory {
     }
 
     // public ArrayList<String> hedgesOne, hedgesTwo, topicChangeHedgesOne, topicChangeHedgesTwo, topicContHedgesOne, topicContHedgesTwo;
-    private ContinuousList<String> hedges, topicChange, topicCont;
+    private ContinuousList<String> hedges, topicChange, topicCont, repeat;
 
     private HedgeFactory() {
         hedges = new ContinuousList<>(Arrays.asList("I see. ", "Interesting. "));
@@ -32,13 +32,18 @@ public class HedgeFactory {
                         "Let's change the topic. "));
 
         topicCont = new ContinuousList<>(Arrays.asList("So then, ", "I see, ", "Well then, ", "And "));
+
+
+        topicCont = new ContinuousList<>(Arrays.asList("Sure, ", "Okay, ", "Fine, ", "Sure, no problem, "));
     }
 
 
     public String hedgeBuilder(List prevIntentions, ArrayList<String> prevNouns, String previousAgentSent) {
         String hedge = "";
         if (prevIntentions.size() > 1) {
-            if (prevIntentions.getString(prevIntentions.size() - 1).equals("probingQuestion")) {
+            if(prevIntentions.getString(prevIntentions.size() - 1).equals("repeatPrevious")){
+                hedge = repeat.getValue();
+            } else if (prevIntentions.getString(prevIntentions.size() - 1).equals("probingQuestion")) {
                 for (int i = 0; i < prevIntentions.size() - 1; i++) {
                     if (prevIntentions.getString(i).equals("probingQuestions")) {
                         hedge += insertHedge();
@@ -46,7 +51,7 @@ public class HedgeFactory {
                 }
                 hedge += insertTopicChangeHedge();
             }
-            if (prevNouns.size() > 0) {
+            else if (prevNouns.size() > 0) {
                 for (String noun : prevNouns) {
                     Pattern pat = Pattern.compile(noun);
                     Matcher matches = pat.matcher(previousAgentSent);
@@ -57,7 +62,7 @@ public class HedgeFactory {
                     }
                 }
             }
-            if (hedge.equals("")) {
+            else if (hedge.equals("")) {
                 Random randomGenerator = new Random();
                 int index = randomGenerator.nextInt(2);
                 if (index == 1) {
@@ -76,6 +81,9 @@ public class HedgeFactory {
         return topicChange.getValue();
     }
 
+    public String insertRepeatHedge() {
+        return repeat.getValue();
+    }
 
     public String insertHedge() {
         return hedges.getValue();
