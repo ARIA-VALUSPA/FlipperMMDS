@@ -179,7 +179,7 @@ import java.util.logging.Logger;
             }
         }
         if (!keywordFound) {
-            is.set(intentionPath, unknownState);
+//            is.set(intentionPath, unknownState);
         }
     }
 }

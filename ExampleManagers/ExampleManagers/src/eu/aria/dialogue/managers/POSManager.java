@@ -104,7 +104,7 @@ import java.util.*;
                 ArrayList<String> wordset = new ArrayList<>(Arrays.asList(userSay.split(" ")));
                 ArrayList<String> taggedText = stanfordTagger.tagFile(wordset);
                 List prevAgentIntentions = getIS().getList("$agentstates.prevIntentions");
-                ArrayList<String> nameOptions = new ArrayList<>();
+                StringBuilder nameOptions = new StringBuilder();
                 for (int i = 0; i < taggedText.size(); i++) {
                     String word = taggedText.get(i);
                     int index = word.lastIndexOf("_");
@@ -138,8 +138,12 @@ import java.util.*;
                         }
                     }
                     if (pos.startsWith("NN")) {
-                        if (prevAgentIntentions.getString(prevAgentIntentions.size() - 1).equals("askAboutName") && pos.startsWith("NNP")) {
-                            nameOptions.add(word);
+                        for(int jj = 0; jj < prevAgentIntentions.size(); jj++){
+                            System.out.println(prevAgentIntentions.getString(jj));
+                        }
+
+                        if (prevAgentIntentions.size() > 1 && prevAgentIntentions.getString(prevAgentIntentions.size() - 2).equals("askAboutName") && pos.startsWith("NNP")) {
+                            nameOptions.append(word + " ");
                         }
                         nounBuilder.add(word);
                     }
@@ -327,9 +331,13 @@ import java.util.*;
                     }
                 }
                 kb.storeRelatedNouns(currNouns);
-                if (nameOptions.size() > 0) {
+                if (nameOptions != null) {
+                    System.out.println("name is set");
                     kb.removeNoun(nameOptions.toString());
+
+
                     getIS().set("$userstates.name", nameOptions.toString());
+                    getIS().set("$userstates.intention", "learnedName");
                 }
             }
         }
