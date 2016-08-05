@@ -275,9 +275,14 @@ public class BehaviourToGui implements ManageableBehaviourClass {
         //        "Agent":{ "id":2, "timestamp":1469625417747, "text":"Hi, are you still there?" }
 
         ArrayList<FilePointer> values = new ArrayList<>();
-        for (String val : argValues) {
-            FilePointer fp = FileStorage.getInstance().getFileFromValue(val);
-            values.add(fp);
+        if(argValues.get(0).equals("@repeatMostRecent")){
+            prevAgentIntentions = manager.getIS().getList("$agentstates.prevIntentions");
+            FileStorage.getInstance().getFile(prevAgentIntentions.getString(prevAgentIntentions.size()-1));
+        } else {
+            for (String val : argValues) {
+                FilePointer fp = FileStorage.getInstance().getFileFromValue(val);
+                values.add(fp);
+            }
         }
 
         if (this.gui == null) {
