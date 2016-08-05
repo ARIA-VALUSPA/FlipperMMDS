@@ -25,7 +25,7 @@ import java.util.*;
     private StanfordTagger stanfordTagger;
     private StanfordParser stanfordParser;
 
-    KnowledgeBase kb = KnowledgeBase.getKB();
+    private KnowledgeBase kb = KnowledgeBase.getInstance();
 
     public ArrayList<String> currNouns;
 
@@ -94,7 +94,7 @@ import java.util.*;
             if (posUtterance.getList("preference") == null) {
                 posUtterance.set("preference", new DefaultList());
             }
-            if (utterance.getString("name") == null){
+            if (utterance.getString("name") == null) {
                 utterance.set("name", "");
             }
 
@@ -138,7 +138,7 @@ import java.util.*;
                         }
                     }
                     if (pos.startsWith("NN")) {
-                        if(prevAgentIntentions.getString(prevAgentIntentions.size()-1).equals("askAboutName") && pos.startsWith("NNP")){
+                        if (prevAgentIntentions.getString(prevAgentIntentions.size() - 1).equals("askAboutName") && pos.startsWith("NNP")) {
                             nameOptions.add(word);
                         }
                         nounBuilder.add(word);
@@ -198,7 +198,7 @@ import java.util.*;
 
                 ArrayList<Integer> nsubjhave = new ArrayList<>();
                 HashMap<Integer, ArrayList<String>> adjHash = new HashMap<>();
-                for(int k = 0; k < 2; k++) {
+                for (int k = 0; k < 2; k++) {
                     for (int i = 0; i < depParse.size(); i++) {
                         TypedDependency dep = depParse.get(i);
 //                        System.out.println(depParse.get(i));
@@ -233,7 +233,7 @@ import java.util.*;
                             kb.addNounQuantity(noun, num);
                         }
                         //direct modifier - the hairy ape
-                        else if (dep.reln().getShortName().equals("amod")  && k == 0) {
+                        else if (dep.reln().getShortName().equals("amod") && k == 0) {
                             String noun = dep.gov().word();
                             String adj = dep.dep().word();
                             kb.storeAdj(noun, adj);
@@ -327,12 +327,11 @@ import java.util.*;
                     }
                 }
                 kb.storeRelatedNouns(currNouns);
-                if(nameOptions.size()>0){
+                if (nameOptions.size() > 0) {
                     kb.removeNoun(nameOptions.toString());
                     getIS().set("$userstates.name", nameOptions.toString());
                 }
-
             }
         }
     }
- }
+}

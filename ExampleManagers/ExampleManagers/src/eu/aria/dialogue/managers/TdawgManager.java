@@ -2,10 +2,6 @@ package eu.aria.dialogue.managers;/*
 by Kevin Bowden
  */
 
-import edu.stanford.nlp.trees.Tree;
-import edu.stanford.nlp.trees.TypedDependency;
-import eu.aria.dialogue.util.StanfordParser;
-import eu.aria.dialogue.util.StanfordTagger;
 import eu.ariaagent.managers.DefaultManager;
 import hmi.flipper.defaultInformationstate.DefaultList;
 import hmi.flipper.defaultInformationstate.DefaultRecord;
@@ -14,7 +10,6 @@ import hmi.flipper.informationstate.Record;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Locale;
 import java.util.Map;
 
@@ -52,11 +47,7 @@ import java.util.Map;
 //    }
 
 
-
-
-
 //    Record countryUtterance = getIS().getRecord(countryPath);
-
 
 
     //public static String[] nations = {"germany","america","england","netherlands","australia"}; ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -69,9 +60,9 @@ import java.util.Map;
     }
 
     @Override
-    public void setParams(Map<String, String> params, Map<String, String[]> paramList){
+    public void setParams(Map<String, String> params, Map<String, String[]> paramList) {
         String path = params.get("user_utterance_is_path");
-        if(path != null){
+        if (path != null) {
             userUtterancePath = path;
         }
 
@@ -83,7 +74,7 @@ import java.util.Map;
 
         //returns array of all locales
         Locale locales[] = SimpleDateFormat.getAvailableLocales();
-        ArrayList <String> nations = new ArrayList<>();///////////////////////////////////////////////////////////////////////////
+        ArrayList<String> nations = new ArrayList<>();///////////////////////////////////////////////////////////////////////////
         for (int i = 0; i < locales.length; i++) {
             nations.add(locales[i].getDisplayCountry());
         }
@@ -91,10 +82,6 @@ import java.util.Map;
         //System.out.println("Nations..................................."+nations);
 
         Record utterance = getIS().getRecord(userUtterancePath);
-
-
-
-
 
 
         if (utterance == null) {
@@ -122,28 +109,28 @@ import java.util.Map;
             String basicAdj = null;
             ArrayList<String> nounBuilder = new ArrayList<>();
 
-                if (posUtterance.getList("nouns") == null) {
-                    posUtterance.set("nouns", new DefaultList());
-                }
+            if (posUtterance.getList("nouns") == null) {
+                posUtterance.set("nouns", new DefaultList());
+            }
 
-                if (tdawgUtterance.getString("exclaim") == null) {
-                    tdawgUtterance.set("exclaim", "false");
-                }
+            if (tdawgUtterance.getString("exclaim") == null) {
+                tdawgUtterance.set("exclaim", "false");
+            }
 
-               if (posUtterance.getString("exclaim") == null) {
-                   posUtterance.set("exclaim", "false");
-                }
+            if (posUtterance.getString("exclaim") == null) {
+                posUtterance.set("exclaim", "false");
+            }
 
             String userSay = utterance.getString("text");
 
             if (userSay != null && !utterance.getString("consumed").equals("true")) {
 
-               // if(userSay.contains("germany")){}
+                // if(userSay.contains("germany")){}
 //                System.out.println("agent says string contains the following text............................................: "+agentsays);
 
                 //if(nations contains noun){trigger response;}
 
-                if(userSay.endsWith("!")){
+                if (userSay.endsWith("!")) {
                     tdawgUtterance.set("exclaim", "true");
 
                 } else {
@@ -170,10 +157,4 @@ import java.util.Map;
             }
         }
     }
-
-
-
-
-
-
- }
+}

@@ -3,18 +3,13 @@ by Kevin Bowden
  */
 package eu.aria.dialogue.managers;
 
-import eu.aria.dialogue.util.*;
 import eu.ariaagent.managers.DefaultManager;
 import hmi.flipper.defaultInformationstate.DefaultList;
 import hmi.flipper.defaultInformationstate.DefaultRecord;
 import hmi.flipper.informationstate.List;
 import hmi.flipper.informationstate.Record;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -32,9 +27,9 @@ import java.util.logging.Logger;
     }
 
     @Override
-    public void setParams(Map<String, String> params, Map<String, String[]> paramList){
+    public void setParams(Map<String, String> params, Map<String, String[]> paramList) {
         String path = params.get("user_utterance_is_path");
-        if(path != null){
+        if (path != null) {
             userUtterancePath = path;
         }
 
@@ -78,4 +73,4 @@ import java.util.logging.Logger;
             }
         }
     }
- }
+}

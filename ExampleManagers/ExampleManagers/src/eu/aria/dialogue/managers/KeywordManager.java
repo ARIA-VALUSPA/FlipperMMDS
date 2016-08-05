@@ -3,16 +3,15 @@ by Kubra
  */
 package eu.aria.dialogue.managers;
 
-import eu.aria.dialogue.util.*;
 import eu.ariaagent.managers.DefaultManager;
 import hmi.flipper.defaultInformationstate.DefaultList;
 import hmi.flipper.defaultInformationstate.DefaultRecord;
 import hmi.flipper.informationstate.List;
 import hmi.flipper.informationstate.Record;
 
-
+import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Map;
-import java.util.*;
 
 public class KeywordManager extends DefaultManager {
     private String userUtterancePath = "$userstates.utterance";
@@ -25,8 +24,6 @@ public class KeywordManager extends DefaultManager {
     public KeywordManager(DefaultRecord is) {
         super(is);
         interval = 75; //fast default interval
-
-
     }
 
     @Override
@@ -75,18 +72,17 @@ public class KeywordManager extends DefaultManager {
                 getIS().set(userKeywordPath, new DefaultList());
             }
             String userSay = utterance.getString("text");
-                if (userSay != null) {
-                    List keyword = getIS().getList(userKeywordPath);
-                    String[] splited = userSay.split("\\s+");
-                    for (int i = 0; i < splited.length; i++) {
-                        if (countries.contains(splited[i])){
-                            keyword.addItemEnd(splited[i]);
-                            getIS().set(userKeywordPath, keyword);
-                            getIS().set(userIntentionPath, "countryFound");
-                        }
+            if (userSay != null) {
+                List keyword = getIS().getList(userKeywordPath);
+                String[] splited = userSay.split("\\s+");
+                for (int i = 0; i < splited.length; i++) {
+                    if (countries.contains(splited[i])) {
+                        keyword.addItemEnd(splited[i]);
+                        getIS().set(userKeywordPath, keyword);
+                        getIS().set(userIntentionPath, "countryFound");
                     }
                 }
-
+            }
         }
     }
 }
