@@ -328,6 +328,7 @@ import java.util.*;
                 }
                 kb.storeRelatedNouns(currNouns);
                 if(nameOptions.size()>0){
+                    kb.removeNoun(nameOptions.toString());
                     getIS().set("$userstates.name", nameOptions.toString());
                 }
 

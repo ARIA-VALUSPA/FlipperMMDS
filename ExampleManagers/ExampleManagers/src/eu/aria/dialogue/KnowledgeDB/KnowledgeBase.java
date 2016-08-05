@@ -110,6 +110,12 @@ private HashMap nounHash = new HashMap();
         }
     }
 
+    public void removeNoun(String noun){
+        if(nounHash.containsKey(noun)) {
+            nounHash.remove(noun);
+        }
+    }
+
     public int numRelatedNouns(String noun) {
         KnowledgeItem ki = verifyEntry(noun);
         return ki.numRelated();

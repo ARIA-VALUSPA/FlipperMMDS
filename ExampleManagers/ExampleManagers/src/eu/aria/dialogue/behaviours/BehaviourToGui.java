@@ -141,6 +141,13 @@ public class BehaviourToGui implements ManageableBehaviourClass {
                         // value = matn.replaceAll(replacementNoun);
                         value.replaceAll(patn, replacementNoun);
                     }
+                } else if (r.startsWith("name")){
+                    String replacementNoun = manager.getIS().getString("$userstates.name");
+                    if(replacementNoun == null || replacementNoun.equals("")){
+                        return false;
+                    }
+                    Pattern patn = Pattern.compile("@" + r);
+                    value.replaceAll(patn, replacementNoun);
                 }
             }
             iters++;
