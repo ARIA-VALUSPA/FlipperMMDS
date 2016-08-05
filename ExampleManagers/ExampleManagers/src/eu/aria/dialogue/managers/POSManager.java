@@ -138,11 +138,8 @@ import java.util.*;
                         }
                     }
                     if (pos.startsWith("NN")) {
-                        for(int jj = 0; jj < prevAgentIntentions.size(); jj++){
-                            System.out.println(prevAgentIntentions.getString(jj));
-                        }
 
-                        if (prevAgentIntentions.size() > 1 && prevAgentIntentions.getString(prevAgentIntentions.size() - 2).equals("askAboutName") && pos.startsWith("NNP")) {
+                        if (prevAgentIntentions.size() >= 1 && prevAgentIntentions.getString(prevAgentIntentions.size() - 2).equals("askAboutName") && pos.startsWith("NNP")) {
                             nameOptions.append(word + " ");
                         }
                         nounBuilder.add(word);
@@ -332,10 +329,7 @@ import java.util.*;
                 }
                 kb.storeRelatedNouns(currNouns);
                 if (nameOptions != null) {
-                    System.out.println("name is set");
                     kb.removeNoun(nameOptions.toString());
-
-
                     getIS().set("$userstates.name", nameOptions.toString());
                     getIS().set("$userstates.intention", "learnedName");
                 }

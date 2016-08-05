@@ -107,6 +107,25 @@
 		</states>
 	</rule>
 
+	<rule id="R1">
+		<words>
+			<word value="hi"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value="greeting"/>
+			<state name="$dialoguestates.topic" value="greeting"/>
+		</states>
+	</rule>
+
+
+	<rule id="R1.0">
+		<words>
+			<word value="test"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value="testing"/>
+		</states>
+	</rule>
 
 	<rule id="R1">
 		<words>
@@ -114,20 +133,20 @@
 			<word value="day"/>
 		</words>
 		<states>
-			<state name="$userstates.intention" value="goodday"/>
+			<state name="$userstates.intention" value="goodDay"/>
 			<state name="$dialoguestates.topic" value="greeting"/>
 		</states>
 	</rule>
 
-	<rule id="R31_1">
-		<words>
-			<word value="information"/>
-			<word value="good"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="expressGoodInformation"/>
-		</states>
-	</rule>
+	<!--<rule id="R31_1">-->
+		<!--<words>-->
+			<!--<word value="information"/>-->
+			<!--<word value="good"/>-->
+		<!--</words>-->
+		<!--<states>-->
+			<!--<state name="$userstates.intention" value="expressGoodInformation"/>-->
+		<!--</states>-->
+	<!--</rule>-->
 
 
 	<rule id="R32">
@@ -350,7 +369,18 @@
 		</states>
 	</rule>
 
-	<rule id="R_General_1">
+	<rule id="R_General_2">
+		<words>
+			<word value="could"/>
+			<word value="you"/>
+			<word value="repeat"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value="repeatPrevious"/>
+		</states>
+	</rule>
+
+	<rule id="R_General_3">
 		<words>
 			<word value="say"/>
 			<word value="again"/>
