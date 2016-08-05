@@ -33,18 +33,25 @@ public class FileStorage {
             int end = matcher.end() - 1;
             if (start < end) {
                 String filePath = value.substring(start, end);
-                return getFile(filePath);
+                return getFile(filePath, true);
             }
-
         }
-        return FilePointer.CreateFromSpeech(value);
+        return getFile(value, false);
     }
 
     public FilePointer getFile(String path) {
-        FilePointer filePointer = map.get(path);
+        return getFile(path, true);
+    }
+
+    private FilePointer getFile(String value, boolean path) {
+        FilePointer filePointer = map.get(value);
         if (filePointer == null) {
-            filePointer = new FilePointer(path);
-            map.put(path, filePointer);
+            if (path) {
+                filePointer = new FilePointer(value);
+            } else {
+                filePointer = FilePointer.CreateFromSpeech(value);
+            }
+            map.put(filePointer.getFilePath(), filePointer);
         }
         return filePointer;
     }

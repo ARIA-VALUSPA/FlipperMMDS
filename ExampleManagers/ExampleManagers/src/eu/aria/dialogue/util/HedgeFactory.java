@@ -27,9 +27,9 @@ public class HedgeFactory {
         hedges = new ContinuousList<>(Arrays.asList("I see. ", "Interesting. "));
 
         topicChange = new ContinuousList<>(
-                Arrays.asList("Okay, well, maybe let's move on to something else.",
-                        "I think I would be interested in learning about something new.",
-                        "Let's change the topic."));
+                Arrays.asList("Okay, well, maybe let's move on to something else. ",
+                        "I think I would be interested in learning about something new. ",
+                        "Let's change the topic. "));
 
         topicCont = new ContinuousList<>(Arrays.asList("So then, ", "I see, ", "Well then, ", "And "));
     }
