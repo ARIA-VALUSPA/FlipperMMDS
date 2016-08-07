@@ -51,20 +51,28 @@ import java.util.Map;
             getIS().set(userStoryPath, storyUtterance);
         }
 
+        if (storyUtterance.getList("sentences") == null) {
+            storyUtterance.set("sentences", new DefaultList());
+        }
+        if (storyUtterance.getList("finishedStating") == null) {
+            storyUtterance.set("finishedStating", new DefaultList());
+        }
+        if (storyUtterance.getInteger("numSentences") == null) {
+            storyUtterance.set("numSentences", 0);
+        }
+        if (utterance.getString("consumed") == null) {
+            utterance.set("consumed", "true");
+        }
         if (!utterance.getString("consumed").equals("true")) {
-
-            if (storyUtterance.getList("sentences") == null) {
-                storyUtterance.set("sentences", new DefaultList());
-            }
-            if (storyUtterance.getList("finishedStating") == null) {
-                storyUtterance.set("finishedStating", new DefaultList());
-            }
 
             double currTime = (double) System.currentTimeMillis();
             String userSay = utterance.getString("text");
+
             if (userSay != null) {
                 List sentences = storyUtterance.getList("sentences");
                 List finishedStating = storyUtterance.getList("finishedStating");
+                storyUtterance.set("numSentences", sentences.size());
+
                 sentences.addItemEnd(userSay);
                 finishedStating.addItemEnd(currTime);
                 storyUtterance.set("sentences", sentences);

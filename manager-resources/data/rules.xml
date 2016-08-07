@@ -15,6 +15,24 @@
 
 
 
+	<!--<rule id="R8d">-->
+		<!--<words>-->
+			<!--<word value="not"/>-->
+		<!--</words>-->
+		<!--<states>-->
+			<!--<state name="$dialoguestates.topic" value="negation"/>-->
+		<!--</states>-->
+	<!--</rule>-->
+
+	<!--<rule id="R8e">-->
+		<!--<words>-->
+			<!--<word value="no"/>-->
+		<!--</words>-->
+		<!--<states>-->
+			<!--<state name="$dialoguestates.topic" value="negation"/>-->
+		<!--</states>-->
+	<!--</rule>-->
+
 	<rule id="R8b">
 		<words>
 			<word value="know"/>
@@ -26,17 +44,25 @@
 
 	<rule id="R8c">
 		<words>
-			<word value="not"/>
+			<word value="idea"/>
 		</words>
 		<states>
-			<state name="$dialoguestates.topic" value="negation"/>
+			<state name="$userstates.intention" value="know"/>
 		</states>
 	</rule>
+
+	<!--<rule id="R8e">-->
+		<!--<words>-->
+			<!--<word value="don't"/>-->
+		<!--</words>-->
+		<!--<states>-->
+			<!--<state name="$dialoguestates.topic" value="negation"/>-->
+		<!--</states>-->
+	<!--</rule>-->
 
 
 	<rule id="R7">
 		<words>
-			<word value="not"/>
 			<word value="like"/>
 		</words>
 		<states>
@@ -45,57 +71,26 @@
 		</states>
 	</rule>
 
+
 	<rule id="R20">
 		<words>
-			<word value="I"/>
-			<word value="don't"/>
-			<word value="like"/>
+			<word value="yes"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="confirmation"/>
-
 		</states>
 	</rule>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<rule id="R5">
-		<words>
-			<word value="how"/>
-			<word value="are"/>
-			<word value="you"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askHowAreYou"/>
-			<!--<state name="$dialoguestates.topic" value="greeting"/>-->
-		</states>
-	</rule>
-
-
-	<rule id="A1">
-		<words>
-			<word value="how"/>
-			<word value="old"/>
-			<word value="are"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="howold"/>
-		</states>
-	</rule>
+	<!--<rule id="A1">-->
+		<!--<words>-->
+			<!--<word value="how"/>-->
+			<!--<word value="old"/>-->
+			<!--<word value="are"/>-->
+		<!--</words>-->
+		<!--<states>-->
+			<!--<state name="$userstates.intention" value="howold"/>-->
+		<!--</states>-->
+	<!--</rule>-->
 
 	<rule id="R1">
 		<words>
@@ -107,7 +102,7 @@
 		</states>
 	</rule>
 
-	<rule id="R1">
+	<rule id="R1b">
 		<words>
 			<word value="hi"/>
 		</words>
@@ -129,12 +124,11 @@
 
 	<rule id="R1">
 		<words>
-			<word value="good"/>
 			<word value="day"/>
 		</words>
 		<states>
-			<state name="$userstates.intention" value="goodDay"/>
-			<state name="$dialoguestates.topic" value="greeting"/>
+			<state name="$userstates.intention" value="day"/>
+			<!--<state name="$dialoguestates.topic" value="greeting"/>-->
 		</states>
 	</rule>
 
@@ -159,23 +153,13 @@
 	</rule>
 
 
-	<rule id="R30">
-		<words>
-			<word value="information"/>
-			<word value="chapter"/>
-			<word value="3"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutChapterThree"/>
-		</states>
-	</rule>
 
 	<rule id="R2">
 		<words>
 			<word value="bye"/>
 		</words>
 		<states>
-			<state name="$userstates.intention" value="ending"/>
+			<state name="$userstates.intention" value="userEnding"/>
 		</states>
 	</rule>
 
@@ -211,74 +195,28 @@
 
     <rule id="R4">
         <words>
-            <word value="old"/>
-            <word value="are"/>
+            <word value="how"/>
+			<word value="old"/>
+			<word value="are"/>
             <word value="you"/>
         </words>
         <states>
             <state name="$userstates.intention" value="askAgentAge"/>
-            <!--<state name="$dialoguestates.topic" value="greeting"/>-->
         </states>
     </rule>
 
 
-
-	<rule id="R6_1">
+	<rule id="R5">
 		<words>
-			<word value="opinion"/>
-			<word value="caterpillar"/>
+			<word value="how"/>
+			<word value="are"/>
+			<word value="you"/>
 		</words>
 		<states>
-			<state name="$userstates.intention" value="askOpinionCaterpillar"/>
+			<state name="$userstates.intention" value="askHowAreYou"/>
+			<!--<state name="$dialoguestates.topic" value="greeting"/>-->
 		</states>
 	</rule>
-
-	<rule id="R6">
-		<words>
-			<word value="caterpillar"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutCaterpillar"/>
-		</states>
-	</rule>
-
-	<rule id="R7_1">
-		<words>
-			<word value="opinion"/>
-			<word value="cheshire"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askOpinionCheshire"/>
-		</states>
-	</rule>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -308,46 +246,7 @@
         </states>
     </rule>
 
-	<rule id="R9_1">
-		<words>
-			<word value="opinion"/>
-			<word value="dodo"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askOpinionDodo"/>
-		</states>
-	</rule>
 
-
-	<rule id="R9">
-		<words>
-			<word value="dodo"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutDodo"/>
-		</states>
-	</rule>
-
-
-	<rule id="R10_1">
-		<words>
-			<word value="opinion"/>
-			<word value="dormouse"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askOpinionDormouse"/>
-		</states>
-	</rule>
-
-
-	<rule id="R10">
-		<words>
-			<word value="dormouse"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutDormouse"/>
-		</states>
-	</rule>
 
 	<rule id="R_General_1">
 		<words>
@@ -399,190 +298,15 @@
 		</states>
 	</rule>
 
-
-	<rule id="R11_1">
+	<rule id="R_General_1">
 		<words>
-			<word value="opinion"/>
-			<word value="duchess"/>
+			<word value="repeat"/>
 		</words>
 		<states>
-			<state name="$userstates.intention" value="askOpinionDuchess"/>
+			<state name="$userstates.intention" value="repeatPrevious"/>
 		</states>
 	</rule>
 
-	<rule id="R11">
-		<words>
-			<word value="duchess"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutDuchess"/>
-		</states>
-	</rule>
-
-	<rule id="R12_1">
-		<words>
-			<word value="opinion"/>
-			<word value="gryphon"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askOpinionGryphon"/>
-		</states>
-	</rule>
-
-	<rule id="R12">
-		<words>
-			<word value="gryphon"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutGryphon"/>
-		</states>
-	</rule>
-
-	<rule id="R13">
-		<words>
-			<word value="jabberwocky"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutJabberwocky"/>
-		</states>
-	</rule>
-
-	<rule id="R14">
-		<words>
-			<word value="king"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutKing"/>
-		</states>
-	</rule>
-
-	<rule id="R15_1">
-		<words>
-			<word value="march"/>
-			<word value="hare"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutMarchhare"/>
-		</states>
-	</rule>
-
-	<rule id="R15">
-		<words>
-			<word value="marchhare"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutMarchhare"/>
-		</states>
-	</rule>
-
-	<rule id="R16_1">
-		<words>
-			<word value="opinion"/>
-			<word value="mockturtle"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askOpinionMockturtle"/>
-		</states>
-	</rule>
-
-	<rule id="R16">
-		<words>
-			<word value="mockturtle"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutMockturtle"/>
-		</states>
-	</rule>
-
-	<rule id="R16_2">
-		<words>
-			<word value="opinion"/>
-			<word value="mock"/>
-			<word value="turtle"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askOpinionMockturtle"/>
-		</states>
-	</rule>
-
-	<rule id="R16_3">
-		<words>
-			<word value="mock"/>
-			<word value="turtle"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutMockturtle"/>
-		</states>
-	</rule>
-
-	<rule id="R17">
-		<words>
-			<word value="mouse"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutMouse"/>
-		</states>
-	</rule>
-
-	<rule id="R18_1">
-		<words>
-			<word value="opinion"/>
-			<word value="queen"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askOpinionQueen"/>
-		</states>
-	</rule>
-
-	<rule id="R18">
-		<words>
-			<word value="queen"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutQueen"/>
-		</states>
-	</rule>
-
-
-	<rule id="R19_3">
-		<words>
-			<word value="opinion"/>
-			<word value="white"/>
-			<word value="rabbit"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askOpinionWhiterabbit"/>
-		</states>
-	</rule>
-
-	<rule id="R19_2">
-		<words>
-			<word value="white"/>
-			<word value="rabbit"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutWhiterabbit"/>
-		</states>
-	</rule>
-
-	<rule id="R19_1">
-		<words>
-			<word value="opinion"/>
-			<word value="whiterabbit"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askOpinionWhiterabbit"/>
-		</states>
-	</rule>
-
-	<rule id="R19">
-		<words>
-			<word value="whiterabbit"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutWhiterabbit"/>
-		</states>
-	</rule>
 
 	<rule id="R20">
 		<words>
@@ -633,19 +357,19 @@
 
 	<rule id="R26">
 		<words>
-			<word value="yes"/>
+			<word value="agree"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="expressAgreement"/>
 		</states>
 	</rule>
 
-	<rule id="R27">
+	<rule id="R26">
 		<words>
-			<word value="no"/>
+			<word value="haha"/>
 		</words>
 		<states>
-			<state name="$userstates.intention" value="expressDisagreement"/>
+			<state name="$userstates.intention" value="laughter"/>
 		</states>
 	</rule>
 
@@ -673,7 +397,6 @@
 	<rule id="R29">
 		<words>
 			<word value="weather"/>
-			<word value="good"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="expressGoodWeather"/>
@@ -682,8 +405,7 @@
 
 	<rule id="R22_1">
 		<words>
-			<word value="good"/>
-			<word value="no"/>
+			<word value="bad"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="expressNegative"/>
@@ -695,47 +417,29 @@
 			<word value="good"/>
 		</words>
 		<states>
-			<state name="$userstates.intention" value="expressPositive"/>
+			<state name="$dialoguestates.topic" value="expressPositive"/>
 		</states>
 	</rule>
 
 
-	<rule id="R3">
-		<words>
-			<word value="this"/>
-			<word value="is"/>
-			<word value="turkey"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value=""/>
-		</states>
-	</rule>
+	<!--<rule id="R3">-->
+		<!--<words>-->
+			<!--<word value="this"/>-->
+			<!--<word value="is"/>-->
+			<!--<word value="turkey"/>-->
+		<!--</words>-->
+		<!--<states>-->
+			<!--<state name="$userstates.intention" value=""/>-->
+		<!--</states>-->
+	<!--</rule>-->
 
-	<rule id="R81">
-		<words>
-			<word value="this"/>
 
-		</words>
-		<states>
-			<state name="$userstates.intention" value="sayOpinionTopic"/>
-		</states>
-	</rule>
 
-	<rule id="R82">
-		<words>
-			<word value="this"/>
-
-		</words>
-		<states>
-			<state name="$userstates.intention" value="confirmation"/>
-		</states>
-	</rule>
 
 
 	<rule id="R83">
 		<words>
-			<word value="this"/>
-
+			<word value="affraid"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="fearResponses"/>
@@ -745,8 +449,7 @@
 
 	<rule id="R84">
 		<words>
-			<word value="this"/>
-
+			<word value="ugh"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="disgustResponses"/>
@@ -756,8 +459,7 @@
 
 	<rule id="R85">
 		<words>
-			<word value="this"/>
-
+			<word value="wow"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="surpriseResponses"/>

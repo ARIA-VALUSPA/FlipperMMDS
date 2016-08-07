@@ -5,15 +5,15 @@
  */
 package eu.aria.dialogue.managers;
 
+import eu.aria.dialogue.util.*;
 import eu.ariaagent.managers.DefaultManager;
-import eu.aria.dialogue.util.RulesReader;
-import eu.aria.dialogue.util.SentencesToKeywords;
-import eu.aria.dialogue.util.Rules;
-import eu.aria.dialogue.util.State;
+import hmi.flipper.defaultInformationstate.DefaultList;
 import hmi.flipper.defaultInformationstate.DefaultRecord;
+import hmi.flipper.informationstate.List;
 import hmi.flipper.informationstate.Record;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +32,7 @@ import java.util.Map;
     private String unknownState = "unknown";
     private String longPauseState = "longPause";
 
-    private long timeout = 10000;
+    private long timeout = 100;
 
     public IntentManager(DefaultRecord is) {
         super(is);
@@ -104,21 +104,39 @@ import java.util.Map;
             utterance = new DefaultRecord();
             getIS().set(userUtterancePath, utterance);
         }
-        if (utterance.getString("consumed") == null) {
-            utterance.set("consumed", "true");
+
+        Record agentUtterance = getIS().getRecord("$agentstates");
+        if (agentUtterance == null) {
+            agentUtterance = new DefaultRecord();
+            getIS().set("$agentstates", agentUtterance);
         }
+
+
+
+        List prevAgentIntentions = agentUtterance.getList("prevIntentions");
+        if (prevAgentIntentions == null) {
+            prevAgentIntentions = new DefaultList();
+        }
+        agentUtterance.set("prevIntentions", prevAgentIntentions);
+
         if (utterance.getString("timestamp") == null) {
             utterance.set("timestamp", "t:" + System.currentTimeMillis());
         }
         if (utterance.getString("text") == null) {
             utterance.set("text", "");
         }
+
+        if (utterance.getString("consumed") == null) {
+            utterance.set("consumed", "true");
+        }
+
         if (utterance.getString("consumed").equals("true")) {
             try {
                 Long time = Long.parseLong(utterance.getString("timestamp").substring(2));
                 if (System.currentTimeMillis() - (time) > timeout && System.currentTimeMillis() - lastLongPause > timeout) {
                     is.set(intentionPath, longPauseState);
                     lastLongPause = System.currentTimeMillis();
+                    timeout=10000;
                 }
             } catch (NumberFormatException e) {
             }
@@ -140,6 +158,15 @@ import java.util.Map;
         userSay = userSay.replaceAll("\\.", " .");
         userSay = userSay.replaceAll("\\,", " ,");
         ArrayList<String> userSayAL = sk.removeStopWords(userSay);
+        System.out.println(userSay);
+        System.out.println(userSayAL);
+
+        ArrayList<String> negationWords = new ArrayList<>(Arrays.asList("no", "not", "don't"));
+        for(String nw : negationWords){
+            if(userSayAL.contains(nw)){
+                is.set("$userstates.dialoguestates", "negation");
+            }
+        }
 
         if (userSayAL.contains("?")) {
             is.set("$userstates.dialoguestates", "askQuestion");
@@ -178,5 +205,11 @@ import java.util.Map;
                 }
             }
         }
+        System.out.println("++++++++++++++++++++This is the printout for thois iteration:");
+        System.out.println(getIS().getString("$userstates.intention"));
+        System.out.println(getIS().getString("$userstates.dialoguestates"));
+        System.out.println(getIS().getString("$dialoguestates.topic"));
+        System.out.println("--------------------This is the e nd of printout for thois iteration:");
+
     }
 }

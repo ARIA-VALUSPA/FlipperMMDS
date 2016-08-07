@@ -305,8 +305,19 @@ public class BehaviourToGui implements ManageableBehaviourClass {
   //      Wordnet wn = new Wordnet();
 //        wn.findSynonym();
 
+        System.out.println("++++++++++++++++++++This is the printout for thois iteration:");
+        System.out.println(manager.getIS().getString("$userstates.intention"));
+        System.out.println(manager.getIS().getString("$userstates.dialoguestates"));
+        System.out.println(manager.getIS().getString("$dialoguestates.topic"));
+        System.out.println("--------------------This is the e nd of printout for thois iteration:");
+
+
         manager.getIS().set("$userstates.intention", "");
         manager.getIS().set("$userstates.dialoguestates", "");
+        manager.getIS().set("$dialoguestates.topic", "");
+        manager.getIS().set("$userstates.utterance.tdawg.exclaim", "false");
+
+
 
         currTime = (double) System.currentTimeMillis();
         posUtterance = manager.getIS().getRecord(userposPath);
@@ -320,10 +331,6 @@ public class BehaviourToGui implements ManageableBehaviourClass {
             manager.getIS().set(userStoryPath, storyUtterance);
         }
 
-        prevAgentIntentions = manager.getIS().getList("$agentstates.prevIntentions");
-        if (prevAgentIntentions == null) {
-            prevAgentIntentions = new DefaultList();
-        }
 
         numArgValues = values.size();
         nouns = posUtterance.getList("nouns");

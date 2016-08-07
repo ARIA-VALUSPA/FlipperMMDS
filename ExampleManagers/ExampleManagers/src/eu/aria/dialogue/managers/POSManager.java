@@ -25,6 +25,8 @@ import java.util.*;
     private StanfordTagger stanfordTagger;
     private StanfordParser stanfordParser;
 
+    private ArrayList<String> exclude;
+
     private KnowledgeBase kb = KnowledgeBase.getInstance();
 
     public ArrayList<String> currNouns;
@@ -46,6 +48,8 @@ import java.util.*;
 
         stanfordTagger = new StanfordTagger(posModel);
         stanfordParser = new StanfordParser(parseModel);
+
+        exclude = new ArrayList<>(Arrays.asList("repeat"));
 
     }
 
@@ -69,34 +73,40 @@ import java.util.*;
             getIS().set(userposPath, posUtterance);
         }
 
+        if (posUtterance.getInteger("nounSize") == null) {
+            posUtterance.set("nounSize", 0);
+        }
+        if (posUtterance.getInteger("possSize") == null) {
+            posUtterance.set("possSize", 0);
+        }
+        if (posUtterance.getList("nouns") == null) {
+            posUtterance.set("nouns", new DefaultList());
+        }
+        if (posUtterance.getList("adjectives") == null) {
+            posUtterance.set("adjectives", new DefaultList());
+        }
+        if (posUtterance.getList("lastStated") == null) {
+            posUtterance.set("lastStated", new DefaultList());
+        }
+        if (posUtterance.getList("frequency") == null) {
+            posUtterance.set("frequency", new DefaultList());
+        }
+        if (posUtterance.getList("preference") == null) {
+            posUtterance.set("preference", new DefaultList());
+        }
+        if (utterance.getString("name") == null) {
+            utterance.set("name", "");
+        }
+        if (utterance.getString("consumed") == null) {
+            utterance.set("consumed", "true");
+        }
+
+
         if (!utterance.getString("consumed").equals("true")) {
             String basicAdj = null;
             ArrayList<String> nounBuilder = new ArrayList<>();
 
-            if (posUtterance.getInteger("nounSize") == null) {
-                posUtterance.set("nounSize", 0);
-            }
-            if (posUtterance.getInteger("possSize") == null) {
-                posUtterance.set("possSize", 0);
-            }
-            if (posUtterance.getList("nouns") == null) {
-                posUtterance.set("nouns", new DefaultList());
-            }
-            if (posUtterance.getList("adjectives") == null) {
-                posUtterance.set("adjectives", new DefaultList());
-            }
-            if (posUtterance.getList("lastStated") == null) {
-                posUtterance.set("lastStated", new DefaultList());
-            }
-            if (posUtterance.getList("frequency") == null) {
-                posUtterance.set("frequency", new DefaultList());
-            }
-            if (posUtterance.getList("preference") == null) {
-                posUtterance.set("preference", new DefaultList());
-            }
-            if (utterance.getString("name") == null) {
-                utterance.set("name", "");
-            }
+
 
             String userSay = utterance.getString("text");
             if (userSay != null && !userSay.equals("") && !utterance.getString("consumed").equals("true")) {
@@ -128,7 +138,7 @@ import java.util.*;
 //                        nounsList.getItem(0).setStringValue(nounsList.getItem(0).getString() + "::string");
 //                    }
 
-                    if (pos.startsWith("JJ") && i + 1 < taggedText.size()) {
+                    if (pos.startsWith("JJ") && i + 1 < taggedText.size()  && !exclude.contains(word)) {
                         String nextWord = taggedText.get(i + 1);
                         int adjDex = nextWord.lastIndexOf("_");
                         String nextPos = nextWord.substring(adjDex, nextWord.length());
@@ -137,15 +147,15 @@ import java.util.*;
                             basicAdj = word;
                         }
                     }
-                    if (pos.startsWith("NN")) {
+                    if (pos.startsWith("NN") && !exclude.contains(word)) {
 
-                        if (prevAgentIntentions.size() >= 1 && prevAgentIntentions.getString(prevAgentIntentions.size() - 2).equals("askAboutName") && pos.startsWith("NNP")) {
+                        if (prevAgentIntentions != null && prevAgentIntentions.size() >= 1 && prevAgentIntentions.getString(prevAgentIntentions.size() - 2).equals("askAboutName") && pos.startsWith("NNP")) {
                             nameOptions.append(word + " ");
                         }
                         nounBuilder.add(word);
                     }
                     double currTime = (double) System.currentTimeMillis();
-                    if ((!pos.startsWith("NN") || i == taggedText.size() - 1) && nounBuilder.size() > 0) {
+                    if ((!pos.startsWith("NN") || i == taggedText.size() - 1) && nounBuilder.size() > 0 && !exclude.contains(word)) {
                         String noun = "";
                         for (String n : nounBuilder) {
                             noun += n + " ";

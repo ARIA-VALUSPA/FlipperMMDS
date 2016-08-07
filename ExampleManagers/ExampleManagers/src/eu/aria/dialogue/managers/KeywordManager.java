@@ -109,7 +109,9 @@ public class KeywordManager extends DefaultManager {
             intentionUtterance = new DefaultRecord();
             getIS().set(userIntentionPath, intentionUtterance);
         }
-
+        if (utterance.getString("consumed") == null) {
+            utterance.set("consumed", "true");
+        }
         if (!utterance.getString("consumed").equals("true")) {
 
             if (getIS().getList(userKeywordPath) == null) {

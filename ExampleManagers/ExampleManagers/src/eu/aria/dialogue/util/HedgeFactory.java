@@ -40,7 +40,7 @@ public class HedgeFactory {
 
     public String hedgeBuilder(List prevIntentions, ArrayList<String> prevNouns, String previousAgentSent) {
         String hedge = "";
-        if (prevIntentions.size() > 1) {
+        if (prevIntentions != null && prevIntentions.size() > 1) {
             if(prevIntentions.getString(prevIntentions.size() - 1).equals("repeatPrevious")){
                 hedge = repeat.getValue();
             } else if (prevIntentions.getString(prevIntentions.size() - 1).equals("probingQuestion")) {

@@ -1,11 +1,11 @@
-hello Hello hiya hey hi morning afternoon evening night
+hi hello Hi Hello hiya hey morning afternoon evening night
 summary sum resume summarize plot adventures
 how How
 mad crazy madness
 bad tired so gloomy
 good fine great fantastic nice
 protagonist antagonist character
-information details detail tell informations who what's know happened happen happens about when
+information details detail tell informations who what's happened happen happens about when
 characters protagonists antagonists people animals
 introduced mentioned mention introduce meet
 frustration frustrate frustrating
@@ -50,8 +50,14 @@ america usa murica
 
 not don't no
 
-know sure clue
+sure clue
 
 hell crap shit dammit
-
+ugh bleh bla ew blah
 am 'm
+
+wow woah omg
+
+bad terrible miserable sad
+
+haha hahaha lol roflmao :D
