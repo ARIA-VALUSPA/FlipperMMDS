@@ -36,6 +36,7 @@
 			<compare value1="$dialoguestates.topic" value2="greeting" />
 			<compare value1="$userstates.intention" value2="greeting" />
 			<compare value1="$agentstates.prevIntentions" comparator="contains" value2="askAboutName" />
+			<compare value1="$agentstates.prevIntentions" comparator="contains" value2="initProbe" />
 			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />
 		</preconditions>
 		<effects>
@@ -43,6 +44,23 @@
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="Yes yes, nice to meet you, but you still haven't answered my question." />
+		</behaviour>
+	</template>
+
+
+	<template id="900d" name="Return_greeting_test">
+		<preconditions>
+			<compare value1="$dialoguestates.topic" value2="greeting" />
+			<compare value1="$userstates.intention" value2="greeting" />
+			<compare value1="$agentstates.prevIntentions" comparator="contains" value2="askAboutName" />
+			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="initProbe" />
+			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />
+		</preconditions>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
+		</effects>
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Yes yes, hello." />
 		</behaviour>
 	</template>
 
@@ -58,7 +76,7 @@
             <update name="$agentstates.prevIntentions._addlast" value="initProbe" />
         </effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Nice to meet you @name, how are you doing? " />
+			<argument name="response" value="Nice to meet you @name, what are you up to? " />
 			<argument name="response" value="Awesome name. Tell me more about yourself @name." />
 			<argument name="response" value="I have a virtual great aunt called @name. She isn’t very nice, but I’m sure you are. Tell me more about yourself @name" />
 			<argument name="response" value="Cool. Tell me more about yourself @name." />
@@ -93,26 +111,47 @@
 
 <!--ASKS TO REPEAT -->
 
-    <template id="900a" name="repeat">
-        <preconditions>
+	<template id="900a" name="repeat">
+		<preconditions>
 			<compare value1="$userstates.intention" value2="repeatPrevious" />
 			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />
-            <!--<compare value1="$dialoguestates.topic" value2="askQuestion" />-->
-        </preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="repeatPrevious" />
-        </effects>
-        <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-            <argument name="response" value="@repeatMostRecent" />
-        </behaviour>
-    </template>
+			<!--<compare value1="$dialoguestates.topic" value2="askQuestion" />-->
+		</preconditions>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="repeatPrevious" />
+		</effects>
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="@repeatMostRecent" />
+		</behaviour>
+	</template>
+
+
+	<template id="900z" name="goodToHear">
+		<preconditions>
+			<compare value1="$dialoguestates.topic" value2="expressPositive" />
+			<compare value1="$agentstates.prevIntentions._last" value2="howAreYou"/>
+			<compare value1="$agentstates.intention.prevIntention" value2="askHowAreYou"/>
+			<!--<compare value1="$dialoguestates.topic" value2="askQuestion" />-->
+		</preconditions>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="goodToHear" />
+		</effects>
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Glad to hear that." />
+			<argument name="response" value="Awesome! I'm glad to hear that!" />
+			<argument name="response" value="That's great! I'm happy for you." />
+		</behaviour>
+	</template>
 
     <!--USER GIVES A LONG ANSWER, AGENT WANTS TO ELABORATE A BIT MORE-->
     <!--NEED TO SETUP RULES-->
 	<!--FIXME this needs to be fixed-->
-    <template id="900" name="longanswer">
+    <template id="900x" name="longanswer">
         <preconditions>
-            <compare value1="$userstates.intention" comparator="equals" value2="longAnswer" />
+			<!--<compare value1="$userstates.intention" comparator="equals" value2="longAnswer" />-->
+			<compare value1="$agentstates.prevIntentions._last" comparator="equals" value2="initProbe" />
+			<compare value1="$userstates.utterance.pos.nounSize" comparator="greater_than" value2="1" />
+
         </preconditions>
         <effects>
             <update name="$agentstates.prevIntentions._addlast" value="moreInfo2" />
@@ -135,7 +174,7 @@
 	<!--AGENT ENDS THE CONVERSATION AFTER n NUMBER OF SENTENCES-->
 
 	<!--FIXME need better conditions-->
-	<template id="900" name="Return_ending_test">
+	<template id="900y" name="Return_ending_test">
 		<preconditions>
 			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="4" />
 			<!--<compare value1="$userstates.utterance.story.numSentences" comparator="smaller_than" value2="4" />-->
@@ -162,6 +201,10 @@
 			<compare value1="$userstates.intention" value2="userEnding" />
 			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="agentEnding" />
 			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />
+
+			<compare value1="$userstates.utterance.story.numSentences" comparator="not_contains" value2="ending" />
+
+
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="ending" />
@@ -227,6 +270,10 @@
 			<argument name="response" value=":D" />
 		</behaviour>
 	</template>
+
+
+	<!--STOP HERE-->
+
 
 	<!--FIXME update responses-->
 	<template id="1" name="exclaim">
@@ -369,9 +416,12 @@
 		<preconditions>
 			<compare value1="$userstates.utterance.pos.nounSize" comparator="greater_than" value2="3"/>
             <compare value1="$userstates.intention" value2="longPause"/>
+			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />
+			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="2" />
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="probingQuestions" />
+			<update name="$userstates.utterance.pos.nounSize" value="0" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.5">
 			<argument name="response" value="OK maybe we can talk about something else now. If you won a lottery tomorrow, what would be the first thing you would do?"/>
