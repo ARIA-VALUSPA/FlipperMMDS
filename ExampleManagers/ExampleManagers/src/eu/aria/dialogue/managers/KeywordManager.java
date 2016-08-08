@@ -32,8 +32,6 @@ public class KeywordManager extends DefaultManager {
 
     public KeywordManager(DefaultRecord is) {
         super(is);
-        System.out.println("IntentGenerator is WIP. It should be using a Flipper template later. Right now it uses: ");
-        System.out.println("$userstates.utterance(.consumed <boolean> |.timestamp = 't:<long ms since 1970>' |.text = <string> ) -> $userstates.intention = <string>");
         interval = 75; //fast default interval
         getDefaultCountryList(countries);
         getIS().set(specificAnswerPath, "false");
@@ -68,7 +66,6 @@ public class KeywordManager extends DefaultManager {
     public void getCountryFound(String[] splited, List keyword){
         for (int i = 0; i < splited.length; i++) {
             if (countries.contains(splited[i].toLowerCase())){
-                //System.out.println(splited[i]+" is found");
                 keyword.addItemEnd(splited[i]);
                 getIS().set(userKeywordPath, keyword);
                 getIS().set(countryFoundPath, "true");
@@ -122,7 +119,6 @@ public class KeywordManager extends DefaultManager {
                 List keyword = getIS().getList(userKeywordPath);
                 String[] splited = userSay.split("\\s+");
                 getCountryFound(splited,keyword);
-                System.out.println(getIS().getString(specificAnswerPath).equals("false"));
             }
         }
     }

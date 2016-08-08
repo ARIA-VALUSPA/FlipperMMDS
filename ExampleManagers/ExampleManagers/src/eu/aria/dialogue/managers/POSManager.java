@@ -57,10 +57,6 @@ import java.util.*;
     public void process() {
         super.process();
 
-        //if(is.getString(intentionPath) != null && !is.getString(intentionPath).equals("")){
-        //    System.out.println(is.getString(intentionPath));
-        //}
-
         Record utterance = getIS().getRecord(userUtterancePath);
         if (utterance == null) {
             utterance = new DefaultRecord();
@@ -149,7 +145,7 @@ import java.util.*;
                     }
                     if (pos.startsWith("NN") && !exclude.contains(word)) {
 
-                        if (prevAgentIntentions != null && prevAgentIntentions.size() >= 1 && prevAgentIntentions.getString(prevAgentIntentions.size() - 2).equals("askAboutName") && pos.startsWith("NNP")) {
+                        if (prevAgentIntentions != null && prevAgentIntentions.size() >= 1 && prevAgentIntentions.getString(prevAgentIntentions.size() - 1).equals("askAboutName") && pos.startsWith("NNP")) {
                             nameOptions.append(word + " ");
                         }
                         nounBuilder.add(word);
@@ -212,8 +208,6 @@ import java.util.*;
                 for (int k = 0; k < 2; k++) {
                     for (int i = 0; i < depParse.size(); i++) {
                         TypedDependency dep = depParse.get(i);
-//                        System.out.println(depParse.get(i));
-                        //known by a different name - Jack, my brother
                         if (dep.reln().getShortName().equals("appos") && k == 0) {
                             String child = dep.gov().word();
                             String root = dep.dep().word();

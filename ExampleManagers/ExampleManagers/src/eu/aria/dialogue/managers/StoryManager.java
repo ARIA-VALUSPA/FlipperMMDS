@@ -17,6 +17,7 @@ import java.util.Map;
  */
  public class StoryManager extends DefaultManager {
     private String userUtterancePath = "$userstates.utterance";
+    private String agentUtterancePath = "$agentstates.utterance";
     private String userStoryPath = "$userstates.utterance.story";
 
     public StoryManager(DefaultRecord is) {
@@ -49,6 +50,17 @@ import java.util.Map;
         if (storyUtterance == null) {
             storyUtterance = new DefaultRecord();
             getIS().set(userStoryPath, storyUtterance);
+        }
+
+
+        Record agentUtterance = getIS().getRecord(agentUtterancePath);
+        if (agentUtterance == null) {
+            agentUtterance = new DefaultRecord();
+            getIS().set(agentUtterancePath, agentUtterance);
+        }
+
+        if (agentUtterance.getList("sentences") == null) {
+            agentUtterance.set("sentences", new DefaultList());
         }
 
         if (storyUtterance.getList("sentences") == null) {

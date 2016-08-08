@@ -96,9 +96,6 @@ import java.util.Map;
     public void process() {
         super.process();
 
-        //if(is.getString(intentionPath) != null && !is.getString(intentionPath).equals("")){
-        //    System.out.println(is.getString(intentionPath));
-        //}
         Record utterance = getIS().getRecord(userUtterancePath);
         if (utterance == null) {
             utterance = new DefaultRecord();
@@ -111,13 +108,12 @@ import java.util.Map;
             getIS().set("$agentstates", agentUtterance);
         }
 
-
-
         List prevAgentIntentions = agentUtterance.getList("prevIntentions");
         if (prevAgentIntentions == null) {
             prevAgentIntentions = new DefaultList();
+            agentUtterance.set("prevIntentions", prevAgentIntentions);
         }
-        agentUtterance.set("prevIntentions", prevAgentIntentions);
+
 
         if (utterance.getString("timestamp") == null) {
             utterance.set("timestamp", "t:" + System.currentTimeMillis());
@@ -144,6 +140,7 @@ import java.util.Map;
         } else if (is.getString(intentionPath) == null || is.getString(intentionPath).equals("")) { // if there is no current intention, see if we can create a new one
             String userSay = utterance.getString("text");
             processInternal(userSay);
+
             utterance.set("consumed", "true");
         }
     }
@@ -158,8 +155,6 @@ import java.util.Map;
         userSay = userSay.replaceAll("\\.", " .");
         userSay = userSay.replaceAll("\\,", " ,");
         ArrayList<String> userSayAL = sk.removeStopWords(userSay);
-        System.out.println(userSay);
-        System.out.println(userSayAL);
 
         ArrayList<String> negationWords = new ArrayList<>(Arrays.asList("no", "not", "don't"));
         for(String nw : negationWords){
@@ -205,11 +200,5 @@ import java.util.Map;
                 }
             }
         }
-        System.out.println("++++++++++++++++++++This is the printout for thois iteration:");
-        System.out.println(getIS().getString("$userstates.intention"));
-        System.out.println(getIS().getString("$userstates.dialoguestates"));
-        System.out.println(getIS().getString("$dialoguestates.topic"));
-        System.out.println("--------------------This is the e nd of printout for thois iteration:");
-
     }
 }

@@ -111,6 +111,7 @@ public class KnowledgeBase {
     }
 
     public void removeNoun(String noun) {
+        noun = noun.trim();
         if (nounHash.containsKey(noun)) {
             nounHash.remove(noun);
         }

@@ -33,13 +33,13 @@ public class BehaviourToGui implements ManageableBehaviourClass {
     private String userposPath = "$userstates.utterance.pos";
     private String userStoryPath = "$userstates.utterance.story";
 
-    private List nouns, lastStated, adjectives, keywords, prevAgentIntentions;
+    private List nouns, lastStated, adjectives, keywords, prevAgentIntentions, as;
 
     private GuiController gui;
 
     private int numArgValues;
 
-    private Record posUtterance, storyUtterance;
+    private Record posUtterance, storyUtterance, au;
     private Manager manager;
 
     private String agentName = "Agent";
@@ -271,6 +271,8 @@ public class BehaviourToGui implements ManageableBehaviourClass {
             value.setHedge(hedgeValue);
             Say newSay = new Say(value.getCurSpeechContent(), agentName, true);
             gui.addAgentSay(newSay, true);
+            as.addItemEnd(value.getCurSpeechContent());
+            au.set("sentences", as);
             manager.getIS().set("$agentstates.utterance.lastPath", value.getFilePath());
             ah.storeRule(value.getCurSpeechContent());
         }
@@ -302,16 +304,6 @@ public class BehaviourToGui implements ManageableBehaviourClass {
             this.gui = GuiController.getInstance(manager.getIS());
         }
 
-  //      Wordnet wn = new Wordnet();
-//        wn.findSynonym();
-
-        System.out.println("++++++++++++++++++++This is the printout for thois iteration:");
-        System.out.println(manager.getIS().getString("$userstates.intention"));
-        System.out.println(manager.getIS().getString("$userstates.dialoguestates"));
-        System.out.println(manager.getIS().getString("$dialoguestates.topic"));
-        System.out.println("--------------------This is the e nd of printout for thois iteration:");
-
-
         manager.getIS().set("$userstates.intention", "");
         manager.getIS().set("$userstates.dialoguestates", "");
         manager.getIS().set("$dialoguestates.topic", "");
@@ -332,11 +324,33 @@ public class BehaviourToGui implements ManageableBehaviourClass {
         }
 
 
+        Record agentUtterance = manager.getIS().getRecord("$agentstates");
+        if (agentUtterance == null) {
+            agentUtterance = new DefaultRecord();
+            manager.getIS().set("$agentstates", agentUtterance);
+        }
+
+        au = manager.getIS().getRecord("$agentstates.utterance");
+        if (au == null) {
+            au = new DefaultRecord();
+            manager.getIS().set("$agentstates.utterance", au);
+        }
+
+        as = au.getList("sentences");
+        if (as == null) {
+            as = new DefaultList();
+        }
+
         numArgValues = values.size();
         nouns = posUtterance.getList("nouns");
         adjectives = posUtterance.getList("adjectives");
         lastStated = posUtterance.getList("lastStated");
         keywords = manager.getIS().getList("$userstates.utterance.keywords");
+
+        prevAgentIntentions = agentUtterance.getList("prevIntentions");
+        if (prevAgentIntentions == null) {
+            prevAgentIntentions = new DefaultList();
+        }
 
         int possSize = 0;
         try {
@@ -360,6 +374,11 @@ public class BehaviourToGui implements ManageableBehaviourClass {
                 agentOutput(value, isRepeat);
             }
         }
+        if(prevAgentIntentions.size() > as.size()){
+            prevAgentIntentions.remove(prevAgentIntentions.size()-1+"");
+            agentUtterance.set("prevIntentions", prevAgentIntentions);
+        }
+
     }
 
     public <T> T randomValue(ArrayList<T> values) {

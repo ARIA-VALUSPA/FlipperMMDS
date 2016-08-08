@@ -6,7 +6,9 @@
 package eu.aria.dialogue.gui;
 
 import eu.aria.dialogue.util.Say;
+import hmi.flipper.defaultInformationstate.DefaultList;
 import hmi.flipper.defaultInformationstate.DefaultRecord;
+import hmi.flipper.informationstate.List;
 import hmi.flipper.informationstate.Record;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -57,7 +59,7 @@ public class GuiController extends Observable
     public synchronized void addAgentSay(Say say, boolean updateIS) {
         agentSays.addLast(say);
         allSays.addLast(say);
-        
+
         if(updateIS){
             Record utterance = is.getRecord(agentUtterancePath);
             if(utterance == null){

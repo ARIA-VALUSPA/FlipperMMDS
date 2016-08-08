@@ -24,14 +24,14 @@ public class HedgeFactory {
     private ContinuousList<String> hedges, topicChange, topicCont, repeat;
 
     private HedgeFactory() {
-        hedges = new ContinuousList<>(Arrays.asList("I see. ", "Interesting. "));
+        hedges = new ContinuousList<>(Arrays.asList("I see. ", "Interesting. ", "Cool."));
 
         topicChange = new ContinuousList<>(
                 Arrays.asList("Okay, well, maybe let's move on to something else. ",
                         "I think I would be interested in learning about something new. ",
                         "Let's change the topic. "));
 
-        topicCont = new ContinuousList<>(Arrays.asList("So then, ", "I see, ", "Well then, ", "And "));
+        topicCont = new ContinuousList<>(Arrays.asList("So then, ", "I see, ", "Well then, ", "And ", "Cool, "));
 
 
         repeat = new ContinuousList<>(Arrays.asList("Sure, ", "Okay, ", "Fine, ", "Sure, no problem, "));
