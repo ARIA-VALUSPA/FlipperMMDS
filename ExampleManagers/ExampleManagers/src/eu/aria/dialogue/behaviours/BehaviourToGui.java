@@ -14,7 +14,6 @@ import eu.aria.dialogue.KnowledgeDB.KnowledgeBase;
 import eu.aria.dialogue.gui.GuiController;
 import eu.aria.dialogue.util.HedgeFactory;
 import eu.aria.dialogue.util.Say;
-import eu.aria.dialogue.util.Wordnet;
 import eu.ariaagent.managers.Manager;
 import eu.ariaagent.util.FilePointer;
 import eu.ariaagent.util.FileStorage;
@@ -52,20 +51,22 @@ public class BehaviourToGui implements ManageableBehaviourClass {
 
     private HedgeFactory hf = HedgeFactory.getInstance();
 
-    private Wordnet wn = new Wordnet();
     private KnowledgeBase kb = KnowledgeBase.getInstance();
     private AgentHistory ah = AgentHistory.getAH();
 
-    private SimpleProducerWrapper producer;
+    private SimpleProducerWrapper fmlSender, speechSender;
 
     public BehaviourToGui() {
         if (new File("config.ini").exists()) {
             IniManager iniManager = new IniManager("config.ini");
-            String url = iniManager.getValueString("amq.sender.fml.url");
-            String name = iniManager.getValueString("amq.sender.fml.name");
-            boolean isTopic = iniManager.getValueBoolean("amq.sender.fml.isTopic");
-            producer = new SimpleProducerWrapper(url, name, isTopic);
-            producer.init();
+            String url = iniManager.getValueString("amq.sender.url");
+            String nameFml = iniManager.getValueString("amq.sender.fml.name");
+            String nameSpeech = iniManager.getValueString("amq.sender.speech.name");
+            boolean isTopicFml = iniManager.getValueBoolean("amq.sender.fml.isTopic");
+            boolean isTopicSpeech = iniManager.getValueBoolean("amq.sender.speech.name");
+            fmlSender = new SimpleProducerWrapper(url, nameFml, isTopicFml);
+            speechSender = new SimpleProducerWrapper(url, nameSpeech, isTopicSpeech);
+            fmlSender.init();
         } else {
             System.err.println("No configuration file exists!");
         }
@@ -110,7 +111,6 @@ public class BehaviourToGui implements ManageableBehaviourClass {
             }
         }
         int iters = 0;
-        ArrayList<String> iterStrList = toReplace;
         while (iters < 2) {
             for (String r : toReplace) {
                 if (r.startsWith("noun")) {
@@ -295,11 +295,14 @@ public class BehaviourToGui implements ManageableBehaviourClass {
             manager.getIS().set("$agentstates.utterance.lastPath", value.getFilePath());
             ah.storeRule(value.getCurSpeechContent());
 
-            if (producer != null) {
-                if (producer.getStatus() == SimpleProducerWrapper.Status.Ready) {
-                    TextMessage textMessage = producer.createTextMessage(value.getCurXmlContent());
-                    if (textMessage != null) {
-                        producer.sendMessage(textMessage);
+            if (fmlSender != null && speechSender != null) {
+                if (fmlSender.getStatus() == SimpleProducerWrapper.Status.Ready &&
+                        speechSender.getStatus() == SimpleProducerWrapper.Status.Ready) {
+                    TextMessage fmlMessage = fmlSender.createTextMessage(value.getCurXmlContent());
+                    TextMessage speechMessage = speechSender.createTextMessage(value.getCurSpeechContent());
+                    if (fmlMessage != null && speechMessage != null) {
+                        fmlSender.sendMessage(fmlMessage);
+                        speechSender.sendMessage(speechMessage);
                     }
                 } else {
                     System.err.println("Something went wrong, could not send the FML to Greta! Please check your ActiveMQ connection!");
