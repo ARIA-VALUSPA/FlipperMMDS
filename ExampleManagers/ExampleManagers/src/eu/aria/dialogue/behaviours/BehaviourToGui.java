@@ -290,6 +290,7 @@ public class BehaviourToGui implements ManageableBehaviourClass {
             value.setHedge(hedgeValue);
             Say newSay = new Say(value.getCurSpeechContent(), agentName, true);
             gui.addAgentSay(newSay, true);
+            manager.getIS().set("$userstates.turn", "user");
             as.addItemEnd(value.getCurSpeechContent());
             au.set("sentences", as);
             manager.getIS().set("$agentstates.utterance.lastPath", value.getFilePath());

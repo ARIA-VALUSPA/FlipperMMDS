@@ -332,7 +332,8 @@ import java.util.*;
                     }
                 }
                 kb.storeRelatedNouns(currNouns);
-                if (nameOptions != null) {
+                String currName = getIS().getString("$userstates.name");
+                if (currName == null) {
                     kb.removeNoun(nameOptions.toString());
                     getIS().set("$userstates.name", nameOptions.toString());
                     getIS().set("$userstates.intention", "learnedName");

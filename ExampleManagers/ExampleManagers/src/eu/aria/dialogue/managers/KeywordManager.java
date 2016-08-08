@@ -20,6 +20,7 @@ public class KeywordManager extends DefaultManager {
     private String userIntentionPath = "$userstates.intention";
     private String userStoryPath = "$userstates.utterance.story";
     private String userKeywordPath = "$userstates.utterance.keywords";
+    private String numWordsPath = "$userstates.numWords";
     private String shortAnswerPath = "$userstates.shortAnswer";
     private String longAnswerPath = "$userstates.longAnswer";
     private String countryFoundPath = "$userstates.countryFound";
@@ -80,7 +81,8 @@ public class KeywordManager extends DefaultManager {
     }
     public void getLengthUserSays(String[] splited, List keyword){
        // if (getIS().getString(specificAnswerPath).equals("false")){
-            if(splited.length < 4){
+        getIS().set(numWordsPath, splited.length);
+        if(splited.length < 4){
                 getIS().set(userKeywordPath, keyword);
                 getIS().set(shortAnswerPath, "true");
             }
@@ -105,6 +107,9 @@ public class KeywordManager extends DefaultManager {
         if (intentionUtterance == null) {
             intentionUtterance = new DefaultRecord();
             getIS().set(userIntentionPath, intentionUtterance);
+        }
+        if (getIS().getInteger(numWordsPath) == null) {
+            getIS().set(numWordsPath, 0);
         }
         if (utterance.getString("consumed") == null) {
             utterance.set("consumed", "true");

@@ -64,16 +64,6 @@
 		</states>
 	</rule>
 
-	<!--FIXME no? maybe?-->
-	<rule id="R20">
-		<words>
-			<word value="yes"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="confirmation"/>
-		</states>
-	</rule>
-
 	<!--FIXME no-->
 	<rule id="R1">
 		<words>
@@ -88,7 +78,8 @@
 	<rule id="R32">
 		<words>
 			<word value="thank"/>
-		</words>
+            <word value="you"/>
+        </words>
 		<states>
 			<state name="$userstates.intention" value="expressGratitude"/>
 		</states>
@@ -130,7 +121,6 @@
 
     <rule id="R8">
         <words>
-			<word value="what"/>
 			<word value="your"/>
             <word value="name"/>
         </words>
@@ -187,16 +177,6 @@
 		</states>
 	</rule>
 
-	<!--FIXME no-->
-	<rule id="R23">
-		<words>
-			<word value="asd"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askUnclearQuestions"/>
-		</states>
-	</rule>
-
 	<!--FIXME update-->
 	<rule id="R25">
 		<words>
@@ -248,34 +228,6 @@
 		</states>
 	</rule>
 
-	<!--FIXME no-->
-	<rule id="R90">
-		<words>
-			<word value="this"/>
-
-		</words>
-		<states>
-			<state name="$userstates.intention" value="changingTopic"/>
-		</states>
-	</rule>
-	<!--FIXME no-->
-	<rule id="R91">
-		<words>
-			<word value="asd"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="notUnderstandChangingTopic"/>
-		</states>
-	</rule>
-	<!--FIXME no-->
-	<rule id="R92">
-		<words>
-			<word value="sdf"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="notUnderstandReexplaining"/>
-		</states>
-	</rule>
 
 </rules>
 

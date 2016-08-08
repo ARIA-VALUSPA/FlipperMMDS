@@ -114,6 +114,10 @@ import java.util.Map;
             agentUtterance.set("prevIntentions", prevAgentIntentions);
         }
 
+        if (getIS().getString("$userstates.turn") == null) {
+            agentUtterance.set("userstates.turn", "agent");
+        }
+
 
         if (utterance.getString("timestamp") == null) {
             utterance.set("timestamp", "t:" + System.currentTimeMillis());
@@ -132,7 +136,7 @@ import java.util.Map;
                 if (System.currentTimeMillis() - (time) > timeout && System.currentTimeMillis() - lastLongPause > timeout) {
                     is.set(intentionPath, longPauseState);
                     lastLongPause = System.currentTimeMillis();
-                    timeout=10000;
+                    timeout=20000;
                 }
             } catch (NumberFormatException e) {
             }
@@ -142,6 +146,7 @@ import java.util.Map;
             processInternal(userSay);
 
             utterance.set("consumed", "true");
+            getIS().set("$userstates.turn", "agent");
         }
     }
 
