@@ -201,10 +201,7 @@
 			<compare value1="$userstates.intention" value2="userEnding" />
 			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="agentEnding" />
 			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />
-
-			<compare value1="$userstates.utterance.story.numSentences" comparator="not_contains" value2="ending" />
-
-
+			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="6" />
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="ending" />
