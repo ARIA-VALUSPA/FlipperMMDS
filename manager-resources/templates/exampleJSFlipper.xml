@@ -1,0 +1,37 @@
+<behaviourtemplates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3schools.com template.xsd">
+	
+	<template id="1" name="Am I a pizza?">
+	   <preconditions>
+	      <compare value1="pizza" comparator="equals" value2="
+	      	@{
+		      		// Values (also in effect-tags) starting with '@{' and ending with '}' will have
+		        	// their contents evaluated as JavaScript
+
+					// Use $is.location$ to get readonly Information State values.
+					// if an IS is not defined (yet) use ``|| 'myDefaultValue'`` to give it a default value
+		      		var pizza = $pizza.my_pizza_state$ || 'myDefaultValue'; 
+
+					// you can also print to the console with print();
+				print(pizza);
+
+		      		// The variable on the final line will be send to as result
+					// That is 'pizza' will be compared to 'myDefaultValue'
+					// You must have a resulting value to be passed to Flipper.
+				pizza;	      		
+	      	}" />
+		 
+	   </preconditions>
+   	   <effects>
+	   	<update name="$is.random_pizza_value" value="
+	   		@{
+				// You should escape special XML characters as well (" &quot; ' &apos; < &lt; > &gt; & &amp)
+				// Additionally the $ should be escaped with a backslash, like so \$
+				// Naturally the previous lines will break this XML file
+			print('newRandomValue'); Math.random() &gt; 0.75?5:2
+		}"/>
+	   </effects>
+	   <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+	      <argument name="response" value="I am a pizza!"  />
+	   </behaviour>
+	</template>
+</behaviourtemplates>
