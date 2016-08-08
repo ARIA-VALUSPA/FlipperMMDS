@@ -64,15 +64,41 @@
 		</states>
 	</rule>
 
-	<!--FIXME no-->
+	<!--FIXME no? maybe?-->
+	<rule id="R20">
+		<words>
+			<word value="yes"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value="confirmation"/>
+		</states>
+	</rule>
+
+
 	<rule id="R1">
 		<words>
+			<word value="good"/>
 			<word value="day"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="day"/>
 		</states>
 	</rule>
+
+
+	<rule id="R1b">
+		<words>
+			<word value="my"/>
+			<word value="name"/>
+			<word value="is"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value="askNameAgain"/>
+		</states>
+	</rule>
+
+
+
 
 	<!--FIXME no, more conditions-->
 	<rule id="R32">

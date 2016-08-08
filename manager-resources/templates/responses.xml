@@ -71,6 +71,7 @@
 	<template id="900c" name="howAreYou">
 		<preconditions>
 			<compare value1="$agentstates.prevIntentions._last" value2="askAboutName" />
+			<compare value1="$userstates.name" comparator="not_equals" value2="" />
 		</preconditions>
         <effects>
             <update name="$agentstates.prevIntentions._addlast" value="initProbe" />
@@ -125,6 +126,37 @@
 		</behaviour>
 	</template>
 
+	<template id="900t" name="askNameAgain">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="askNameAgain" />
+			<compare value1="$userstates.name" value2="" />
+			<!--<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />-->
+			<!--<compare value1="$dialoguestates.topic" value2="askQuestion" />-->
+		</preconditions>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
+		</effects>
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="Sorry, didn't quite hear that. What was your name again?" />
+		</behaviour>
+	</template>
+
+	<template id="900t" name="askNameAgain">
+		<preconditions>
+			<compare value1="$userstates.intention" value2="askNameAgain" />
+			<compare value1="$userstates.name" comparator="not_equals" value2="" />
+			<!--<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />-->
+			<!--<compare value1="$dialoguestates.topic" value2="askQuestion" />-->
+		</preconditions>
+		<effects>
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
+		</effects>
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+			<argument name="response" value="But you already told me your name. Have you been drinking?" />
+		</behaviour>
+	</template>
+
+
 
 	<template id="900z" name="goodToHear">
 		<preconditions>
@@ -176,7 +208,7 @@
 	<!--FIXME need better conditions-->
 	<template id="900y" name="Return_ending_test">
 		<preconditions>
-			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="4" />
+			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="5" />
 			<!--<compare value1="$userstates.utterance.story.numSentences" comparator="smaller_than" value2="4" />-->
 			<!--<compare value1="$agentstates.prevIntentions._last" comparator="not_equals" value2="agentEnding" />-->
 			<compare value1="$agentstates.prevIntentions._last" comparator="not_equals" value2="ending" />
