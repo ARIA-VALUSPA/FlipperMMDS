@@ -45,15 +45,15 @@ public class SentencesToKeywords {
     public ArrayList<String> pickUp(ArrayList<String> sentence/*, BufferedWriter bwDet*/) throws IOException {
         ArrayList<String> wordsForKeywords = new ArrayList<>();
         sentence = sr.replaceBySynonyme(sentence);
-        ArrayList<String> wtt = st.tagFile(sentence);
+//        ArrayList<String> wtt = st.tagFile(sentence);
         //bwDet.write("After removing of stopwords and Standford tagger, userSay =  " + wtt.toString() + "\n");
 
-        pickNNP(wtt, wordsForKeywords);
-        pickNNandNNS(wtt, wordsForKeywords);
-        pickCD(wtt, wordsForKeywords);
-        pickVBandIN(wtt, wordsForKeywords);
-        pickJJ(wtt, wordsForKeywords);
-        pickRest(wtt, wordsForKeywords);
+//        pickNNP(wtt, wordsForKeywords);
+//        pickNNandNNS(wtt, wordsForKeywords);
+//        pickCD(wtt, wordsForKeywords);
+//        pickVBandIN(wtt, wordsForKeywords);
+//        pickJJ(wtt, wordsForKeywords);
+//        pickRest(wtt, wordsForKeywords);
 
 /*
         if (wordsForKeywords.contains("information") && wordsForKeywords.contains("opinion"))
@@ -61,7 +61,7 @@ public class SentencesToKeywords {
 */
         //bwDet.write("Information extracted from userSay = " + wordsForKeywords.toString() + "\n");
         //bwDet.flush();
-        return wordsForKeywords;
+        return sentence;
     }
 
     /*

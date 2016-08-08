@@ -1,40 +1,10 @@
 <rules>
 
-
-	<!--from countries -->
-
-
-	<!--<rule id="R7">-->
-	<!--<words>-->
-	<!--<word value="germany"/>-->
-	<!--</words>-->
-	<!--<states>-->
-	<!--<state name="$userstates.intention" value="germany" quality="0.4"/>-->
-	<!--</states>-->
-	<!--</rule>-->
-
-
-
-	<!--<rule id="R8d">-->
-		<!--<words>-->
-			<!--<word value="not"/>-->
-		<!--</words>-->
-		<!--<states>-->
-			<!--<state name="$dialoguestates.topic" value="negation"/>-->
-		<!--</states>-->
-	<!--</rule>-->
-
-	<!--<rule id="R8e">-->
-		<!--<words>-->
-			<!--<word value="no"/>-->
-		<!--</words>-->
-		<!--<states>-->
-			<!--<state name="$dialoguestates.topic" value="negation"/>-->
-		<!--</states>-->
-	<!--</rule>-->
+	<!--USER DOES NOT KNOW-->
 
 	<rule id="R8b">
 		<words>
+			<word value="don't"/>
 			<word value="know"/>
 		</words>
 		<states>
@@ -42,8 +12,20 @@
 		</states>
 	</rule>
 
+	<rule id="R8b">
+		<words>
+			<word value="I"/>
+			<word value="not"/>
+			<word value="know"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value="know"/>
+		</states>
+	</rule>
+	<!--FIXME update-->
 	<rule id="R8c">
 		<words>
+			<word value="no"/>
 			<word value="idea"/>
 		</words>
 		<states>
@@ -51,56 +33,7 @@
 		</states>
 	</rule>
 
-	<!--<rule id="R8e">-->
-		<!--<words>-->
-			<!--<word value="don't"/>-->
-		<!--</words>-->
-		<!--<states>-->
-			<!--<state name="$dialoguestates.topic" value="negation"/>-->
-		<!--</states>-->
-	<!--</rule>-->
-
-
-	<rule id="R7">
-		<words>
-			<word value="like"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="sayOpinionTopic"/>
-
-		</states>
-	</rule>
-
-
-	<rule id="R20">
-		<words>
-			<word value="yes"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="confirmation"/>
-		</states>
-	</rule>
-
-	<!--<rule id="A1">-->
-		<!--<words>-->
-			<!--<word value="how"/>-->
-			<!--<word value="old"/>-->
-			<!--<word value="are"/>-->
-		<!--</words>-->
-		<!--<states>-->
-			<!--<state name="$userstates.intention" value="howold"/>-->
-		<!--</states>-->
-	<!--</rule>-->
-
-	<rule id="R1">
-		<words>
-			<word value="hello"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="greeting"/>
-			<state name="$dialoguestates.topic" value="greeting"/>
-		</states>
-	</rule>
+	<!--GREETINGS-->
 
 	<rule id="R1b">
 		<words>
@@ -112,37 +45,46 @@
 		</states>
 	</rule>
 
-
-	<rule id="R1.0">
+	<rule id="R2">
 		<words>
-			<word value="test"/>
+			<word value="bye"/>
 		</words>
 		<states>
-			<state name="$userstates.intention" value="testing"/>
+			<state name="$userstates.intention" value="userEnding"/>
 		</states>
 	</rule>
 
+	<rule id="R7">
+		<words>
+			<word value="I"/>
+			<word value="like"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value="sayOpinionTopic"/>
+		</states>
+	</rule>
+
+	<!--FIXME no? maybe?-->
+	<rule id="R20">
+		<words>
+			<word value="yes"/>
+		</words>
+		<states>
+			<state name="$userstates.intention" value="confirmation"/>
+		</states>
+	</rule>
+
+	<!--FIXME no-->
 	<rule id="R1">
 		<words>
 			<word value="day"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="day"/>
-			<!--<state name="$dialoguestates.topic" value="greeting"/>-->
 		</states>
 	</rule>
 
-	<!--<rule id="R31_1">-->
-		<!--<words>-->
-			<!--<word value="information"/>-->
-			<!--<word value="good"/>-->
-		<!--</words>-->
-		<!--<states>-->
-			<!--<state name="$userstates.intention" value="expressGoodInformation"/>-->
-		<!--</states>-->
-	<!--</rule>-->
-
-
+	<!--FIXME no, more conditions-->
 	<rule id="R32">
 		<words>
 			<word value="thank"/>
@@ -153,27 +95,7 @@
 	</rule>
 
 
-
-	<rule id="R2">
-		<words>
-			<word value="bye"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="userEnding"/>
-		</states>
-	</rule>
-
-	<rule id="R3_1">
-		<words>
-			<word value="opinion"/>
-			<word value="alice"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askOpinionAlice"/>
-		</states>
-	</rule>
-
-
+	<!--FIXME update-->
     <rule id="R3">
 		<words>
 			<word value="alice"/>
@@ -182,16 +104,6 @@
 			<state name="$userstates.intention" value="askAboutAlice"/>
 		</states>
 	</rule>
-
-	<rule id="R4">
-		<words>
-			<word value="duchess"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutDuchess"/>
-		</states>
-	</rule>
-
 
     <rule id="R4">
         <words>
@@ -205,7 +117,6 @@
         </states>
     </rule>
 
-
 	<rule id="R5">
 		<words>
 			<word value="how"/>
@@ -214,16 +125,8 @@
 		</words>
 		<states>
 			<state name="$userstates.intention" value="askHowAreYou"/>
-			<!--<state name="$dialoguestates.topic" value="greeting"/>-->
 		</states>
 	</rule>
-
-
-
-
-
-
-
 
     <rule id="R8">
         <words>
@@ -236,35 +139,12 @@
         </states>
     </rule>
 
-    <rule id="R8_A">
-        <words>
-            <word value="information"/>
-            <word value="name"/>
-        </words>
-        <states>
-            <state name="$userstates.intention" value="askAboutHumanName"/>
-        </states>
-    </rule>
-
-
-
 	<rule id="R_General_1">
 		<words>
 			<word value="really"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="askReally"/>
-		</states>
-	</rule>
-
-	<rule id="R_General_1">
-		<words>
-			<word value="can"/>
-			<word value="you"/>
-			<word value="repeat"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="repeatPrevious"/>
 		</states>
 	</rule>
 
@@ -278,7 +158,7 @@
 			<state name="$userstates.intention" value="repeatPrevious"/>
 		</states>
 	</rule>
-
+	<!--FIXME update?-->
 	<rule id="R_General_3">
 		<words>
 			<word value="say"/>
@@ -288,7 +168,7 @@
 			<state name="$userstates.intention" value="repeatPrevious"/>
 		</states>
 	</rule>
-
+	<!--FIXME no-->
 	<rule id="R_General_1">
 		<words>
 			<word value="what"/>
@@ -297,7 +177,7 @@
 			<state name="$userstates.intention" value="repeatPrevious"/>
 		</states>
 	</rule>
-
+	<!--FIXME update-->
 	<rule id="R_General_1">
 		<words>
 			<word value="repeat"/>
@@ -307,44 +187,17 @@
 		</states>
 	</rule>
 
-
-	<rule id="R20">
-		<words>
-			<word value="wonderland"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="askAboutWonderland"/>
-		</states>
-	</rule>
-
-
+	<!--FIXME no-->
 	<rule id="R23">
 		<words>
-			<word value="information"/>
+			<word value="asd"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="askUnclearQuestions"/>
 		</states>
 	</rule>
 
-	<rule id="R24">
-		<words>
-			<word value="sad"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="expressSadnessWords"/>
-		</states>
-	</rule>
-
-	<rule id="R24">
-		<words>
-			<word value="happy"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="expressHappinessWords"/>
-		</states>
-	</rule>
-
+	<!--FIXME update-->
 	<rule id="R25">
 		<words>
 			<word value="introduced"/>
@@ -354,7 +207,7 @@
 			<state name="$userstates.intention" value="sayNiceToMeet"/>
 		</states>
 	</rule>
-
+	<!--FIXME no-->
 	<rule id="R26">
 		<words>
 			<word value="agree"/>
@@ -364,6 +217,7 @@
 		</states>
 	</rule>
 
+	<!--FIXME update-->
 	<rule id="R26">
 		<words>
 			<word value="haha"/>
@@ -373,36 +227,7 @@
 		</states>
 	</rule>
 
-
-
-	<rule id="R28">
-		<words>
-			<word value="weather"/>
-			<word value="bad"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="expressBadWeather"/>
-		</states>
-	</rule>
-
-	<!--<rule id="R29">-->
-	<!--<words>-->
-	<!--<word value="from"/>-->
-	<!--</words>-->
-	<!--<states>-->
-	<!--<state name="$userstates.intention" value="germany"/>-->
-	<!--</states>-->
-	<!--</rule>-->
-
-	<rule id="R29">
-		<words>
-			<word value="weather"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="expressGoodWeather"/>
-		</states>
-	</rule>
-
+	<!--FIXME no-->
 	<rule id="R22_1">
 		<words>
 			<word value="bad"/>
@@ -411,7 +236,7 @@
 			<state name="$userstates.intention" value="expressNegative"/>
 		</states>
 	</rule>
-
+	<!--FIXME no-->
 	<rule id="R22">
 		<words>
 			<word value="good"/>
@@ -421,95 +246,7 @@
 		</states>
 	</rule>
 
-
-	<!--<rule id="R3">-->
-		<!--<words>-->
-			<!--<word value="this"/>-->
-			<!--<word value="is"/>-->
-			<!--<word value="turkey"/>-->
-		<!--</words>-->
-		<!--<states>-->
-			<!--<state name="$userstates.intention" value=""/>-->
-		<!--</states>-->
-	<!--</rule>-->
-
-
-
-
-
-	<rule id="R83">
-		<words>
-			<word value="affraid"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="fearResponses"/>
-		</states>
-	</rule>
-
-
-	<rule id="R84">
-		<words>
-			<word value="ugh"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="disgustResponses"/>
-		</states>
-	</rule>
-
-
-	<rule id="R85">
-		<words>
-			<word value="wow"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="surpriseResponses"/>
-		</states>
-	</rule>
-
-
-	<rule id="R86">
-		<words>
-			<word value="this"/>
-
-		</words>
-		<states>
-			<state name="$userstates.intention" value="angerResponses"/>
-		</states>
-	</rule>
-
-
-	<rule id="R87">
-		<words>
-			<word value="this"/>
-
-		</words>
-		<states>
-			<state name="$userstates.intention" value="sadnessResponses"/>
-		</states>
-	</rule>
-
-	<rule id="R88">
-		<words>
-			<word value="this"/>
-
-		</words>
-		<states>
-			<state name="$userstates.intention" value="laughterResponses"/>
-		</states>
-	</rule>
-
-
-	<rule id="R89">
-		<words>
-			<word value="this"/>
-
-		</words>
-		<states>
-			<state name="$userstates.intention" value="silenceResponses"/>
-		</states>
-	</rule>
-
-
+	<!--FIXME no-->
 	<rule id="R90">
 		<words>
 			<word value="this"/>
@@ -519,48 +256,24 @@
 			<state name="$userstates.intention" value="changingTopic"/>
 		</states>
 	</rule>
-
+	<!--FIXME no-->
 	<rule id="R91">
 		<words>
-			<word value="this"/>
-
+			<word value="asd"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="notUnderstandChangingTopic"/>
 		</states>
 	</rule>
-
-
+	<!--FIXME no-->
 	<rule id="R92">
 		<words>
-			<word value="this"/>
-
+			<word value="sdf"/>
 		</words>
 		<states>
 			<state name="$userstates.intention" value="notUnderstandReexplaining"/>
 		</states>
 	</rule>
-
-	<!--<rule id="R23">-->
-	<!--<words>-->
-	<!--<word value="how"/>-->
-	<!--</words>-->
-	<!--<states>-->
-	<!--<state name="$userstates.intention" value="how"/>-->
-	<!--</states>-->
-	<!--</rule>-->
-
-
-	<!--posUtterance.nouns-->
-
-	<!--<rule id="R27">
-		<words>
-			<word value="?"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="undefinedQuestions"/>
-		</states>
-	</rule> -->
 
 </rules>
 

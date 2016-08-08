@@ -106,12 +106,16 @@ public class FilePointer {
     }
 
     public void setHedge(String hedge) {
+        if (hedge == null || hedge.trim().isEmpty()) {
+            return;
+        }
         if (curHedge != null) {
             curSpeechContent = curSpeechContent.replace(curHedge, hedge);
             curXmlContent = curXmlContent.replace(curHedge, hedge);
             curHedge = hedge;
         } else {
             curSpeechContent = hedge + curSpeechContent;
+            curHedge = hedge;
 
             try {
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

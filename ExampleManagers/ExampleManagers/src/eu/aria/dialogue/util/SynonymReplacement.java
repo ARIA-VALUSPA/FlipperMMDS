@@ -37,28 +37,27 @@ public class SynonymReplacement {
                 j++;
             }
         }
+        System.out.println("This is the synonyms hash:");
+        System.out.println(synonyms.entrySet());
     }
 
 
     public ArrayList<String> replaceBySynonyme(ArrayList<String> wordsList) {
-
+        ArrayList<String> output = new ArrayList<>();
         for (int i = 0; i < wordsList.size(); i++) {
             // get the item as string
             for (int j = 0; j < synonyms.size(); j++) {
                 ArrayList<String> temp = synonyms.get(j);
-
-                if (temp.contains((wordsList.get(i)).toLowerCase())) {
-                    if (wordsList.get(i).toLowerCase().equals("what") && wordsList.contains("think")) {
-                        wordsList.set(i, temp.get(0));
-                        wordsList.remove("think");
-                    } else
-                        wordsList.set(i, temp.get(0));
+                if (temp.contains((wordsList.get(i)).toLowerCase().trim())) {
+                    for(int h = 0; h < temp.size(); h++){
+                        if(!temp.get(h).equals(wordsList.get(i))){
+                            output.add(temp.get(h));
+                        }
+                    }
                 }
             }
-
         }
-
-        return wordsList;
+        return output;
     }
 
 

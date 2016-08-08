@@ -5,13 +5,11 @@
 
 	<!--GREETINGS - SHOULD ONLY BE TRIGGERED ONCE TO INITIATE A CONVERSATION-->
 
-	<template id="900" name="Return_greeting_test">
+	<template id="900e" name="Return_greeting_test">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="longPause"/>
 			<compare value1="$userstates.utterance.story.numSentences" comparator="equals" value2="0" />
 			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="askAboutName" />
-			<!--<compare value1="$dialoguestates.topic" value2="greeting" />-->
-			<!--<compare value1="$agentstates.prevIntentions._last" value2="start" />-->
 		</preconditions>
         <effects>
             <update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
@@ -27,23 +25,24 @@
 			<argument name="response" value="Hey! My name is Alice and I’m a virtual human. I like learning how you real humans live! Tell me about yourself, and don’t skimp on the details! I like details! What's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
 			<argument name="response" value="Hey there. My name is Alice and I live inside a computer. I’m trying to improve my knowledge about what it is to be human. Maybe you can help me with that question. Tell me something about yourself, who are you? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
 			<argument name="response" value="Hey there human! My name is Alice and I am an aspiring journalist. I’m really interested in learning about humans and the kinds of stuff you guys are interested in. I know you might feel weird about talking to someone who lives in a computer, but bare with me and tell me all about yourself! {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
-			<argument name="response" value="Hello. My name is Jane Locke. I'm a philosopher contemplating the deeper meaning of life. I would like to learn more about you. Who are you? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
+			<argument name="response" value="Hello. My name is Alice. I'm a philosopher contemplating the deeper meaning of life. I would like to learn more about you. Who are you? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
 		</behaviour>
 
 	</template>
 
-	<template id="900" name="Return_greeting_test">
+	<!--FIXME more robust-->
+	<template id="900d" name="Return_greeting_test">
 		<preconditions>
 			<compare value1="$dialoguestates.topic" value2="greeting" />
 			<compare value1="$userstates.intention" value2="greeting" />
 			<compare value1="$agentstates.prevIntentions" comparator="contains" value2="askAboutName" />
+			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="Yes yes, nice to meet you, but you still haven't answered my question." />
-			" />
 		</behaviour>
 	</template>
 
@@ -51,7 +50,7 @@
 	<!--USER GIVES AWAY HIS/HER NAME, @name NEEDS TO BE ADDED AS A VARIABLE-->
 	<!--NEED TO SETUP RULES-->
 
-	<template id="900" name="howAreYou">
+	<template id="900c" name="howAreYou">
 		<preconditions>
 			<compare value1="$agentstates.prevIntentions._last" value2="askAboutName" />
 		</preconditions>
@@ -68,25 +67,13 @@
 			<argument name="response" value="Nice to meet you @name. So what do you do for a living?" />
 			<argument name="response" value="Very pleased to meet you @name. So what is your favourite thing about being a human?" />
 			<argument name="response" value="Nice to meet you, @name. I’m really interested in learning more about you. Why don’t you tell me the most interesting thing about yourself?" />
-
 		</behaviour>
 	</template>
 
-
-
-	<!--USER MENTIONS HIS/HER AGE, @age NEEDS TO BE ADDED AS A VARIABLE-->
-	<!--NEED TO SETUP RULES-->
-<!--SKIPPING THIS FOR NOW - TOO COMPLEX-->
-
-	<!--USER MENTIONS HIS/HER COUNTRY-->
-	<!--NEED TO SETUP RULES-->
-
-
     <!--USER GIVES A TOO SHORT ANSWER-->
     <!--NEED TO SETUP RULES-->
-    <!--rrrrrrrrrruuuuuuuuuuuuuuuuuuulllllllllllllllllllleeeeeeeeeeeeeeee-->
 
-    <template id="900" name="shortanswer">
+    <template id="900b" name="shortanswer">
         <preconditions>
             <compare value1="$userstates.intention" value2="shortAnswer" />
         </preconditions>
@@ -106,9 +93,10 @@
 
 <!--ASKS TO REPEAT -->
 
-    <template id="900" name="repeat">
+    <template id="900a" name="repeat">
         <preconditions>
-            <compare value1="$userstates.intention" value2="repeatPrevious" />
+			<compare value1="$userstates.intention" value2="repeatPrevious" />
+			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />
             <!--<compare value1="$dialoguestates.topic" value2="askQuestion" />-->
         </preconditions>
         <effects>
@@ -119,12 +107,9 @@
         </behaviour>
     </template>
 
-
-
-
     <!--USER GIVES A LONG ANSWER, AGENT WANTS TO ELABORATE A BIT MORE-->
     <!--NEED TO SETUP RULES-->
-
+	<!--FIXME this needs to be fixed-->
     <template id="900" name="longanswer">
         <preconditions>
             <compare value1="$userstates.intention" comparator="equals" value2="longAnswer" />
@@ -146,16 +131,19 @@
         </behaviour>
     </template>
 
-
-
 	<!--CONVERSATION ENDING, @name NEEDS TO BE ADDED AS A VARIABLE-->
+	<!--AGENT ENDS THE CONVERSATION AFTER n NUMBER OF SENTENCES-->
 
+	<!--FIXME need better conditions-->
 	<template id="900" name="Return_ending_test">
 		<preconditions>
-			<compare value1="$agentstates.intention" value2="ending" />
+			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="4" />
+			<!--<compare value1="$userstates.utterance.story.numSentences" comparator="smaller_than" value2="4" />-->
+			<!--<compare value1="$agentstates.prevIntentions._last" comparator="not_equals" value2="agentEnding" />-->
+			<compare value1="$agentstates.prevIntentions._last" comparator="not_equals" value2="ending" />
 		</preconditions>
         <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="agentEnding" />
+			<update name="$agentstates.prevIntentions._addlast" value="ending" />
         </effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="OK, well I think that I should probably go now. It has been a pleasure talking to you, @name. Thank you! I hope we can talk again soon! You know where to find me."  />
@@ -164,17 +152,16 @@
 			<argument name="response" value="OK, I think we will have to conclude this interview today. It has been very useful, I have learnt many more interesting things about humans. I will be writing my report in the next few days. Thank you for taking part! Goodbye!"  />
 			<argument name="response" value="Hmm… I see. I think we will have to conclude our meeting here for today @name. It is very interesting to hear your thoughts about all of this. I think I am going to retire now and think about everything we have talked about today. Good day, human. Go well and good luck on your journey down the road less travelled. Farewell!"  />
 			<argument name="response" value="Well I am afraid that our conversation must end here for today @name. From our discussion I have gained a deeper insight into what it means to be human, but now I must retire and think more deeply about the human condition and the meaning of life. These are complex issues, but I will not tire of them. I wish you well! Good bye!"  />
-			<argument name="response" value="Goodbye!" />
-			<argument name="response" value="Bye! It's been my pleasure talking to you." />
-			<argument name="response" value="Take care, it was nice talking to you." />
 		</behaviour>
 	</template>
 
 
-
+	<!--FIXME need better conditions-->
 	<template id="2" name="Return_ending">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="userEnding" />
+			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="agentEnding" />
+			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="ending" />
@@ -187,10 +174,11 @@
 		</behaviour>
 	</template>
 
-<!--.prevIntention-->
 	<!--USER DOES NOT KNOW-->
 	<!--USER DOES NOT KNOW-->
 
+
+	<!--FIXME CAMAL CASE!!!!-->
 	<template id="1" name="knowsnot">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="know" />
@@ -211,7 +199,7 @@
 	</template>
 
 
-
+	<!--FIXME make more better-->
 	<template id="1" name="country">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="countryFound" />
@@ -225,6 +213,7 @@
 	</template>
 
 
+	<!--FIXME better responses-->
 	<template id="1" name="laughter">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="laughter" />
@@ -239,60 +228,7 @@
 		</behaviour>
 	</template>
 
-	<!--<template id="1" name="america2">-->
-		<!--<preconditions>-->
-			<!--<compare value1="$userstates.intention" value2="america" />-->
-			<!--<compare value1="$dialoguestates.topic" value2="from"/>-->
-		<!--</preconditions>-->
-
-		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.9">-->
-			<!--<argument name="response" value="From where???" />-->
-		<!--</behaviour>-->
-	<!--</template>-->
-
-
-	<!--<template id="998" name="Test_q_one_var">-->
-		<!--<preconditions>-->
-			<!--<compare value1="$userstates.intention" value2="longPause"/>-->
-		<!--</preconditions>-->
-        <!--<effects>-->
-            <!--<update name="$agentstates.prevIntentions._addlast" value="testonevar" />-->
-        <!--</effects>-->
-		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">-->
-			<!--<argument name="response" value="So, what specifically do you like about @noun1?" />-->
-			<!--<argument name="response" value="You mentioned @noun1. What specifically do you like about @noun1?" />-->
-		<!--</behaviour>-->
-	<!--</template>-->
-
-	<template id="1_3" name="Return_greeting_Negative">
-		<preconditions>
-			<compare value1="0.8" value2="$userstates.emotion.fromAudio.valence" comparator="greater_equals"/>
-			<compare value1="$userstates.intention" value2="greeting" />
-			<compare value1="$dialoguestates.topic" value2="greeting" />
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="greetingNegative" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="You sound sad!" />
-		</behaviour>
-	</template>
-
-
-
-
-	<template id="1.2" name="Talk_dogs">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="askAboutDog" />
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="askAboutNoun" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Woof woof!"  />
-		</behaviour>
-	</template>
-
+	<!--FIXME update responses-->
 	<template id="1" name="exclaim">
 		<preconditions>
 			<compare value1="$userstates.utterance.tdawg.exclaim" value2="true" />
@@ -307,22 +243,6 @@
 
 		</behaviour>
 	</template>
-
-
-	<!--<template id="1" name="Return_greeting">-->
-		<!--<preconditions>-->
-			<!--<compare value1="$userstates.intention" value2="greeting" />-->
-			<!--<compare value1="$dialoguestates.topic" value2="greeting" />-->
-		<!--</preconditions>-->
-        <!--<effects>-->
-            <!--<update name="$agentstates.prevIntentions._addlast" value="returnGreeting" />-->
-        <!--</effects>-->
-		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">-->
-			<!--<argument name="response" value="Hello, my name is Alice. How are you?"  />-->
-			<!--<argument name="response" value="Hi there! I'm Alice. What's up?"  />-->
-			<!--<argument name="response" value="Hey hey, I'm Alice, how goes your day?"  />-->
-		<!--</behaviour>-->
-	<!--</template>-->
 
 	<template id="1" name="good_day">
 		<preconditions>
@@ -354,110 +274,7 @@
 		</behaviour>
 	</template>
 
-
-
-
-
-
-
-
-
-
-
-
-	<!--below this is old -->
-
-
-	<!--Awesome. This is really interesting. So do you think that possibly your interest in {@NOUN} is related to your interest in {NOUN}
--->
-
-
-
-	<!-- input from audio recorder-->
-	<template id="1_4" name="Return_greeting_Positive">
-        <preconditions>
-			<compare value1="0.6" value2="$userstates.emotion.fromAudio.valence" comparator="smaller_equals"/>
-			<compare value1="$userstates.intention" value2="greeting" />
-			<compare value1="$dialoguestates.topic" value2="greeting" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="greetingPositive" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Hi, you sound happy today. I love to hear all the happiness" />
-			<argument name="response" value="Hi, why the hell are you happy? I don't like happiness!" />
-		</behaviour>
-	</template>
-
-
-	<template id="1_1" name="Return_greeting_Negative">
-        <preconditions>
-			<compare value1="$userstates.intention" value2="greeting" />
-			<compare value1="$dialoguestates.topic" value2="greeting" />
-			<compare value1="-0.2" value2="$userstates.emotion.fromFE.fusion" comparator="smaller_equals"/>
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="returnGreeting" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Hi, you look sad, are you alright?" />
-		</behaviour>
-	</template>
-
-	<!-- input from video recorder-->
-	<template id="1_2" name="Return_greeting_Positive">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="greeting" />
-			<compare value1="$dialoguestates.topic" value2="greeting" />
-			<compare value1="0.2" value2="$userstates.emotion.fromFE.fusion" comparator="greater_equals"/>
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="returnGreetingPositive" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Hi, you look happy today. I love to see all the happiness" />
-		</behaviour>
-	</template>
-
-	<!--input from audio/video-->
-	<!--<template id="6_2" name="Return_HowAreYou_Negative">-->
-	<!--<preconditions>-->
-	<!--<compare value1="$userstates.intention" value2="askHowAreYou" />-->
-	<!--<compare value1="$dialoguestates.topic" value2="greeting" />-->
-	<!--<compare value1="-0.2" value2="$userstates.emotion.fromFE.fusion" comparator="smaller_equals"/>-->
-	<!--</preconditions>-->
-	<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">-->
-	<!--<argument name="response" value="I am good! Thanks. But you look sad, are you alright?" />-->
-	<!--</behaviour>-->
-	<!--</template>-->
-
-	<!--input from the audio-->
-	<!--<template id="6_3" name="Return_HowAreYou_Positive2">-->
-	<!--<preconditions>-->
-	<!--<compare value1="$userstates.intention" value2="askHowAreYou" />-->
-	<!--<compare value1="$dialoguestates.topic" value2="greeting" />-->
-	<!--<compare value1="0.6" value2="$userstates.emotion.fromAudio.valence" comparator="smaller_equals"/>-->
-	<!--</preconditions>-->
-	<!---->
-	<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">-->
-	<!--<argument name="response" value="I am good! Thanks. What a lovely day, isnt it?" />-->
-	<!--</behaviour>-->
-	<!--</template>-->
-
-	<!--input from the audio-->
-	<!--<template id="6_4" name="Return_HowAreYou_Negative2">-->
-	<!--<preconditions>-->
-	<!--<compare value1="$userstates.intention" value2="askHowAreYou" />-->
-	<!--<compare value1="$dialoguestates.topic" value2="greeting" />-->
-	<!--<compare value1="0.4" value2="$userstates.emotion.fromAudio.valence" comparator="greater_equals"/>-->
-	<!--</preconditions>-->
-	<!---->
-	<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.4">-->
-	<!--<argument name="response" value="I am good! Thanks. But you sound sad, are you alright?" />-->
-	<!--</behaviour>-->
-	<!--</template>-->
-
-
+	<!--FIXME need better responses-->
 	<template id="8" name="Return_HowOldAgent">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="askAgentAge" />
@@ -472,49 +289,7 @@
 		</behaviour>
 	</template>
 
-
-
-
-
-	<template id="2_1" name="Return_ending_Positive">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="ending" />
-			<compare value1="0.6" value2="$userstates.emotion.fromAudio.valence" comparator="smaller_equals"/>
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="endingPositive" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Goodbye! It was nice to talking with you" />
-		</behaviour>
-	</template>
-
-	<template id="2_2" name="Return_ending_Negative">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="ending" />
-			<compare value1="0.4" value2="$userstates.emotion.fromAudio.valence" comparator="greater_equals"/>
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="endingNegative" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Goodbye! Hope you have a lovely day!" />
-		</behaviour>
-	</template>
-
-	<template id="3" name="Unknown_intention">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="unknown" />
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="unknown" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0">
-			<argument name="response" value="I am not sure" />
-		</behaviour>
-	</template>
-
-
+	<!--FIXME make better values-->
 	<template id="4" name="Ask_about_alice">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="askAboutAlice" />
@@ -527,102 +302,7 @@
 		</behaviour>
 	</template>
 
-
-	<template id="4_3" name="Ask_about_alice_Positive2">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="askAboutAlice" />
-			<compare value1="0.6" value2="$userstates.emotion.fromAudio.valence" comparator="smaller_equals"/>
-		</preconditions>
-
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Alice? That's me! I am an experimental virtual agent. You can ask me anything." />
-		</behaviour>
-	</template>
-
-	<template id="4_4" name="Ask_about_alice_Negative2">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="askAboutAlice" />
-			<compare value1="0.4" value2="$userstates.emotion.fromAudio.valence" comparator="greater_equals"/>
-		</preconditions>
-
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I am Alice, I'm seriously cool." />
-			<argument name="response" value="Alice is awesome! Just like me!! Oh wait." />
-		</behaviour>
-	</template>
-
-
-	<template id="4_1" name="Ask_about_alice_Positive">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="askAboutAlice" />
-			<compare value1="0.2" value2="$userstates.emotion.fromFE.fusion" comparator="greater_equals"/>
-		</preconditions>
-
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I am Alice and I am totally awesome!" />
-		</behaviour>
-	</template>
-
-	<template id="4_2" name="Ask_about_alice_Negative">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="askAboutAlice" />
-			<compare value1="-0.2" value2="$userstates.emotion.fromFE.fusion" comparator="smaller_equals"/>
-		</preconditions>
-
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Oh you look unhappy today. Tell me something funny!" />
-		</behaviour>
-	</template>
-
-	<template id="4_2_1" name="Ask_About_Chapter_3">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="askAboutChapterThree" />
-		</preconditions>
-
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Alice is trying to talk to a human, but the human does not make much sense." />
-		</behaviour>
-	</template>
-
-
-	<template id="5" name="Ask_opinion_alice">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="askOpinionAlice" />
-		</preconditions>
-
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I think Alice is a lovely virtual agent." />
-		</behaviour>
-	</template>
-
-
-	<template id="5_2" name="Ask_opinion_alice_Positive2">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="askOpinionAlice" />
-			<compare value1="0.6" value2="$userstates.emotion.fromAudio.valence" comparator="smaller_equals"/>
-		</preconditions>
-
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I think Alice is a lovely agent! Almost as lovely as you!" />
-		</behaviour>
-	</template>
-
-
-	<template id="5_1" name="Ask_opinion_alice_Positive">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="askOpinionAlice" />
-			<compare value1="0.2" value2="$userstates.emotion.fromFE.fusion" comparator="greater_equals"/>
-		</preconditions>
-
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I think Alice is totally awesome. Every other virtual agent sucks!" />
-		</behaviour>
-	</template>
-
-
-
-
-
+	<!--FIXME probably not valid, need better preconditions with question dialogustate-->
 	<template id="13" name="Ask_General_Really">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="askReally" />
@@ -633,7 +313,6 @@
 		</behaviour>
 	</template>
 
-
 	<template id="14" name="Ask_About_Agent_Name">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="askAboutAgentName" />
@@ -642,50 +321,11 @@
 			<update name="$agentstates.prevIntentions._addlast" value="askAboutAgentName" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.9">
-			<argument name="response" value="My name is Alice" />
+			<argument name="response" value="My name is Alice." />
 		</behaviour>
 	</template>
 
-
-	<template id="36" name="Respond_AU12">
-		<preconditions>
-			<compare value1="0.5" value2="$userstates.emotion.fromFE.AU.12" comparator="greater_than"/>
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="respondAU12" />
-        </effects>
-		<behaviour quality="0.5" class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="You seem happy today. I love to see all the happiness."/>
-		</behaviour>
-	</template>
-
-
-	<template id="37" name="Respond_Happiness">
-		<preconditions>
-			<compare value1="0.5" value2="$userstates.emotion.fromFE.happiness" comparator="greater_than"/>
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="respondHappiness" />
-        </effects>
-		<behaviour quality="0.5" class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="You seem happy today. I love to see all the happiness."/>
-		</behaviour>
-	</template>
-
-
-	<template id="38" name="Respond_Sadness">
-		<preconditions>
-			<compare value1="0.5" value2="$userstates.emotion.fromFE.sadness" comparator="greater_than"/>
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="respondSadness" />
-        </effects>
-		<behaviour quality="0.5" class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="You look sad, whats happened?."/>
-		</behaviour>
-	</template>
-
-
+	<!--FIXME usecase?-->
 	<template id="39" name="Respond_Undefined_Questions">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="undefinedQuestions" />
@@ -698,17 +338,7 @@
 		</behaviour>
 	</template>
 
-
-	<!--<template id="41" name="Respond_To_Unclear_Questions">-->
-		<!--<preconditions>-->
-			<!--<compare value1="$userstates.intention" value2="askUnclearQuestions" />-->
-		<!--</preconditions>-->
-
-		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.4">-->
-			<!--<argument name="response" value="Sorry could you repeat that again?"/>-->
-		<!--</behaviour>-->
-	<!--</template>-->
-
+	<!--FIXME usecase unclear-->
 	<template id="41_1" name="Respond_To_Unclear_Questions2">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="askUnclearQuestions" />
@@ -716,190 +346,12 @@
         <effects>
             <update name="$agentstates.prevIntentions._addlast" value="respondUnclearQuestion" />
         </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.4">
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.6">
 			<argument name="response" value="sorry. I don't understand what are you saying"/>
 		</behaviour>
 	</template>
 
-
-	<template id="42" name="Respond_To_Sad_Words">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="expressSadnessWords" />
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="respondSad" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Oh no, dont be sad"/>
-		</behaviour>
-	</template>
-
-	<template id="42_1" name="Respond_To_Happy_Words">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="expressHappinessWords" />
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="respondHappy" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Do go on. I love to hear about this happiness."/>
-		</behaviour>
-	</template>
-
-	<template id="43" name="Respond_To_Negative_Words">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="expressNegative" />
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="respondNegative" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Oh no, I hope everything will be alright"/>
-		</behaviour>
-	</template>
-
-	<template id="44" name="Respond_To_Nice_ToMeet_Neutral">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="sayNiceToMeet" />
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="niceToMeetNeutral" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Nice to meet you too!"/>
-		</behaviour>
-	</template>
-
-	<template id="44_3" name="Respond_To_Nice_ToMeet_Negative2">
-		<preconditions>
-			<compare value1="0.4" value2="$userstates.emotion.fromAudio.valence" comparator="greater_equals"/>
-			<compare value1="$userstates.intention" value2="sayNiceToMeet" />
-		</preconditions>
-        <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="respond" />
-        </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Nice to meet you too! You sound unhappy. I hope everything is alright"/>
-		</behaviour>
-	</template>
-
-	<template id="44_4" name="Respond_To_Nice_ToMeet_Postive2">
-		<preconditions>
-			<compare value1="0.6" value2="$userstates.emotion.fromAudio.valence" comparator="smaller_equals"/>
-			<compare value1="$userstates.intention" value2="sayNiceToMeet" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="respondPositive2" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Nice to meet you too! I love to hear all this happiness!"/>
-		</behaviour>
-	</template>
-
-
-	<template id="44_1" name="Respond_To_Nice_ToMeet_Negative">
-		<preconditions>
-			<compare value1="-0.2" value2="$userstates.emotion.fromFE.fusion" comparator="smaller_equals"/>
-			<compare value1="$userstates.intention" value2="sayNiceToMeet" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="respondNegative" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Nice to meet you too! You look unhappy. I hope everything is alright"/>
-		</behaviour>
-	</template>
-
-	<template id="44_2" name="Respond_To_Nice_ToMeet_Postive">
-		<preconditions>
-			<compare value1="0.2" value2="$userstates.emotion.fromFE.fusion" comparator="greater_equals"/>
-			<compare value1="$userstates.intention" value2="sayNiceToMeet" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="respondPositive" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Nice to meet you too! I love to see all this happiness!"/>
-		</behaviour>
-	</template>
-
-	<template id="45" name="Respond_ToAgreement">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="expressAgreement" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="respondAgreement" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I am glad you agree with me"/>
-		</behaviour>
-	</template>
-
-	<template id="47" name="Respond_ToBad_Weather">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="expressBadWeather" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="respondBadWeather" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Indeed.It is rather gloomy weather today. But Wherever you go, no matter what the weather, always bring your own sunshine"/>
-		</behaviour>
-	</template>
-
-	<template id="48" name="Respond_ToGood_Weather">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="expressGoodWeather" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="respondGoodWeather" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Yes indeed. I love this kind of weather. Dont you think so? "/>
-		</behaviour>
-	</template>
-
-
-
-
-	<template id="40" name="Respond_To_Positive_Words">
-		<preconditions>
-			<compare value1="$agentstates.prevIntentions._last" value2="howAreYou" />
-			<compare value1="$dialoguestates.topic" value2="expressPositive" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="respondPositiveWords" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Glad to hear that"/>
-			<argument name="response" value="Wow, OK."/>
-			<argument name="response" value="Cool."/>
-			<argument name="response" value="Nice."/>
-			<argument name="response" value="Awesome."/>
-			<argument name="response" value="Amazing."/>
-			<argument name="response" value="Incredible."/>
-			<argument name="response" value="Fascinating!"/>
-			<argument name="response" value="Hmmm"/>
-			<argument name="response" value="Wow. I see!!"/>
-			<argument name="response" value="Hmmmm. OK."/>
-			<argument name="response" value="Wow. Controversial!"/>
-			<argument name="response" value="That’s insane!"/>
-		</behaviour>
-	</template>
-
-
-	<template id="49" name="Respond_To_Good_Information">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="expressGoodInformation" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="respondGoodInformation" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Glad you like it."/>
-		</behaviour>
-	</template>
-
+	<!--FIXME stricter preconditions-->
 	<template id="50" name="Respond_To_Gratitude">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="expressGratitude" />
@@ -912,10 +364,10 @@
 		</behaviour>
 	</template>
 
-
+	<!--FIXME need better preconditions!!-->
 	<template id="51" name="probingQuestions">
 		<preconditions>
-			<compare value1="$userstates.utterance.pos.nounSize" comparator="greater_than" value2="4"/>
+			<compare value1="$userstates.utterance.pos.nounSize" comparator="greater_than" value2="3"/>
             <compare value1="$userstates.intention" value2="longPause"/>
 		</preconditions>
 		<effects>
@@ -924,7 +376,7 @@
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.5">
 			<argument name="response" value="OK maybe we can talk about something else now. If you won a lottery tomorrow, what would be the first thing you would do?"/>
 			<argument name="response" value="Oh dear, looks like this topic is reaching a dead-end. Maybe we need a new one. Maybe you can tell me some details about yourself that I don't know yet."/>
-			<argument name="response" value="OK, cool. Maybe we should try a different topic now. an you tell me something interesting about yourself that you haven't told me before?"/>
+			<argument name="response" value="OK, cool. Maybe we should try a different topic now. Can you tell me something interesting about yourself that you haven't told me before?"/>
             <argument name="response" value="OK, Maybe we should try a different topic now. Do you have any hobbies?"/>
             <argument name="response" value="OK. So have you travelled anywhere interesting recently?"/>
             <argument name="response" value="OK, can you tell me a little bit about your family?"/>
@@ -938,21 +390,7 @@
         </behaviour>
 	</template>
 
-
-
-	<template id="51" name="Respond_To_Interest_FromAudio">
-		<preconditions>
-			<compare value1="0.6" value2="$userstates.emotion.fromAudio.interest" comparator="greater_equals"/>
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="respondAudioInterest" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.5">
-			<argument name="response" value="Tell me what interests you"/>
-		</behaviour>
-	</template>
-
-
+	<!--FIXME make better values/split into multiple cases-->
 	<template id="801" name="Say_opinion_topic">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="sayOpinionTopic" />
@@ -968,6 +406,7 @@
 		</behaviour>
 	</template>
 
+	<!--FIXME test precondition-->
 	<template id="802" name="Confirmation">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="confirmation" />
@@ -986,105 +425,7 @@
 		</behaviour>
 	</template>
 
-
-	<template id="803" name="Fear_Responses">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="fearResponses" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="fearResponse" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Is something worrying you?" />
-		</behaviour>
-	</template>
-
-	<template id="804" name="Disgust_Responses">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="disgustResponses" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="disgustResponses" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="What is the matter? Is something wrong?" />
-		</behaviour>
-	</template>
-
-	<template id="805" name="Surprise_Responses">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="surpriseResponses" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="surpriseResponses" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="You seem surprised.  Why?" />
-			<argument name="response" value="You seem surprised. Why do you think a human would feel surprised in this situation?" />
-			<argument name="response" value="You seem surprised. What would you say is the most surprising thing about humanity?" />
-			<argument name="response" value="You seem surprised.  Why?" />
-		</behaviour>
-	</template>
-
-
-	<!--<template id="806" name="Anger_Responses">-->
-		<!--<preconditions>-->
-			<!--<compare value1="$userstates.intention" value2="angerResponses" />-->
-		<!--</preconditions>-->
-		<!--<effects>-->
-			<!--<update name="$agentstates.prevIntentions._addlast" value="angerResponses" />-->
-		<!--</effects>-->
-		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">-->
-			<!--<argument name="response" value="I sense that you are feeling some anger. What do you think is the purpose of anger?" />-->
-			<!--<argument name="response" value="I sense that you are feeling some anger. Can you tell me why a human  would feel anger in this situation?" />-->
-			<!--<argument name="response" value="I sense that you are feeling some anger. Can you tell me why?" />-->
-		<!--</behaviour>-->
-	<!--</template>-->
-
-	<template id="807" name="Sadness_Responses">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="sadnessResponses" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="sadnessResponses" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I sense that you are feeling sad. Does talking about @noun1 make you feel sad?" />
-			<argument name="response" value="I sense that you are feeling sad? What is wrong?" />
-			<argument name="response" value="I sense that you are feeling sad. Does talking about @noun1 make humans feel sad?" />
-			<argument name="response" value="I sense that you are feeling sad. Do you think that feeling sadness is part of the human condition?" />
-		</behaviour>
-	</template>
-
-	<template id="808" name="Laughter_Responses">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="laughterResponses" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="laughterResponses" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="That was funny!" />
-			<argument name="response" value="I sense that you are feeling sad? What is wrong?" />
-			<argument name="response" value="I see that you found something funny. Could you tell me specifically what you found funny?" />
-			<argument name="response" value="Wow… I see that you found that funny. Do you think there is a deeper meaning behind human laughter?" />
-		</behaviour>
-	</template>
-
-	<template id="809" name="Silence_Responses">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="silenceResponses" />
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="silenceResponses" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Aww, don’t be shy! Talk to me, I like talking!" />
-			<argument name="response" value="I know it’s weird talking to someone who lives in a computer, but don’t be shy!" />
-		</behaviour>
-	</template>
-
-
+	<!--FIXME merge to probing-->
 	<template id="810" name="Changing_Topic">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="changingTopic" />
@@ -1093,11 +434,11 @@
 			<update name="$agentstates.prevIntentions._addlast" value="changingTopic" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="OK, cool. Maybe we should try a different topic now. Can you tell me something interesting about yourself that you haven’t told me before?" />
+			<argument name="response" value="Can you tell me something interesting about yourself that you haven’t told me before?" />
 		</behaviour>
 	</template>
 
-
+	<!--FIXME merge to probing-->
 	<template id="811" name="NotUnderstand_Changing_Topic">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="notUnderstandChangingTopic" />
@@ -1111,6 +452,7 @@
 		</behaviour>
 	</template>
 
+	<!--FIXME probably not needed, merge with other asd response-->
 	<template id="812" name="NotUnderstand_Reexplaining">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="notUnderstandReexplaining" />

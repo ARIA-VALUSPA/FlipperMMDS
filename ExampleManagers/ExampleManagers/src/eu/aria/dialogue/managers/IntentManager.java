@@ -155,7 +155,15 @@ import java.util.Map;
         userSay = userSay.replaceAll("\\.", " .");
         userSay = userSay.replaceAll("\\,", " ,");
         ArrayList<String> userSayAL = sk.removeStopWords(userSay);
-
+        System.out.println("First user say:");
+        System.out.println(userSayAL);
+        try {
+            userSayAL.addAll(sk.pickUp(userSayAL));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Second user:");
+        System.out.println(userSayAL);
         ArrayList<String> negationWords = new ArrayList<>(Arrays.asList("no", "not", "don't"));
         for(String nw : negationWords){
             if(userSayAL.contains(nw)){
@@ -169,11 +177,11 @@ import java.util.Map;
 
         for (Rules rule : rules) {
             int count = 0;
-
             for (String word : rule.getWords()) {
                 for (String userUtt : userSayAL) {
-                    if (userUtt.toLowerCase().contains(word)) {
+                    if (userUtt.toLowerCase().equals(word)) {
                         count++;
+                        break;
                     }
                 }
             }
