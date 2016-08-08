@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ActiveMQ">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/lib/ActiveMQ" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/ActiveMQ" recursive="false" />
+  </library>
+</component>

@@ -19,11 +19,15 @@ import eu.ariaagent.managers.Manager;
 import eu.ariaagent.util.FilePointer;
 import eu.ariaagent.util.FileStorage;
 import eu.ariaagent.util.ManageableBehaviourClass;
+import eu.ariaagent.util.SimpleProducerWrapper;
 import hmi.flipper.defaultInformationstate.DefaultList;
 import hmi.flipper.defaultInformationstate.DefaultRecord;
 import hmi.flipper.informationstate.List;
 import hmi.flipper.informationstate.Record;
+import vib.core.util.IniManager;
 
+import javax.jms.TextMessage;
+import java.io.File;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -51,6 +55,21 @@ public class BehaviourToGui implements ManageableBehaviourClass {
     private Wordnet wn = new Wordnet();
     private KnowledgeBase kb = KnowledgeBase.getInstance();
     private AgentHistory ah = AgentHistory.getAH();
+
+    private SimpleProducerWrapper producer;
+
+    public BehaviourToGui() {
+        if (new File("config.ini").exists()) {
+            IniManager iniManager = new IniManager("config.ini");
+            String url = iniManager.getValueString("amq.sender.fml.url");
+            String name = iniManager.getValueString("amq.sender.fml.name");
+            boolean isTopic = iniManager.getValueBoolean("amq.sender.fml.isTopic");
+            producer = new SimpleProducerWrapper(url, name, isTopic);
+            producer.init();
+        } else {
+            System.err.println("No configuration file exists!");
+        }
+    }
 
     public ArrayList<String> getAllCurrentNouns() {
 
@@ -275,6 +294,17 @@ public class BehaviourToGui implements ManageableBehaviourClass {
             au.set("sentences", as);
             manager.getIS().set("$agentstates.utterance.lastPath", value.getFilePath());
             ah.storeRule(value.getCurSpeechContent());
+
+            if (producer != null) {
+                if (producer.getStatus() == SimpleProducerWrapper.Status.Ready) {
+                    TextMessage textMessage = producer.createTextMessage(value.getCurXmlContent());
+                    if (textMessage != null) {
+                        producer.sendMessage(textMessage);
+                    }
+                } else {
+                    System.err.println("Something went wrong, could not send the FML to Greta! Please check your ActiveMQ connection!");
+                }
+            }
         }
     }
 
