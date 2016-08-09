@@ -25,6 +25,7 @@
 	   	<update name="$is.random_pizza_value" value="
 	   		@{
 				// You should escape special XML characters as well (" &quot; ' &apos; < &lt; > &gt; & &amp)
+				// or use $$greater_than$$ $$smaller_than$$ $$equals$$ $$greater_equals$$ $$smaller_equals$$ $$not_equals$$
 				// Additionally the $ should be escaped with a backslash, like so \$
 				// Naturally the previous lines will break this XML file
 			print('newRandomValue'); Math.random() &gt; 0.75?5:2
