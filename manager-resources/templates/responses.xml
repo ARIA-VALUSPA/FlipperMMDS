@@ -14,7 +14,7 @@
         <effects>
             <update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
         </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="1.0">
 			<argument name="response" value="Hello, my name is Alice. Who are you? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
 			<argument name="response" value="Hello, my name is Alice. What's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
 			<argument name="response" value="Hi there, what’s up? Would you mind answering a few questions? Please! What's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
@@ -40,7 +40,7 @@
 			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />
 		</preconditions>
 		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
+			<update name="$agentstates.prevIntentions._addlast" value="askAboutName"  />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="Yes yes, nice to meet you, but you still haven't answered my question." />
@@ -75,7 +75,7 @@
         <effects>
             <update name="$agentstates.prevIntentions._addlast" value="initProbe" />
         </effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="1">
 			<argument name="response" value="Nice to meet you @name, what are you up to? " />
 			<argument name="response" value="Awesome name. Tell me more about yourself @name." />
 			<argument name="response" value="I have a virtual great aunt called @name. She isn’t very nice, but I’m sure you are. Tell me more about yourself @name" />
@@ -145,27 +145,29 @@
 
     <!--USER GIVES A LONG ANSWER, AGENT WANTS TO ELABORATE A BIT MORE-->
     <!--NEED TO SETUP RULES-->
-	<!--FIXME this needs to be fixed-->
+
+	<!--TODO more reobust-->
     <template id="900x" name="longanswer">
         <preconditions>
-			<!--<compare value1="$userstates.intention" comparator="equals" value2="longAnswer" />-->
-			<compare value1="$agentstates.prevIntentions._last" comparator="equals" value2="initProbe" />
-			<compare value1="$userstates.utterance.pos.nounSize" comparator="greater_than" value2="1" />
-
+			<!--<compare value1="$agentstates.prevIntentions._last" comparator="equals" value2="initProbe" />-->
+			<compare value1="$userstates.utterance.pos.nounSize" comparator="greater_than" value2="2" />
+            <compare value1="$userstates.turn" value2="agent" />
         </preconditions>
         <effects>
             <update name="$agentstates.prevIntentions._addlast" value="moreInfo2" />
         </effects>
-        <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-            <argument name="response" value="So, what specifically do you like about @noun?" />
-            <argument name="response" value="So…. you said something about @noun. Why don’t you tell me more about @noun?" />
-            <argument name="response" value="Awesome. This is really interesting. Could you tell me a little bit more about @noun?" />
-            <argument name="response" value="So why do you like @noun?" />
-            <argument name="response" value="Cool. OK, so you talked about @noun. What is it about @noun that really interests you?" />
-            <argument name="response" value="You also talked about @noun. What do you like most about @noun?" />
-            <argument name="response" value="Ah, I see. That is very interesting to hear. I am learning a lot of new information today. Could you tell me a little more about @noun?" />
-            <argument name="response" value="I’d be interested in hearing more about @noun. Can you tell me a little bit more about that?" />
-            <argument name="response" value="Hmmm… and what would you say is the most interesting thing about @noun?" />
+        <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality=".8">
+            <argument name="response" value="So you said the @noun1 was @adj11, why is that?" />
+            <argument name="response" value="What specifically do you like about the @noun1?" />
+            <argument name="response" value="So how @adj11 would you say the @noun1 is?" />
+            <argument name="response" value="You've described the @noun1 as both @adj11 and @adj12, how else would you describe it?" />
+            <argument name="response" value="You said something about the @?adj11 @noun1. Why don’t you tell me more about @noun1?" />
+            <argument name="response" value="Awesome. This is really interesting. Could you tell me a little bit more about @noun1?" />
+            <argument name="response" value="Why do you like the @adj11 @noun1?" />
+            <argument name="response" value="What is it about @noun1 that really interests you?" />
+            <argument name="response" value="What do you like most about the @noun1?" />
+            <argument name="response" value="I’d be interested in hearing more about the @noun1. Can you tell me a little bit more about that?" />
+            <argument name="response" value="Hmmm… and what would you say is the most interesting thing about the @noun1?" />
 
         </behaviour>
     </template>
@@ -173,10 +175,10 @@
 	<!--CONVERSATION ENDING, @name NEEDS TO BE ADDED AS A VARIABLE-->
 	<!--AGENT ENDS THE CONVERSATION AFTER n NUMBER OF SENTENCES-->
 
-	<!--FIXME need better conditions-->
+	<!--FIXME need better conditions after some tests-->
 	<template id="900y" name="Return_ending_test">
 		<preconditions>
-			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="4" />
+			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="11" />
 			<!--<compare value1="$userstates.utterance.story.numSentences" comparator="smaller_than" value2="4" />-->
 			<!--<compare value1="$agentstates.prevIntentions._last" comparator="not_equals" value2="agentEnding" />-->
 			<compare value1="$agentstates.prevIntentions._last" comparator="not_equals" value2="ending" />
@@ -194,21 +196,17 @@
 		</behaviour>
 	</template>
 
-
-	<!--FIXME need better conditions-->
 	<template id="2" name="Return_ending">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="userEnding" />
 			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="agentEnding" />
 			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />
-			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="6" />
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="ending" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="Goodbye!" />
-			<argument name="response" value="See you in hell!" />
 			<argument name="response" value="Bye! It's been my pleasure talking to you." />
 			<argument name="response" value="Take care, it was nice talking to you." />
 		</behaviour>
@@ -217,9 +215,7 @@
 	<!--USER DOES NOT KNOW-->
 	<!--USER DOES NOT KNOW-->
 
-
-	<!--FIXME CAMAL CASE!!!!-->
-	<template id="1" name="knowsnot">
+	<template id="1" name="knowsNot">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="know" />
 			<compare value1="$userstates.dialoguestates.topic" value2="negation" />
@@ -228,18 +224,10 @@
 			<update name="$agentstates.prevIntentions._addlast" value="knowsnot" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.9">
-			<argument name="response" value="Comeon, surely you know something!!" />
-			<argument name="response" value="Ahhh, come on, you must have an opinion on that!" />
-			<argument name="response" value="Come on, that’s a generic response. You can tell me more than that!" />
-			<argument name="response" value="Come on, that’s a generic response. Surely you must have an opinion on that!" />
-			<argument name="response" value="Ahh, give me some details! I really like details!" />
-			<argument name="response" value="It might seem like a vague question, but I’m interested in hearing what you have to say" />
-			<argument name="response" value="Oh you must have an opinion on that! Even if you don’t, why don’t you make something up?" />
+			<argument name="response" value="Why is that?" />
 		</behaviour>
 	</template>
 
-
-	<!--FIXME make more better-->
 	<template id="1" name="country">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="countryFound" />
@@ -248,11 +236,10 @@
 			<update name="$agentstates.prevIntentions._addlast" value="country" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.8">
-			<argument name="response" value="You mentioned @keyword1, can you tell me more about it?" />
+			<argument name="response" value="You mentioned @keyword1, can you tell me more about what life is like there?" />
 		</behaviour>
 	</template>
 
-	<!--FIXME better responses-->
 	<template id="1" name="laughter">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="laughter" />
@@ -262,11 +249,11 @@
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.8">
 			<argument name="response" value="Haha, this is so funny!!" />
-			<argument name="response" value="Hilarious!" />
+			<argument name="response" value="Did you really lol, or are you just saying that?" />
 			<argument name="response" value=":D" />
 		</behaviour>
 	</template>
-	<!--TODO Kevin below here-->
+
 	<template id="1" name="good_day">
 		<preconditions>
 			<compare value1="$userstates.intention" value2="day" />
@@ -302,7 +289,7 @@
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="rebuffQuestions"/>
-			<update name="$userstates.intention" value="probingQuestion"/>
+			<update name="$userstates.utterance.story.canProbe" value="true"/>
 			<update name="$userstates.turn" value="agent"/>
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.1">
@@ -377,26 +364,48 @@
 		</behaviour>
 	</template>
 
-	<!--FIXME need better preconditions!!-->
+	<!--<template id="51" name="initProbingQuestions">-->
+		<!--<preconditions>-->
+			<!--<compare value1="$userstates.utterance.story.numSentences" comparator="smaller_than" value2="5"/>-->
+			<!--<compare value1="$userstates.turn" comparator="equals" value2="agent"/>-->
+		<!--</preconditions>-->
+		<!--<effects>-->
+			<!--<update name="$agentstates.prevIntentions._addlast" value="probingQuestions" />-->
+		<!--</effects>-->
+		<!--<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.3">-->
+			<!--<argument name="response" value="If you won a lottery tomorrow, what would be the first thing you would do?"/>-->
+			<!--<argument name="response" value="Do you have any hobbies?"/>-->
+            <!--<argument name="response" value="Have you travelled anywhere interesting recently?"/>-->
+            <!--<argument name="response" value="Can you tell me a little bit about your family?"/>-->
+            <!--<argument name="response" value="So what do you like to do for fun?"/>-->
+            <!--<argument name="response" value="Where are you from?"/>-->
+            <!--<argument name="response" value="Do you have any pets?"/>-->
+            <!--<argument name="response" value="If you could visit any place on earth right now where would you choose to go?"/>-->
+        <!--</behaviour>-->
+	<!--</template>-->
+
 	<template id="51" name="probingQuestions">
 		<preconditions>
-			<compare value1="$userstates.utterance.story.numSentences" comparator="smaller_than" value2="5"/>
+			<!--<compare value1="$userstates.utterance.story.numSentences" comparator="smaller_than" value2="5"/>-->
 			<compare value1="$userstates.turn" comparator="equals" value2="agent"/>
+			<compare value1="$userstates.utterance.story.canProbe" value2="true"/>
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="probingQuestions" />
+			<update name="$userstates.utterance.story.canProbe" value="false"/>
 		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.3">
+		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality=".9">
 			<argument name="response" value="If you won a lottery tomorrow, what would be the first thing you would do?"/>
 			<argument name="response" value="Do you have any hobbies?"/>
-            <argument name="response" value="Have you travelled anywhere interesting recently?"/>
-            <argument name="response" value="Can you tell me a little bit about your family?"/>
-            <argument name="response" value="So what do you like to do for fun?"/>
-            <argument name="response" value="Where are you from?"/>
-            <argument name="response" value="Do you have any pets?"/>
-            <argument name="response" value="If you could visit any place on earth right now where would you choose to go?"/>
-        </behaviour>
+			<argument name="response" value="Have you travelled anywhere interesting recently?"/>
+			<argument name="response" value="Can you tell me a little bit about your family?"/>
+			<argument name="response" value="So what do you like to do for fun?"/>
+			<argument name="response" value="Where are you from?"/>
+			<argument name="response" value="Do you have any pets?"/>
+			<argument name="response" value="If you could visit any place on earth right now where would you choose to go?"/>
+		</behaviour>
 	</template>
+
 
 	<template id="801" name="Say_opinion_topic">
 		<preconditions>
@@ -449,7 +458,7 @@
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="longPauseAgent" />
-			<update name="$userstates.intention" value="probingQuestion"/>
+			<update name="$userstates.utterance.story.canProbe" value="true"/>
 			<update name="$userstates.turn" value="agent"/>
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">

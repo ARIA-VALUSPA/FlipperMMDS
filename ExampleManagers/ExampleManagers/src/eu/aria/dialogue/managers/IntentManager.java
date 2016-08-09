@@ -108,11 +108,26 @@ import java.util.Map;
             getIS().set("$agentstates", agentUtterance);
         }
 
+        Record storyUtterance = getIS().getRecord("$userstates.utterance.story");
+        if (storyUtterance == null) {
+            storyUtterance = new DefaultRecord();
+            getIS().set("$userstates.utterance.story", storyUtterance);
+        }
+
         List prevAgentIntentions = agentUtterance.getList("prevIntentions");
         if (prevAgentIntentions == null) {
             prevAgentIntentions = new DefaultList();
             agentUtterance.set("prevIntentions", prevAgentIntentions);
         }
+
+
+        if (storyUtterance.getInteger("numSentences") == null) {
+            storyUtterance.set("numSentences", 0);
+        }
+        if (storyUtterance.getString("canProbe") == null) {
+            storyUtterance.set("canProbe", "true");
+        }
+        int numSet = storyUtterance.getInteger("numSentences");
 
         if (getIS().getString("$userstates.turn") == null) {
             agentUtterance.set("userstates.turn", "agent");
@@ -130,6 +145,20 @@ import java.util.Map;
             utterance.set("consumed", "true");
         }
 
+        prevAgentIntentions = agentUtterance.getList("prevIntentions");
+        double numProbes = 0.0;
+        for(int i = prevAgentIntentions.size()-1; i > -1 ; i--){
+            if(prevAgentIntentions.getString(i).equals("probingQuestions")){
+                break;
+            }
+            numProbes++;
+        }
+        if(numProbes > 0.0) {
+            System.out.println("In the if.....");
+            if (numProbes == Math.floor(numProbes/3.0) ||numProbes / 3.0 <= 1.0) {
+                storyUtterance.set("canProbe", "true");
+            }
+        }
         if (utterance.getString("consumed").equals("true")) {
             try {
                 Long time = Long.parseLong(utterance.getString("timestamp").substring(2));
@@ -160,15 +189,11 @@ import java.util.Map;
         userSay = userSay.replaceAll("\\.", " .");
         userSay = userSay.replaceAll("\\,", " ,");
         ArrayList<String> userSayAL = sk.removeStopWords(userSay);
-        System.out.println("First user say:");
-        System.out.println(userSayAL);
         try {
             userSayAL.addAll(sk.pickUp(userSayAL));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Second user:");
-        System.out.println(userSayAL);
         ArrayList<String> negationWords = new ArrayList<>(Arrays.asList("no", "not", "don't"));
         for(String nw : negationWords){
             if(userSayAL.contains(nw)){
@@ -196,7 +221,6 @@ import java.util.Map;
 //                break;
             }
         }
-
 
         if (!keywordFound) {
 //            is.set(intentionPath, unknownState);
