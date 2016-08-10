@@ -21,6 +21,7 @@ import java.io.StringWriter;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -191,9 +192,14 @@ public class FilePointer {
             Node child = nodeList.item(i);
             if (child.getNodeName().equals("#text")) {
                 String value = child.getNodeValue();
-                Pattern pattern = Pattern.compile("\\s+");
-                Matcher matcher = pattern.matcher(value);
-                sb.append(matcher.replaceAll(" ")).append(" ");
+                String[] splits = value.split("\\s+");
+                System.out.println(Arrays.toString(splits));
+                for (String split : splits) {
+                    split = split.trim();
+                    if (!split.isEmpty()) {
+                        sb.append(split).append(" ");
+                    }
+                }
             }
         }
         return sb.toString().trim();
