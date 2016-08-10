@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="english" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+			
+			<tm id="tm1"/>
+				Perfect. <break time="0.8s"/>
+			<tm id="tm2"/>
+				I think it is probably time for me to wrap up this interview with you today, @name.
+			<tm id="tm3"/>
+				It has been a pleasure talking to you and gathering more useful information about humans. <break time="1s"/>
+			<tm id="tm4"/> 
+				I will be compiling my report very soon!
+			<tm id="tm5"/> 
+				Thank you, and see you again sometime! <break time="0.8s"/>
+			<tm id="tm6"/> 
+				Goodbye! 
+			<tm id="tm7"/> 
+		
+				
+			<pitchaccent start="s1:tm1" id="pa1" importance="1" level="medium" end="s1:tm2" type="HStar" />
+			<boundary start="s1:tm0" id="b1" end="s1:tm1+55.5" type="H" />
+
+		</speech>
+	</bml>
+	<fml>
+	    	<emotion id="e1" type="surprise" start="s1:tm1" end="s1:tm2" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm2" end="s1:tm3"  importance="1" />
+
+		<emotion id="e2" type="sadness" start="s1:tm2" end="s1:tm3" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm2" end="s1:tm3"  importance="1" />
+
+		<emotion id="e3" type="joy" start="s1:tm3" end="s1:tm4" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm3" end="s1:tm4"  importance="1" />
+
+		<emotion id="e4" type="surprise" start="s1:tm4" end="s1:tm5" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm4" end="s1:tm5"  importance="1" />
+
+		<emotion id="e5" type="joy" start="s1:tm5" end="s1:tm6" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm5" end="s1:tm6"  importance="1" />
+
+		<emotion id="e6" type="surprise" start="s1:tm6" end="s1:tm7" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm6" end="s1:tm7"  importance="1" />
+
+
+<!-- a-->
+	
+	</fml>
+</fml-apml>

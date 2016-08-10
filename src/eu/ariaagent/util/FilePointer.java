@@ -62,6 +62,7 @@ public class FilePointer {
         } catch (Exception e) {
             xmlContent = "";
             speechContent = "";
+            System.err.println("Error while reading file " + filePath);
             e.printStackTrace();
         }
     }
@@ -175,7 +176,12 @@ public class FilePointer {
 
     public static String ReadFile(String path, Charset encoding) throws IOException {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
-        return new String(encoded, encoding);
+        String content = new String(encoded, encoding);
+        int start = 0;
+        while (content.charAt(start) != '<') {
+            start++;
+        }
+        return content.substring(start);
     }
 
     public static String ExtractText(Node node) {

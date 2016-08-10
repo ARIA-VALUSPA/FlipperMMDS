@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="english" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+			
+			<tm id="tm1"/>
+				Well. <break time="0.8s"/>
+			<tm id="tm2"/>
+				I am afraid that our conversation must end here for today, @name.<break time="0.8s"/>
+			<tm id="tm3"/>
+				From our discussion I have gained a deeper insight into what it means to be human, <break time="1s"/>
+			<tm id="tm4"/> 
+				but now I must retire and think more deeply about the human condition and the meaning of life.
+			<tm id="tm5"/> 
+				These are complex issues, but I will not tire of them.  <break time="0.7s"/>
+			<tm id="tm6"/> 
+				I wish you well! Good bye!
+			<tm id="tm7"/> 
+						
+
+				
+			<pitchaccent start="s1:tm1" id="pa1" importance="1" level="medium" end="s1:tm2" type="HStar" />
+			<boundary start="s1:tm0" id="b1" end="s1:tm1+55.5" type="H" />
+
+		</speech>
+	</bml>
+	<fml>
+	    	<emotion id="e1" type="surprise" start="s1:tm1" end="s1:tm2" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm2" end="s1:tm3"  importance="1" />
+
+		<emotion id="e2" type="sadness" start="s1:tm2" end="s1:tm3" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm2" end="s1:tm3"  importance="1" />
+
+		<emotion id="e3" type="joy" start="s1:tm3" end="s1:tm4" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm3" end="s1:tm4"  importance="1" />
+
+		<emotion id="e4" type="surprise" start="s1:tm4" end="s1:tm5" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm4" end="s1:tm5"  importance="1" />
+
+		<emotion id="e5" type="joy" start="s1:tm5" end="s1:tm6" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm5" end="s1:tm6"  importance="1" />
+
+		<emotion id="e6" type="surprise" start="s1:tm6" end="s1:tm7" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm6" end="s1:tm7"  importance="1" />
+
+
+<!-- a-->
+	
+	</fml>
+</fml-apml>

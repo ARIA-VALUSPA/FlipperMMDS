@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE fml-apml SYSTEM "..\..\ARIA-ValuspaFMLTranslator\fml-apml.dtd">
+<fml-apml>
+	
+	<bml>
+		<speech id="s1" language="english" start="0.0" text="" voice="cereproc">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+			
+			<tm id="tm0"/>
+			Ok <break time = "1.0s"/> well I think that I should probably go now <break time = "0.8s"/> <tm id="tm1"/>
+			It has been a pleasure talking to you @name <break time = "0.8s"/> <tm id="tm2"/>
+			Thank you! <tm id="tm3"/>
+			I hope we can talk again soon <tm id="tm4"/><break time = "1.0s"/>
+			You know where to find me <tm id="tm5"/>
+			
+			
+			<pitchaccent end="s1:tm1" id="pa1" importance="1" level="medium" start="s1:tm0" type="Hstar"/>
+
+			<boundary id="b1" start="s1:tm5" type="HH"/>
+			
+		</speech>
+	</bml>
+	
+	<fml>
+	
+		<emotion end="s1:tm3" id="em1" importance="1.0" intensity="1" regulation="felt" start="s1:tm0" type="joy"/>
+		<emotion end="s1:tm5" id="em1" importance="1.0" intensity="1" regulation="felt" start="s1:tm4" type="surprise"/>
+		
+		<performative end="s1:tm4" id="p1" importance="1" start="s1:tm3" type="question"/>
+		
+	</fml>
+	
+</fml-apml>
