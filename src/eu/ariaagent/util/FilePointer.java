@@ -190,7 +190,7 @@ public class FilePointer {
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node child = nodeList.item(i);
             if (child.getNodeName().equals("#text")) {
-                sb.append(child.getNodeValue());
+                sb.append(child.getNodeValue().trim()).append(" ");
             }
         }
         return sb.toString().trim();

@@ -49,7 +49,7 @@ import java.util.*;
         stanfordTagger = new StanfordTagger(posModel);
         stanfordParser = new StanfordParser(parseModel);
 
-        exclude = new ArrayList<>(Arrays.asList("repeat"));
+        exclude = new ArrayList<>(Arrays.asList("repeat", "look"));
 
     }
 
@@ -251,6 +251,9 @@ import java.util.*;
                                     nid = j;
                                     break;
                                 }
+                            }
+                            if(nid == -1){
+                                continue;
                             }
                             ArrayList<String> n;
                             if (!adjHash.containsKey(dep.dep().index())) {

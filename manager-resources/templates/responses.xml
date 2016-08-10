@@ -19,13 +19,15 @@
 			<argument name="response" value="Hello, my name is Alice. What's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name3.xml}" />
 			<argument name="response" value="Hi there, what’s up? Would you mind answering a few questions? Please! What's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_1_whats_your_name2.xml}" />
 			<argument name="response" value="Hey,  my  name  is  Alice...  What's  your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
-			<argument name="response" value="Hi  human,  my  name  is  Alice,  and  I'm  really  interested  in learning more about you and the kind of things you like doing. Why don’t you tell me all about yourself, what's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_6_journalist.xml}"/>
-			<argument name="response" value="Hi there, my name is Alice. I live in a computer and I’m really interested in finding out more about the kinds of things that humans like doing. Why don’t you tell me a bit about yourself, starting with your name and how old you are?{SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_7_journalist.xml}"/>
-			<argument name="response" value="Hey! My name is Alice and I’m a virtual human. I like learning how you real humans live! Tell me about yourself, and don’t skimp on the details! I like details! What's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_8_journalist.xml}"/>
-			<argument name="response" value="Hey there. My name is Alice and I live inside a computer. I’m trying to improve my knowledge about what it is to be human. Maybe you can help me with that question. Tell me something about yourself, who are you?{SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_9_philosopher.xml}"/>
-			<argument name="response" value="Hey there human! My name is Alice and I am an aspiring journalist. I’m really interested in learning about humans and the kinds of stuff you guys are interested in. I know you might feel weird about talking to someone who lives in a computer, but bare with me and tell me all about yourself!{SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_10_journalist.xml}"/>
-			<argument name="response" value="Hello. My name is Alice. I'm a philosopher contemplating the deeper meaning of life. I would like to learn more about you. Who are you? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_11_philosopher.xml}" />
+			<argument name="response" value="{SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
+			<argument name="response" value="Hi  human,  my  name  is  Alice,  and  I'm  really  interested  in learning more about you and the kind of things you like doing. Why don’t you tell me all about yourself, what's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
+			<argument name="response" value="Hi there, my name is Alice. I live in a computer and I’m really interested in finding out more about the kinds of things that humans like doing. Why don’t you tell me a bit about yourself, starting with your name and how old you are? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
+			<argument name="response" value="Hey! My name is Alice and I’m a virtual human. I like learning how you real humans live! Tell me about yourself, and don’t skimp on the details! I like details! What's your name? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
+			<argument name="response" value="Hey there. My name is Alice and I live inside a computer. I’m trying to improve my knowledge about what it is to be human. Maybe you can help me with that question. Tell me something about yourself, who are you? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
+			<argument name="response" value="Hey there human! My name is Alice and I am an aspiring journalist. I’m really interested in learning about humans and the kinds of stuff you guys are interested in. I know you might feel weird about talking to someone who lives in a computer, but bare with me and tell me all about yourself! {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}"/>
+			<argument name="response" value="Hello. My name is Alice. I'm a philosopher contemplating the deeper meaning of life. I would like to learn more about you. Who are you? {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_2_what-s-your-name.xml}" />
 		</behaviour>
+
 	</template>
 
 	<!--FIXME more robust-->
@@ -41,7 +43,7 @@
 			<update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Yes yes, nice to meet you, but you still haven't answered my question. {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_12_repeated.xml}" />
+			<argument name="response" value="Yes yes, nice to meet you, but you still haven't answered my question." />
 		</behaviour>
 	</template>
 
@@ -58,7 +60,7 @@
 			<update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Yes yes, hello. {SPEECH_FOLDER_WoZ/1_Alice_hello/GREETING_13_annoyed.xml}" />
+			<argument name="response" value="Yes yes, hello." />
 		</behaviour>
 	</template>
 
@@ -69,7 +71,6 @@
 	<template id="900c" name="howAreYou">
 		<preconditions>
 			<compare value1="$agentstates.prevIntentions._last" value2="askAboutName" />
-			<compare value1="$userstates.name" comparator="not_equals" value2="" />
 		</preconditions>
         <effects>
             <update name="$agentstates.prevIntentions._addlast" value="initProbe" />
@@ -98,12 +99,13 @@
             <update name="$agentstates.prevIntentions._addlast" value="moreInfo" />
         </effects>
         <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-            <argument name="response" value="Could I get a little more detail about @noun? I like details! Details are good! {SPEECH_FOLDER_WoZ/3_short_answer/CAT_1_20.xml}" />
-            <argument name="response" value="I see. Could you tell me a little more about @noun? {SPEECH_FOLDER_WoZ/3_short_answer/CAT_1_21.xml}" />
-            <argument name="response" value="Would you like to tell me a little bit more about @noun? {SPEECH_FOLDER_WoZ/3_short_answer/CAT_1_22.xml}" />
-            <argument name="response" value="I’d be interested in hearing more about @noun. Can you tell me a little bit more about it? {SPEECH_FOLDER_WoZ/3_short_answer/CAT_1_23.xml}" />
-            <argument name="response" value="Is that all? How disappointing. Surely you can tell me more. {SPEECH_FOLDER_WoZ/3_short_answer/CAT_1_23b.xml}" />
-            <argument name="response" value="So, what specifically do you like about @noun? {SPEECH_FOLDER_WoZ/3_short_answer/CAT_1_23c.xml}" />
+            <argument name="response" value="Could I get a little more detail about @noun? I like details! Details are good!" />
+            <argument name="response" value="I see. Could you tell me a little more about @noun?" />
+            <argument name="response" value="Would you like to tell me a little bit more about @noun?" />
+            <argument name="response" value="I’d be interested in hearing more about @noun. Can you tell me a little bit more about it?" />
+            <argument name="response" value="Is that all? How disappointing. Surely you can tell me more." />
+            <argument name="response" value="So, what specifically do you like about @noun?" />
+
         </behaviour>
     </template>
 
@@ -123,37 +125,6 @@
 		</behaviour>
 	</template>
 
-	<template id="900t" name="askNameAgain">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="askNameAgain" />
-			<compare value1="$userstates.name" value2="" />
-			<!--<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />-->
-			<!--<compare value1="$dialoguestates.topic" value2="askQuestion" />-->
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="askAboutName" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Sorry, didn't quite hear that. What was your name again? {SPEECH_FOLDER_WoZ\1_Alice_hello/askForName.xml}"/>
-		</behaviour>
-	</template>
-
-	<template id="900t" name="askNameAgain">
-		<preconditions>
-			<compare value1="$userstates.intention" value2="askNameAgain" />
-			<compare value1="$userstates.name" comparator="not_equals" value2="" />
-			<!--<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />-->
-			<!--<compare value1="$dialoguestates.topic" value2="askQuestion" />-->
-		</preconditions>
-		<effects>
-			<update name="$agentstates.prevIntentions._addlast" value="notAskAboutName" />
-		</effects>
-		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="But you already told me your name. Have you been drinking? {SPEECH_FOLDER_WoZ\1_Alice_hello/nameAgain.xml}" />
-		</behaviour>
-	</template>
-
-
 
 	<template id="900z" name="goodToHear">
 		<preconditions>
@@ -166,9 +137,9 @@
 			<update name="$agentstates.prevIntentions._addlast" value="goodToHear" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Glad to hear that. {SPEECH_FOLDER_WoZ\4_confirmation\glad.xml}" />
-			<argument name="response" value="Awesome! I'm glad to hear that! {SPEECH_FOLDER_WoZ\4_confirmation\awesome.xml}" />
-			<argument name="response" value="That's great! I'm happy for you. {SPEECH_FOLDER_WoZ\4_confirmation\great.xml}" />
+			<argument name="response" value="Glad to hear that." />
+			<argument name="response" value="Awesome! I'm glad to hear that!" />
+			<argument name="response" value="That's great! I'm happy for you." />
 		</behaviour>
 	</template>
 
@@ -205,7 +176,7 @@
 	<!--FIXME need better conditions-->
 	<template id="900y" name="Return_ending_test">
 		<preconditions>
-			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="5" />
+			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="11" />
 			<!--<compare value1="$userstates.utterance.story.numSentences" comparator="smaller_than" value2="4" />-->
 			<!--<compare value1="$agentstates.prevIntentions._last" comparator="not_equals" value2="agentEnding" />-->
 			<compare value1="$agentstates.prevIntentions._last" comparator="not_equals" value2="ending" />
@@ -214,12 +185,12 @@
 			<update name="$agentstates.prevIntentions._addlast" value="ending" />
         </effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="OK, well I think that I should probably go now. It has been a pleasure talking to you, @name. Thank you! I hope we can talk again soon! You know where to find me. {SPEECH_FOLDER_WoZ\6_bye\9generic_ending.xml}" />
-			<argument name="response" value="I hate to cut this conversation short, but I think I should probably go now. See you soon @name. Goodbye! {SPEECH_FOLDER_WoZ\6_bye\ending2_generic.xml}" />
-			<argument name="response" value="Perfect. I think it’s probably time for me to wrap up this interview with you today @name. It has been a pleasure talking to you and gathering more useful information about humans. I will be compiling my report very soon! Thank you, and see you again sometime! Goodbye! {SPEECH_FOLDER_WoZ\6_bye\ENDING_3_journalist.xml}" />
-			<argument name="response" value="OK, I think we will have to conclude this interview today. It has been very useful, I have learnt many more interesting things about humans. I will be writing my report in the next few days. Thank you for taking part! Goodbye! {SPEECH_FOLDER_WoZ\6_bye\ENDING_4_journalist.xml}"  />
-			<argument name="response" value="Hmm… I see. I think we will have to conclude our meeting here for today @name. It is very interesting to hear your thoughts about all of this. I think I am going to retire now and think about everything we have talked about today. Good day, human. Go well and good luck on your journey down the road less travelled. Farewell! {SPEECH_FOLDER_WoZ\6_bye\ENDING_5_philosopher.xml}"  />
-			<argument name="response" value="Well I am afraid that our conversation must end here for today @name. From our discussion I have gained a deeper insight into what it means to be human, but now I must retire and think more deeply about the human condition and the meaning of life. These are complex issues, but I will not tire of them. I wish you well! Good bye! {SPEECH_FOLDER_WoZ\6_bye\ENDING_6_philosopher.xml}"  />
+			<argument name="response" value="OK, well I think that I should probably go now. It has been a pleasure talking to you, @name. Thank you! I hope we can talk again soon! You know where to find me."  />
+			<argument name="response" value="I hate to cut this conversation short, but I think I should probably go now. See you soon @name. Goodbye!"  />
+			<argument name="response" value="Perfect. I think it’s probably time for me to wrap up this interview with you today @name. It has been a pleasure talking to you and gathering more useful information about humans. I will be compiling my report very soon! Thank you, and see you again sometime! Goodbye!"  />
+			<argument name="response" value="OK, I think we will have to conclude this interview today. It has been very useful, I have learnt many more interesting things about humans. I will be writing my report in the next few days. Thank you for taking part! Goodbye!"  />
+			<argument name="response" value="Hmm… I see. I think we will have to conclude our meeting here for today @name. It is very interesting to hear your thoughts about all of this. I think I am going to retire now and think about everything we have talked about today. Good day, human. Go well and good luck on your journey down the road less travelled. Farewell!"  />
+			<argument name="response" value="Well I am afraid that our conversation must end here for today @name. From our discussion I have gained a deeper insight into what it means to be human, but now I must retire and think more deeply about the human condition and the meaning of life. These are complex issues, but I will not tire of them. I wish you well! Good bye!"  />
 		</behaviour>
 	</template>
 
@@ -237,7 +208,6 @@
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
 			<argument name="response" value="Goodbye! {SPEECH_FOLDER_WoZ\6_bye\bye_short1.xml}" />
-			<argument name="response" value="See you in hell! {SPEECH_FOLDER_WoZ\6_bye\bye_short1.xml}" />
 			<argument name="response" value="Bye! It's been my pleasure talking to you. {SPEECH_FOLDER_WoZ\6_bye\bye_short1.xml}" />
 			<argument name="response" value="Take care, it was nice talking to you. {SPEECH_FOLDER_WoZ\6_bye\bye_short1.xml}" />
 		</behaviour>
@@ -305,9 +275,9 @@
             <update name="$agentstates.prevIntentions._addlast" value="goodDay" />
         </effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Good day indeed, what's up? {SPEECH_FOLDER_WoZ\1_Alice_hello\good_day1.xml}"  />
-			<argument name="response" value="I agree, a good day indeed. {SPEECH_FOLDER_WoZ\1_Alice_hello\good_day2.xml}"  />
-			<argument name="response" value="Why do you think this day is good? {SPEECH_FOLDER_WoZ\1_Alice_hello\good_day3.xml}"  />
+			<argument name="response" value="Good day indeed, what's up?"  />
+			<argument name="response" value="I agree, a good day indeed."  />
+			<argument name="response" value="Why do you think this day is good?"  />
 		</behaviour>
 	</template>
 
@@ -320,8 +290,8 @@
             <update name="$agentstates.prevIntentions._addlast" value="howAreYou"/>
 	    </effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.4">
-			<argument name="response" value="Oh, you know, making it work. What about yourself? {SPEECH_FOLDER_WoZ\9_ask_agent\Im_fine1.xml.xml}" />
-			<argument name="response" value="I am fine! Thank you for asking. How about you? {SPEECH_FOLDER_WoZ\9_ask_agent\Im_fine2.xml.xml}" />
+			<argument name="response" value="Oh, you know, making it work. What about yourself?" />
+			<argument name="response" value="I am fine! Thank you for asking. How about you?" />
 		</behaviour>
 	</template>
 
@@ -335,8 +305,8 @@
 			<update name="$userstates.turn" value="agent"/>
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.1">
-			<argument name="response" value="Can you focus on you? {SPEECH_FOLDER_WoZ\9_ask_agent\focus_on_you.xml}" />
-			<argument name="response" value="I am fine! Thank you for asking. How about you? {SPEECH_FOLDER_WoZ\9_ask_agent\Im_fine2.xml.xml}" />
+			<argument name="response" value="Can you focus on you?" />
+			<argument name="response" value="I am fine! Thank you for asking. How about you?" />
 		</behaviour>
 	</template>
 
@@ -349,8 +319,8 @@
             <update name="$agentstates.prevIntentions._addlast" value="agentAge" />
         </effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I'd prefere not to talk about my age. Thanks.{SPEECH_FOLDER_WoZ\9_ask_agent\age1.xml}" />
-			<argument name="response" value="I'm only three weeks old, if you can believe it.{SPEECH_FOLDER_WoZ\9_ask_agent\age2.xml}" />
+			<argument name="response" value="I'd prefere not to talk about my age. Thanks." />
+			<argument name="response" value="I'm only three weeks old, if you can believe it." />
 		</behaviour>
 	</template>
 
@@ -362,8 +332,8 @@
             <update name="$agentstates.prevIntentions._addlast" value="alice" />
         </effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Alice? Now there's a name I like.{SPEECH_FOLDER_WoZ\9_ask_agent\alice1.xml}" />
-			<argument name="response" value="Alice? Why, I believe that's me! You can talk to me about anything. I like talking! {SPEECH_FOLDER_WoZ\9_ask_agent\alice2.xml}" />
+			<argument name="response" value="Alice? Now there's a name I like." />
+			<argument name="response" value="Alice? Why, I believe that's me! You can talk to me about anything. I like talking!" />
 		</behaviour>
 	</template>
 
@@ -374,7 +344,7 @@
 		</preconditions>
 
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Yes really. Do you disagree? {SPEECH_FOLDER_WoZ\9_ask_agent\disagree.xml}" />
+			<argument name="response" value="Yes really. Do you disagree?" />
 		</behaviour>
 	</template>
 
@@ -387,8 +357,8 @@
 			<update name="$agentstates.prevIntentions._addlast" value="askAboutAgentName" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.9">
-			<argument name="response" value="My name is Alice.{SPEECH_FOLDER_WoZ\9_ask_agent\askName1.xml}" />
-			<argument name="response" value="My name is @name too! Just kidding, my name is Alice.{SPEECH_FOLDER_WoZ\9_ask_agent\askName2.xml}" />
+			<argument name="response" value="My name is Alice." />
+			<argument name="response" value="My name is @name too! Just kidding, my name is Alice." />
 		</behaviour>
 	</template>
 
@@ -400,9 +370,9 @@
 			<update name="$agentstates.prevIntentions._addlast" value="respondGratitude" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="No problem. {SPEECH_FOLDER_WoZ\4_confirmation\noProblem1.xml}"/>
-			<argument name="response" value="You're welcome. {SPEECH_FOLDER_WoZ\4_confirmation\noProblem2.xml}"/>"/>
-			<argument name="response" value="Anytime. {SPEECH_FOLDER_WoZ\4_confirmation\noProblem3.xml}"/>"/>
+			<argument name="response" value="No problem."/>
+			<argument name="response" value="You're welcome."/>
+			<argument name="response" value="Anytime."/>
 		</behaviour>
 	</template>
 
@@ -435,9 +405,9 @@
 			<update name="$agentstates.prevIntentions._addlast" value="respondOpinion" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Why? {SPEECH_FOLDER_WoZ\10_probes\why.xml}" />
-			<argument name="response" value="Can you elaborate on that? {SPEECH_FOLDER_WoZ\10_probes\elaborate.xml}" />
-			<argument name="response" value="Really? Why? {SPEECH_FOLDER_WoZ\10_probes\really.xml}" />
+			<argument name="response" value="Why?" />
+			<argument name="response" value="Can you elaborate on that?" />
+			<argument name="response" value="Really? Why?" />
 		</behaviour>
 	</template>
 
@@ -450,8 +420,8 @@
 			<update name="$agentstates.prevIntentions._addlast" value="respondOpinionNeg" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Why not? {SPEECH_FOLDER_WoZ\5_elaborate\whyNot.xml}"/>
-			<argument name="response" value="Really? Why is that?{SPEECH_FOLDER_WoZ\5_elaborate\really.xml}" />
+			<argument name="response" value="Why not?" />
+			<argument name="response" value="Really? Why is that?" />
 		</behaviour>
 	</template>
 
@@ -459,16 +429,15 @@
 		<preconditions>
 			<compare value1="$userstates.intention" value2="longPause" />
 			<compare value1="$userstates.turn" value2="user" />
-			<compare value1="$agentstates.prevIntentions" comparator="not_contains" value2="ending" />
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="$agentstates.prevIntentions._last" />
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="Are you still there? {SPEECH_FOLDER_WoZ\5_elaborate\stillThere.xml}" />
-			<argument name="response" value="Still here? {SPEECH_FOLDER_WoZ\5_elaborate\stillHere.xml}" />
-			<argument name="response" value="Yes? {SPEECH_FOLDER_WoZ\5_elaborate\yes.xml}" />
-			<argument name="response" value="Hello? {SPEECH_FOLDER_WoZ\5_elaborate\hello.xml}" />
+			<argument name="response" value="Are you still there?" />
+			<argument name="response" value="Still here?" />
+			<argument name="response" value="Yes?" />
+			<argument name="response" value="Hello?" />
 		</behaviour>
 	</template>
 
@@ -483,9 +452,9 @@
 			<update name="$userstates.turn" value="agent"/>
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
-			<argument name="response" value="I'm sorry, I was just thinking about my response. {SPEECH_FOLDER_WoZ\8_sounds\thinking1.xml}" />
-			<argument name="response" value="Oops, I realize that I was just thinking to myself there. {SPEECH_FOLDER_WoZ\8_sounds\thinking2.xml}" />
-			<argument name="response" value="Sorry, I'm still learning how to respond to questions. {SPEECH_FOLDER_WoZ\8_sounds\thinking3.xml}" />
+			<argument name="response" value="I'm sorry, I was just thinking about my response." />
+			<argument name="response" value="Oops, I realize that I was just thinking to myself there." />
+			<argument name="response" value="Sorry, I'm still learning how to respond to questions." />
 		</behaviour>
 	</template>
 

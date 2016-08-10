@@ -174,7 +174,6 @@
 			<state name="$userstates.intention" value="repeatPrevious"/>
 		</states>
 	</rule>
-	<!--FIXME update?-->
 	<rule id="R_General_3">
 		<words>
 			<word value="say"/>
@@ -184,46 +183,7 @@
 			<state name="$userstates.intention" value="repeatPrevious"/>
 		</states>
 	</rule>
-	<!--FIXME no-->
-	<rule id="R_General_1">
-		<words>
-			<word value="what"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="repeatPrevious"/>
-		</states>
-	</rule>
-	<!--FIXME update-->
-	<rule id="R_General_1">
-		<words>
-			<word value="repeat"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="repeatPrevious"/>
-		</states>
-	</rule>
 
-	<!--FIXME update-->
-	<rule id="R25">
-		<words>
-			<word value="introduced"/>
-			<word value="nice"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="sayNiceToMeet"/>
-		</states>
-	</rule>
-	<!--FIXME no-->
-	<rule id="R26">
-		<words>
-			<word value="agree"/>
-		</words>
-		<states>
-			<state name="$userstates.intention" value="expressAgreement"/>
-		</states>
-	</rule>
-
-	<!--FIXME update-->
 	<rule id="R26">
 		<words>
 			<word value="haha"/>
@@ -235,7 +195,6 @@
 
 
 
-	<!--FIXME no-->
 	<rule id="R22_1">
 		<words>
 			<word value="bad"/>
@@ -244,7 +203,7 @@
 			<state name="$userstates.intention" value="expressNegative"/>
 		</states>
 	</rule>
-	<!--FIXME no-->
+
 	<rule id="R22">
 		<words>
 			<word value="good"/>

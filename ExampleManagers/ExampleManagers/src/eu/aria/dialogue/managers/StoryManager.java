@@ -83,7 +83,7 @@ import java.util.Map;
             if (userSay != null) {
                 List sentences = storyUtterance.getList("sentences");
                 List finishedStating = storyUtterance.getList("finishedStating");
-                storyUtterance.set("numSentences", sentences.size());
+                storyUtterance.set("numSentences", sentences.size()+1);
 
                 sentences.addItemEnd(userSay);
                 finishedStating.addItemEnd(currTime);

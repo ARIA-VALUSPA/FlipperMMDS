@@ -4,7 +4,6 @@
     <root id="archive" name="FlipperMMDS.jar">
       <element id="module-output" name="FlipperMMDS" />
       <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/Util.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/Flipper.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/gson-2.7.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/ERISAJAVA.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/Intentions.jar" path-in-jar="/" />
@@ -31,6 +30,7 @@
       <element id="dir-copy" path="$PROJECT_DIR$/manager-resources/data" />
       <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0_jdk.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/ActiveMQ/activemq-all-5.13.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/Flipper.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
