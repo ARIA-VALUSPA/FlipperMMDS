@@ -184,7 +184,10 @@ public class FilePointer {
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node child = nodeList.item(i);
             if (child.getNodeName().equals("#text")) {
-                sb.append(child.getNodeValue().trim()).append(" ");
+                String value = child.getNodeValue();
+                Pattern pattern = Pattern.compile("\\s+");
+                Matcher matcher = pattern.matcher(value);
+                sb.append(matcher.replaceAll(" ")).append(" ");
             }
         }
         return sb.toString().trim();
