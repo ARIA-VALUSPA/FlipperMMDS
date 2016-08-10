@@ -146,18 +146,15 @@ import java.util.Map;
         }
 
         prevAgentIntentions = agentUtterance.getList("prevIntentions");
-        double numProbes = 0.0;
-        for(int i = prevAgentIntentions.size()-1; i > -1 ; i--){
-            if(prevAgentIntentions.getString(i).equals("probingQuestions")){
+        int numProbes = 0;
+        for(int i = prevAgentIntentions.size()-1; i > -1 ; i--) {
+            if (prevAgentIntentions.getString(i).equals("probingQuestions")) {
                 break;
             }
             numProbes++;
         }
-        if(numProbes > 0.0) {
-            System.out.println("In the if.....");
-            if (numProbes == Math.floor(numProbes/3.0) ||numProbes / 3.0 <= 1.0) {
-                storyUtterance.set("canProbe", "true");
-            }
+        if (numProbes == 3 || prevAgentIntentions.size() < 6) {
+            storyUtterance.set("canProbe", "true");
         }
         if (utterance.getString("consumed").equals("true")) {
             try {

@@ -15,10 +15,7 @@ import eu.aria.dialogue.gui.GuiController;
 import eu.aria.dialogue.util.HedgeFactory;
 import eu.aria.dialogue.util.Say;
 import eu.ariaagent.managers.Manager;
-import eu.ariaagent.util.FilePointer;
-import eu.ariaagent.util.FileStorage;
-import eu.ariaagent.util.ManageableBehaviourClass;
-import eu.ariaagent.util.SimpleProducerWrapper;
+import eu.ariaagent.util.*;
 import hmi.flipper.defaultInformationstate.DefaultList;
 import hmi.flipper.defaultInformationstate.DefaultRecord;
 import hmi.flipper.informationstate.List;
@@ -55,18 +52,39 @@ public class BehaviourToGui implements ManageableBehaviourClass {
     private AgentHistory ah = AgentHistory.getAH();
 
     private SimpleProducerWrapper fmlSender, speechSender;
+    private SimpleReceiverWrapper userInput;
 
     public BehaviourToGui() {
         if (new File("config.ini").exists()) {
             IniManager iniManager = new IniManager("config.ini");
-            String url = iniManager.getValueString("amq.sender.url");
+            String url = iniManager.getValueString("amq.url");
             String nameFml = iniManager.getValueString("amq.sender.fml.name");
             String nameSpeech = iniManager.getValueString("amq.sender.speech.name");
+            String nameInput = iniManager.getValueString("amq.receiver.input.name");
             boolean isTopicFml = iniManager.getValueBoolean("amq.sender.fml.isTopic");
-            boolean isTopicSpeech = iniManager.getValueBoolean("amq.sender.speech.name");
+            boolean isTopicSpeech = iniManager.getValueBoolean("amq.sender.speech.isTopic");
+            boolean isTopicInput = iniManager.getValueBoolean("amq.receiver.input.isTopic");
             fmlSender = new SimpleProducerWrapper(url, nameFml, isTopicFml);
             speechSender = new SimpleProducerWrapper(url, nameSpeech, isTopicSpeech);
             fmlSender.init();
+            speechSender.init();
+            userInput = new SimpleReceiverWrapper(url, nameInput, isTopicInput);
+            userInput.start(message -> {
+                if (message instanceof TextMessage) {
+                    try {
+                        String text = ((TextMessage) message).getText();
+                        if (gui != null) {
+                            gui.addUserSay(new Say(text, "Me", true), false);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            TextMessage resetMessage = speechSender.createTextMessage("{RESET}");
+            if (resetMessage != null) {
+                speechSender.sendMessage(resetMessage);
+            }
         } else {
             System.err.println("No configuration file exists!");
         }
