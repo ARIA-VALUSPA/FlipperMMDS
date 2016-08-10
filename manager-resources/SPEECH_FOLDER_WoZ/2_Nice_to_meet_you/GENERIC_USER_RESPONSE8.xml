@@ -5,14 +5,17 @@
 			<description level="1" type="gretabml">
 				<reference>tmp/from-fml-apml.pho</reference>
 			</description>
-				
+
+
 			<tm id="tm1"/>
-				Hey, 
+				I have a virtual great aunt called {NAME}!
 			<tm id="tm2"/>
-				my name is Alice.
+				She isn't very nice, 
 			<tm id="tm3"/>
-				What's your name?
+				but I'm sure you are!
 			<tm id="tm4"/>
+				Tell me more about yourself @name
+			<tm id="tm5"/>
 				
 			<pitchaccent start="s1:tm1" id="pa1" importance="1" level="medium" end="s1:tm2" type="HStar" />
 			<boundary start="s1:tm1" id="b2" end="s1:tm1+0.5" type="H" />
@@ -20,11 +23,17 @@
 		</speech>
 	</bml>
 	<fml>
-	    	<emotion id="e1" type="joy" start="s1:tm1" end="s1:tm2" importance="1.0"/>
-		<performative id="p1" type="beatsocial" start="s1:tm1" end="s1:tm2"  importance="1" />
-		<emotion id="e1" type="joy" start="s1:tm2" end="s1:tm3" importance="1.0"/>
+	    <emotion id="e1" type="joy" start="s1:tm1" end="s1:tm2" importance="1.0"/>
 		<performative id="p1" type="beatsocial" start="s1:tm2" end="s1:tm3"  importance="1" />
-		<emotion id="e1" type="surprise" start="s1:tm3" end="s1:tm4" importance="1.0"/>
+
+		<emotion id="e2" type="sadness" start="s1:tm2" end="s1:tm3" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm2" end="s1:tm3"  importance="1" />
+
+		<emotion id="e3" type="surprise" start="s1:tm3" end="s1:tm4" importance="1.0"/>
 		<performative id="p1" type="beatsocial" start="s1:tm3" end="s1:tm4"  importance="1" />
+
+		<emotion id="e4" type="joy" start="s1:tm4" end="s1:tm5" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm4" end="s1:tm5"  importance="1" />
+	
 	</fml>
 </fml-apml>

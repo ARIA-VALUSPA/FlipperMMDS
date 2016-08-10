@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE fml-apml SYSTEM "..\..\ARIA-ValuspaFMLTranslator\fml-apml.dtd">
+<fml-apml>
+	
+	<bml>
+		<speech id="s1" language="english" start="0.0" text="" voice="cereproc">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+			
+			<tm id="tm0"/>
+			Ah I see <break time = "1.0s"/><tm id="tm1"/>
+			That is really interesting to hear. I am learning a lot of new information today. <break time = "0.8s"/> <tm id="tm2"/>
+			Could you tell me a little more about @noun1 <tm id="tm3"/>?
+			
+			
+			<pitchaccent end="s1:tm1" id="pa1" importance="1" level="medium" start="s1:tm0" type="Hstar"/>
+
+			<boundary id="b1" start="s1:tm3" type="HH"/>
+			
+		</speech>
+	</bml>
+	
+	<fml>
+	
+		<emotion end="s1:tm2" id="em1" importance="1.0" intensity="1" regulation="felt" start="s1:tm0" type="joy"/>
+		<emotion end="s1:tm3" id="em1" importance="1.0" intensity="1" regulation="felt" start="s1:tm0" type="surprise"/>
+		
+		<performative end="s1:tm3" id="p1" importance="1" start="s1:tm2" type="question"/>
+		
+	</fml>
+	
+</fml-apml>

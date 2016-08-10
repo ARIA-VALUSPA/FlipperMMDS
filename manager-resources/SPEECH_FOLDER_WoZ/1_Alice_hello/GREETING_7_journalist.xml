@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="english" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+ 
+
+
+			<tm id="tm1"/>
+				Hi there, I'm Alice. 
+			<tm id="tm2"/>
+				I live in a computer and I'm really interested in finding out more about the kinds of things that humans like doing.
+			<tm id="tm3"/>
+				Why don't you tell me a bit about yourself, starting with your name and how old you are?	
+			<tm id="tm4"/>	
+			<pitchaccent start="s1:tm1" id="pa1" importance="1" level="medium" end="s1:tm2" type="HStar" />
+			<boundary start="s1:tm1" id="b2" end="s1:tm1+0.5" type="H" />
+			<boundary start="s1:tm2" id="b2" end="s1:tm2+0.5" type="H" />
+		</speech>
+	</bml>
+	<fml>
+	        <emotion id="e1" type="joy" start="s1:tm1" end="s1:tm2" importance="1.0"/>
+		<performative id="p1" type="beatsocial" start="s1:tm1" end="s1:tm2"  importance="1" />
+		
+		<emotion id="e2" type="sadness" start="s1:tm2" end="s1:tm3" importance="1.0"/>
+		<performative id="p2" type="beatsocial" start="s1:tm2" end="s1:tm3"  importance="1" />
+
+		<emotion id="e3" type="surprise" start="s1:tm3" end="s1:tm4" importance="1.0"/>
+		<performative id="p3" type="beatsocial" start="s1:tm3" end="s1:tm4"  importance="1" />
+	</fml>
+</fml-apml>
