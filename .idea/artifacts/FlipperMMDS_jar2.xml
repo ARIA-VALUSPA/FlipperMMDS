@@ -1,0 +1,36 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FlipperMMDS:jar2">
+    <output-path>$PROJECT_DIR$/manager-resources</output-path>
+    <root id="archive" name="FlipperMMDS.jar">
+      <element id="module-output" name="FlipperMMDS" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0_jdk.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/manager-resources/modules/ExampleManagers.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/Util.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/Flipper.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/gson-2.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/ERISAJAVA.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/Intentions.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/Input-Types.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/pdfbox-app-1.8.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/edu.mit.jwi_2.4.0_javadoc.zip" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/JSON/javax.json-1.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/JSON/javax.json-api-1.0-prd.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/JSON/javax.json-1.0.2-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-parser-full-2015-12-09/ejml-0.23.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-parser-full-2015-12-09/slf4j-api.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-parser-full-2015-12-09/slf4j-simple.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-parser-full-2015-12-09/ejml-0.23-src.zip" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-parser-full-2015-12-09/stanford-parser.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-parser-full-2015-12-09/stanford-parser-3.6.0-models.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-parser-full-2015-12-09/stanford-parser-3.6.0-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-parser-full-2015-12-09/stanford-parser-3.6.0-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-postagger-full-2015-12-09/stanford-postagger.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-postagger-full-2015-12-09/stanford-postagger-3.6.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-postagger-full-2015-12-09/stanford-postagger-3.6.0-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/ExampleManagers/ExampleManagers/lib/stanford-postagger-full-2015-12-09/stanford-postagger-3.6.0-sources.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/manager-resources/config/managerexample.xml" />
+      <element id="file-copy" path="$PROJECT_DIR$/resources/manager.xsd" />
+    </root>
+  </artifact>
+</component>

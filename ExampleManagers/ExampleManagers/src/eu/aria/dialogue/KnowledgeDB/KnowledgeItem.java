@@ -13,6 +13,7 @@ public class KnowledgeItem {
     private ArrayList<String> aka, quantity;
     private boolean neg;
     private boolean possession;
+    private double preference;
 
     public KnowledgeItem() {
         adjectives = new HashMap<>();
@@ -21,6 +22,7 @@ public class KnowledgeItem {
         quantity = new ArrayList<>();
         neg = false;
         possession = false;
+        preference = .5;
     }
 
     public void setBool(String bootToInvert, boolean bool) {
@@ -94,7 +96,7 @@ public class KnowledgeItem {
         }
     }
 
-    public String getAdj(Set exclude) {
+    public String getAdj(Collection<String> exclude) {
         Map.Entry<String, Integer> maxEntry = null;
 
         for (Map.Entry<String, Integer> entry : adjectives.entrySet()) {
@@ -103,6 +105,9 @@ public class KnowledgeItem {
                     maxEntry = entry;
                 }
             }
+        }
+        if (maxEntry == null){
+            dump("adjectives");
         }
         return maxEntry.getKey();
     }

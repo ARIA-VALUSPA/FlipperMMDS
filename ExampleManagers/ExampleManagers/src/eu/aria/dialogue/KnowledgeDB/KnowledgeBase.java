@@ -1,6 +1,7 @@
 package eu.aria.dialogue.KnowledgeDB;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -79,7 +80,7 @@ public class KnowledgeBase {
         ki.addToList("quantity", quantity);
     }
 
-    public String getAdj(String noun, Set exclude) {
+    public String getAdj(String noun, Collection<String> exclude) {
         if (numAdj(noun) == 0) {
             return null;
         }

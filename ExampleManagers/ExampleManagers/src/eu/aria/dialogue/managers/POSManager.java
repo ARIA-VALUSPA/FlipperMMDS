@@ -90,6 +90,9 @@ import java.util.*;
         if (posUtterance.getList("preference") == null) {
             posUtterance.set("preference", new DefaultList());
         }
+        if (posUtterance.getInteger("numQualifiedNouns") == null) {
+            posUtterance.set("numQualifiedNouns", 0);
+        }
         if (utterance.getString("name") == null) {
             utterance.set("name", "");
         }
@@ -103,10 +106,14 @@ import java.util.*;
             ArrayList<String> nounBuilder = new ArrayList<>();
 
 
-
             String userSay = utterance.getString("text");
             if (userSay != null && !userSay.equals("") && !utterance.getString("consumed").equals("true")) {
                 currNouns = new ArrayList<>();
+                if(userSay.endsWith(".")) {
+                    userSay = userSay.replace(".", "");
+                }
+                userSay = userSay.replace("?", "");
+                userSay = userSay.replace("!", "");
                 ArrayList<String> wordset = new ArrayList<>(Arrays.asList(userSay.split(" ")));
                 ArrayList<String> taggedText = stanfordTagger.tagFile(wordset);
                 List prevAgentIntentions = getIS().getList("$agentstates.prevIntentions");
@@ -133,8 +140,7 @@ import java.util.*;
 //                    if(nounsList.size() > 2) {
 //                        nounsList.getItem(0).setStringValue(nounsList.getItem(0).getString() + "::string");
 //                    }
-
-                    if (pos.startsWith("JJ") && i + 1 < taggedText.size()  && !exclude.contains(word)) {
+                    if (pos.startsWith("JJ") && i + 1 < taggedText.size() && !exclude.contains(word)) {
                         String nextWord = taggedText.get(i + 1);
                         int adjDex = nextWord.lastIndexOf("_");
                         String nextPos = nextWord.substring(adjDex, nextWord.length());
@@ -155,8 +161,8 @@ import java.util.*;
                         String noun = "";
                         for (String n : nounBuilder) {
                             noun += n + " ";
-                            noun = noun.trim();
                         }
+                        noun = noun.trim();
                         nounBuilder.clear();
                         int nid = -1;
                         if (nounsList.size() > 0 && nounsList.contains(noun)) {
@@ -170,9 +176,11 @@ import java.util.*;
 
                             frequency.getItem(nid).setIntegerValue(frequency.getInteger(nid) + 1);
                             lastStated.getItem(nid).setDoubleValue(currTime);
+                            preference.getItem(nid).setDoubleValue(preference.getDouble(nid)+.1);
 
                             posUtterance.set("frequency", frequency);
                             posUtterance.set("lastStated", lastStated);
+                            posUtterance.set("preference", preference);
 
                         } else {
                             //add word, freq of 1, timestamp, and preference
@@ -252,7 +260,7 @@ import java.util.*;
                                     break;
                                 }
                             }
-                            if(nid == -1){
+                            if (nid == -1) {
                                 continue;
                             }
                             ArrayList<String> n;
@@ -301,7 +309,9 @@ import java.util.*;
                                         break;
                                     }
                                 }
-
+                                if (nid == -1) {
+                                    continue;
+                                }
                                 adjectives.getItem(nid).setIntegerValue(kb.numAdj(noun) + 1);
                                 posUtterance.set("adjectives", adjectives);
                                 ArrayList<String> n;
@@ -342,6 +352,28 @@ import java.util.*;
                     getIS().set("$userstates.intention", "learnedName");
                 }
             }
+
+
+            List frequency = posUtterance.getList("frequency");
+            List preference = posUtterance.getList("preference");
+            List nouns = posUtterance.getList("nouns");
+            List lastStated = posUtterance.getList("lastStated");
+            double currTime = (double) System.currentTimeMillis();
+
+            int numQual = 0;
+            for (int n = 0; n < nouns.size(); n++) {
+                double ls = lastStated.getItem(n).getDouble();
+                double freq = frequency.getItem(n).getInteger();
+                double pref = preference.getItem(n).getDouble();
+                double timeDiff = currTime - ls;
+                double sum = freq/Math.sqrt(nouns.size()) - (timeDiff / 50000);
+                sum = sum * pref;
+                if(sum > 0){
+//                    if
+                    numQual++;
+                }
+             }
+            posUtterance.set("numQualifiedNouns", numQual);
         }
     }
 }

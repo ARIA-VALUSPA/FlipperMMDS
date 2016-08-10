@@ -148,13 +148,12 @@
 	<!--FIXME this needs to be fixed-->
     <template id="900x" name="longanswer">
         <preconditions>
-			<!--<compare value1="$userstates.intention" comparator="equals" value2="longAnswer" />-->
-			<compare value1="$agentstates.prevIntentions._last" comparator="equals" value2="initProbe" />
-			<compare value1="$userstates.utterance.pos.nounSize" comparator="greater_than" value2="1" />
-
+			<!--<compare value1="$agentstates.prevIntentions._last" comparator="equals" value2="initProbe" />-->
+			<compare value1="$userstates.utterance.pos.numQualifiedNouns" comparator="greater_than" value2="2" />
+            <compare value1="$userstates.turn" value2="agent" />
         </preconditions>
         <effects>
-            <update name="$agentstates.prevIntentions._addlast" value="moreInfo2" />
+            <update name="$agentstates.prevIntentions._addlast" value="longResponse" />
         </effects>
         <behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">
             <argument name="response" value="So, what specifically do you like about @noun? {SPEECH_FOLDER_WoZ\5_elaborate\CAT_2_24.xml}" />
@@ -176,10 +175,8 @@
 	<!--FIXME need better conditions-->
 	<template id="900y" name="Return_ending_test">
 		<preconditions>
-			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="11" />
-			<!--<compare value1="$userstates.utterance.story.numSentences" comparator="smaller_than" value2="4" />-->
-			<!--<compare value1="$agentstates.prevIntentions._last" comparator="not_equals" value2="agentEnding" />-->
-			<compare value1="$agentstates.prevIntentions._last" comparator="not_equals" value2="ending" />
+			<compare value1="$userstates.utterance.story.numSentences" comparator="greater_than" value2="12" />
+			<compare value1="$userstates.turn" value2="agent" />
 		</preconditions>
         <effects>
 			<update name="$agentstates.prevIntentions._addlast" value="ending" />
@@ -301,7 +298,6 @@
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="rebuffQuestions"/>
-			<update name="$userstates.intention" value="probingQuestion"/>
 			<update name="$userstates.turn" value="agent"/>
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui" quality="0.1">
@@ -379,7 +375,6 @@
 	<!--FIXME need better preconditions!!-->
 	<template id="51" name="probingQuestions">
 		<preconditions>
-			<compare value1="$userstates.utterance.story.numSentences" comparator="smaller_than" value2="5"/>
 			<compare value1="$userstates.turn" comparator="equals" value2="agent"/>
 		</preconditions>
 		<effects>
@@ -448,7 +443,6 @@
 		</preconditions>
 		<effects>
 			<update name="$agentstates.prevIntentions._addlast" value="longPauseAgent" />
-			<update name="$userstates.intention" value="probingQuestion"/>
 			<update name="$userstates.turn" value="agent"/>
 		</effects>
 		<behaviour class="eu.aria.dialogue.behaviours.BehaviourToGui">

@@ -120,19 +120,13 @@ import java.util.Map;
             agentUtterance.set("prevIntentions", prevAgentIntentions);
         }
 
-
         if (storyUtterance.getInteger("numSentences") == null) {
             storyUtterance.set("numSentences", 0);
         }
-        if (storyUtterance.getString("canProbe") == null) {
-            storyUtterance.set("canProbe", "true");
-        }
-        int numSet = storyUtterance.getInteger("numSentences");
 
         if (getIS().getString("$userstates.turn") == null) {
             agentUtterance.set("userstates.turn", "agent");
         }
-
 
         if (utterance.getString("timestamp") == null) {
             utterance.set("timestamp", "t:" + System.currentTimeMillis());
@@ -143,18 +137,6 @@ import java.util.Map;
 
         if (utterance.getString("consumed") == null) {
             utterance.set("consumed", "true");
-        }
-
-        prevAgentIntentions = agentUtterance.getList("prevIntentions");
-        int numProbes = 0;
-        for(int i = prevAgentIntentions.size()-1; i > -1 ; i--) {
-            if (prevAgentIntentions.getString(i).equals("probingQuestions")) {
-                break;
-            }
-            numProbes++;
-        }
-        if (numProbes == 3 || prevAgentIntentions.size() < 6) {
-            storyUtterance.set("canProbe", "true");
         }
         if (utterance.getString("consumed").equals("true")) {
             try {
@@ -172,7 +154,9 @@ import java.util.Map;
             processInternal(userSay);
 
             utterance.set("consumed", "true");
-            getIS().set("$userstates.turn", "agent");
+            if(getIS().getString("$userstates.turn") == null || !getIS().getString("$userstates.turn").equals("end")){
+                getIS().set("$userstates.turn", "agent");
+            }
         }
     }
 

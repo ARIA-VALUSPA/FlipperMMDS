@@ -136,7 +136,7 @@ public class BehaviourToGui implements ManageableBehaviourClass {
                     String replacementNoun = "";
                     int k = 0;
                     int numAdj = numVars(value.getCurSpeechContent(), "@adj");
-                    while (k < 10 && k < ri.size()) {
+                    while (k <= manager.getIS().getInteger("$userstates.utterance.pos.numQualifiedNouns")) {
                         if (numAdj <= adjectives.getItem(ri.get(k)).getInteger()) {
                             if (!localReplacements.containsValue(replacementNoun)) {
                                 String currNoun = nouns.getItem(ri.get(k)).getString();
@@ -144,6 +144,11 @@ public class BehaviourToGui implements ManageableBehaviourClass {
                                     continue;
                                 }
                                 replacementNoun = currNoun;
+
+                                List preference = posUtterance.getList("preference");
+                                preference.getItem(ri.get(k)).setDoubleValue(preference.getDouble(ri.get(k))-.1);
+                                posUtterance.set("preference", preference);
+
                                 break;
                             }
                         }
@@ -155,7 +160,19 @@ public class BehaviourToGui implements ManageableBehaviourClass {
                     Pattern patn = Pattern.compile("@\\??" + r);
                     // Matcher matn = patn.matcher(value);
                     // value = matn.replaceAll(replacementNoun);
-                    value.replaceAll(patn, replacementNoun);
+                    String det = " the ";
+                    if(kb.isPossession(replacementNoun)) {
+                        det = " your ";
+                    }
+                    String p = "@\\??[a-zA-Z0-9]+ @\\??[a-zA-Z0-9]+";
+                    Pattern pp = Pattern.compile(p);
+                    Matcher m = pp.matcher(value.getCurSpeechContent());
+                    String ev = "";
+                    if(m.find()){
+                        String[] extraVar = m.group().split(" ");
+                        ev = extraVar[1];
+                    }
+                    value.replaceAll(patn, det + ev + replacementNoun);
                     localReplacements.put(r, replacementNoun);
                 } else if (r.startsWith("adj") && iters > 0) {
                     String poss = "";
@@ -168,7 +185,7 @@ public class BehaviourToGui implements ManageableBehaviourClass {
                     String adjNoun = localReplacements.get("noun" + poss + repID.substring(0, 1));
                     String replacementAdj = "";
                     if (kb.numAdj(adjNoun) > 0) {
-                        replacementAdj = kb.getAdj(adjNoun, localReplacements.keySet());
+                        replacementAdj = kb.getAdj(adjNoun, localReplacements.values());
                     }
                     Pattern pata = Pattern.compile("@\\??" + r);
                     // Matcher mata = pata.matcher(value);
@@ -199,8 +216,8 @@ public class BehaviourToGui implements ManageableBehaviourClass {
 
     public double scoreNoun(int frequency, double lastStated, double preference) {
         double timeDiff = currTime - lastStated;
-        double sum = frequency - (timeDiff / 1000);
-        sum += sum * preference;
+        double sum = frequency/Math.sqrt(nouns.size()) - (timeDiff / 50000);
+        sum = sum * preference;
         return sum;
     }
 
@@ -226,49 +243,39 @@ public class BehaviourToGui implements ManageableBehaviourClass {
         return nid;
     }
 
-    //TODO finish this thought
-    public void findParentSentence(double timestamp) {
-        List finishedStating = storyUtterance.getList("finishedStating");
-        int sid = -1;
-        double currDiff, diff = 0.0;
-        for (int i = 0; i < finishedStating.size(); i++) {
-            double time = finishedStating.getDouble(i);
-
-            currDiff = Math.abs(time - timestamp);
-            if (currDiff < diff || diff == 0.0) {
-                diff = currDiff;
-                sid = i;
-            }
-        }
-
-    }
-
-    //TODO finish this thought
-    public void getRelatedNoun(String noun) {
-        int nid = findIndex(noun, nouns);
-        lastStated.getItem(nid).getDouble();
-    }
-
     public ArrayList<Integer> sortNounIndicies(boolean onlyLargest) {
         List frequency = posUtterance.getList("frequency");
         List preference = posUtterance.getList("preference");
 
         ArrayList<Double> nounScores = new ArrayList<>();
         for (int j = 0; j < frequency.size(); j++) {
-            nounScores.add(scoreNoun(frequency.getInteger(j), lastStated.getDouble(j), preference.getDouble(j)));
+            double score = scoreNoun(frequency.getInteger(j), lastStated.getDouble(j), preference.getDouble(j));
+            nounScores.add(score);
         }
+
+        ArrayList<Map.Entry<Double, Integer>> sortedList = new ArrayList<>();
+        for (int i = 0; i < nounScores.size(); i++) {
+            sortedList.add(new AbstractMap.SimpleEntry<Double, Integer>(nounScores.get(i), i));
+        }
+
+        sortedList.sort((o1, o2) -> {
+            if (o1.getKey() > o2.getKey()) {
+                return -1;
+            } else if (o1.getKey() < o2.getKey()) {
+                return 1;
+            } else {
+                return 0;
+            }
+        });
+
         ArrayList<Integer> sortedIndex = new ArrayList<>();
 
-        if (onlyLargest) {
-            sortedIndex.add(largestIndex(nounScores));
-            return sortedIndex;
+        for (Map.Entry<Double, Integer> entry : sortedList) {
+            if (entry.getKey() >= 0.0) {
+                sortedIndex.add(entry.getValue());
+            }
         }
 
-        while (!nounScores.isEmpty()) {
-            int li = largestIndex(nounScores);
-            sortedIndex.add(li);
-            nounScores.remove(li);
-        }
         return sortedIndex;
     }
 
@@ -341,7 +348,6 @@ public class BehaviourToGui implements ManageableBehaviourClass {
             isRepeat = true;
             String repeatPath = manager.getIS().getString("$agentstates.utterance.lastPath");
             if(repeatPath == null) {
-                System.err.println("there is no lastPath");
                 return;
             }
             values.add(FileStorage.getInstance().getFile(repeatPath));
@@ -416,7 +422,6 @@ public class BehaviourToGui implements ManageableBehaviourClass {
         }
 
         values = ah.sortValues(values, 10, true);
-
         if (nouns != null && adjectives != null && lastStated != null) {
             values = posQualifier(values, nouns.size(), "@noun");
             values = posQualifier(values, possSize, "@nounposs");
