@@ -193,7 +193,6 @@ public class FilePointer {
             if (child.getNodeName().equals("#text")) {
                 String value = child.getNodeValue();
                 String[] splits = value.split("\\s+");
-                System.out.println(Arrays.toString(splits));
                 for (String split : splits) {
                     split = split.trim();
                     if (!split.isEmpty()) {
